@@ -6,13 +6,15 @@
   <meta name="keywords" content="">
   <meta name="description" content="RHCSA之软件包管理 | Laosec@Falao">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
-<meta property="og:title" content="categories">
-<meta property="og:url" content="http://example.com/categories/index.html">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
 <meta property="og:site_name" content="Laosec@Falao">
+<meta property="og:description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-15T10:01:12.000Z">
-<meta property="article:modified_time" content="2021-01-15T10:01:12.093Z">
+<meta property="article:published_time" content="2021-01-15T05:05:54.000Z">
+<meta property="article:modified_time" content="2021-01-15T05:07:45.429Z">
 <meta property="article:author" content="法老">
 <meta name="twitter:card" content="summary">
 
@@ -299,7 +301,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-18 19:16:02'>2021-01-18 19:15</time>
+            Created At : <time class="date" title='Updated At: 2021-01-18 19:57:18'>2021-01-18 19:15</time>
         
     </div>
     <div class="article-meta">
@@ -321,7 +323,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="toc-text">源码编译安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPM%E5%8C%85%E5%AE%89%E8%A3%85"><span class="toc-text">RPM包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%89%E8%A3%85"><span class="toc-text">包管理器安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0YUM%E6%BA%90%E6%90%AD%E5%BB%BA"><span class="toc-text">本地YUM源搭建</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -337,7 +339,45 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h2><h2 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h2><h2 id="包管理器安装"><a href="#包管理器安装" class="headerlink" title="包管理器安装"></a>包管理器安装</h2><h3 id="本地YUM源搭建"><a href="#本地YUM源搭建" class="headerlink" title="本地YUM源搭建"></a>本地YUM源搭建</h3><blockquote>
+<ol>
+<li><p>将光盘塞入光驱</p>
+</li>
+<li><p>mkdir /iso                  #创建进行文件挂载目录</p>
+</li>
+<li><p>mount /dev/sr0 /iso   #挂载镜像文件到/iso</p>
+</li>
+<li><p>cd /etc/yum.repos.d/ #进入到YUM配置目录</p>
+</li>
+<li><p>rm -rf *                      #删除所有的配置文件</p>
+</li>
+<li><p>vi repo.repo              #创建并编辑新的配置</p>
+<blockquote>
+<p>[Centos_iso]          #仓库描述</p>
+<p>name = info           #对软件源的描述</p>
+<p>baseurl=file:///iso   #镜像挂载位置</p>
+<p>enable = 1             #是否启用此配置 0代表禁用 1代表启用</p>
+<p>gpgchek = 0          #是否检测软件包签名</p>
+</blockquote>
+</li>
+<li><p>yum clear all           #清除之前的YUM源信息</p>
+</li>
+<li><p>yum repolist            #列出YUM的信息</p>
+</li>
+<li><p>yum -y install gcc    #安装GCC编译程序</p>
+</li>
+<li><p>vi /etc/rc.d/rc.local</p>
+<blockquote>
+<p>mount /dev/sr0 /iso         #在最后一行添加</p>
+</blockquote>
+</li>
+<li><p>chmod 755 /etc/rc.d/rc.local   #系统开机时自动挂载此脚本</p>
+</li>
+<li><p>reboot     #重启操作系统并验证</p>
+</li>
+</ol>
+</blockquote>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
     </div>

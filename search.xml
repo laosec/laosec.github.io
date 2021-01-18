@@ -8,7 +8,7 @@
       <link href="2021/01/18/RHCSA%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/"/>
       <url>2021/01/18/RHCSA%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h2><h2 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h2><h2 id="包管理器安装"><a href="#包管理器安装" class="headerlink" title="包管理器安装"></a>包管理器安装</h2><h3 id="本地YUM源搭建"><a href="#本地YUM源搭建" class="headerlink" title="本地YUM源搭建"></a>本地YUM源搭建</h3><blockquote><ol><li><p>将光盘塞入光驱</p></li><li><p>mkdir /iso                  #创建进行文件挂载目录</p></li><li><p>mount /dev/sr0 /iso   #挂载镜像文件到/iso</p></li><li><p>cd /etc/yum.repos.d/ #进入到YUM配置目录</p></li><li><p>rm -rf *                      #删除所有的配置文件</p></li><li><p>vi repo.repo              #创建并编辑新的配置</p><blockquote><p>[Centos_iso]          #仓库描述</p><p>name = info           #对软件源的描述</p><p>baseurl=file:///iso   #镜像挂载位置</p><p>enable = 1             #是否启用此配置 0代表禁用 1代表启用</p><p>gpgchek = 0          #是否检测软件包签名</p></blockquote></li><li><p>yum clear all           #清除之前的YUM源信息</p></li><li><p>yum repolist            #列出YUM的信息</p></li><li><p>yum -y install gcc    #安装GCC编译程序</p></li><li><p>vi /etc/rc.d/rc.local</p><blockquote><p>mount /dev/sr0 /iso         #在最后一行添加</p></blockquote></li><li><p>chmod 755 /etc/rc.d/rc.local   #系统开机时自动挂载此脚本</p></li><li><p>reboot     #重启操作系统并验证</p></li></ol></blockquote>]]></content>
       
       
       <categories>

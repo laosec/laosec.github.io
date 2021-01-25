@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>爬虫之快速入门 | Laosec@Falao</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="爬虫之快速入门 | Laosec@Falao">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
+<meta property="og:type" content="website">
+<meta property="og:title" content="about">
+<meta property="og:url" content="http://example.com/about/index.html">
+<meta property="og:site_name" content="Laosec@Falao">
+<meta property="og:description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-15T05:05:54.000Z">
+<meta property="article:modified_time" content="2021-01-15T05:07:45.429Z">
+<meta property="article:author" content="法老">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/hong.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/hong.jpg"/>
+</a>
+<div class="author">
+    <span>法老</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=2662904153&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=314396446"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(10)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="网络工程师">
+                        
+                        网络工程师
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="服务器运维">
+                        
+                        服务器运维
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="WEB渗透">
+                        
+                        WEB渗透
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后渗透专题">
+                        
+                        后渗透专题
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Python专题">
+                        
+                        Python专题
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="10">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://r0teamx.github.io/">XxSEC</a></li>
+            
+            <li><a target="_blank" href="https://kim23-pg1.github.io/">ZZZSEC</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="All Python专题 "
+           href="/2021/01/25/%E7%88%AC%E8%99%AB%E4%B9%8B%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫之快速入门">爬虫之快速入门</span>
+            <span class="post-date" title="2021-01-25 10:53:18">2021/01/25</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/21/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E4%B8%8E%E9%9A%A7%E9%81%93/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="端口转发与隧道">端口转发与隧道</span>
+            <span class="post-date" title="2021-01-21 13:59:00">2021/01/21</span>
+        </a>
+        
+        <a  class="All WEB渗透 "
+           href="/2021/01/19/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%AE%80%E4%BB%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试简介">渗透测试简介</span>
+            <span class="post-date" title="2021-01-19 10:26:04">2021/01/19</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/19/Windows%E6%8F%90%E6%9D%83%E4%B9%8B%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows提权之权限维持">Windows提权之权限维持</span>
+            <span class="post-date" title="2021-01-19 10:20:33">2021/01/19</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/19/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux提权之权限维持">Linux提权之权限维持</span>
+            <span class="post-date" title="2021-01-19 10:20:13">2021/01/19</span>
+        </a>
+        
+        <a  class="All 服务器运维 "
+           href="/2021/01/18/RHCSA%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCSA之软件包管理">RHCSA之软件包管理</span>
+            <span class="post-date" title="2021-01-18 19:15:18">2021/01/18</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/18/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E5%86%85%E6%A0%B8%E6%8F%90%E6%9D%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux提权之内核提权">Linux提权之内核提权</span>
+            <span class="post-date" title="2021-01-18 14:42:39">2021/01/18</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/18/Windows%E6%8F%90%E6%9D%83%E4%B9%8B%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows提权之信息收集">Windows提权之信息收集</span>
+            <span class="post-date" title="2021-01-18 10:56:33">2021/01/18</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/18/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux提权之信息收集">Linux提权之信息收集</span>
+            <span class="post-date" title="2021-01-18 10:53:10">2021/01/18</span>
+        </a>
+        
+        <a  class="All 网络工程师 "
+           href="/2021/01/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算机网络">计算机网络</span>
+            <span class="post-date" title="2021-01-15 18:03:42">2021/01/15</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-爬虫之快速入门" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">爬虫之快速入门</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python专题">Python专题</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2021-01-25 11:31:31'>2021-01-25 10:53</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E4%BD%95%E4%B8%BA%E7%88%AC%E8%99%AB"><span class="toc-text">一：何为爬虫</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%92%E8%81%94%E7%BD%91%EF%BC%9F"><span class="toc-text">1：什么是互联网？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E4%BA%92%E8%81%94%E7%BD%91%E5%BB%BA%E7%AB%8B%E7%9A%84%E7%9B%AE%E7%9A%84%EF%BC%9F"><span class="toc-text">2：互联网建立的目的？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9A%E4%BB%80%E4%B9%88%E6%98%AF%E4%B8%8A%E7%BD%91%EF%BC%9F%E7%88%AC%E8%99%AB%E8%A6%81%E5%81%9A%E7%9A%84%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"><span class="toc-text">3：什么是上网？爬虫要做的是什么？</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%9A%E6%80%BB%E7%BB%93%E7%88%AC%E8%99%AB"><span class="toc-text">4：总结爬虫</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E7%88%AC%E8%99%AB%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%B5%81%E7%A8%8B"><span class="toc-text">二：爬虫的基本流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%EF%BC%9A%E8%AF%B7%E6%B1%82%E4%B8%8E%E5%93%8D%E5%BA%94"><span class="toc-text">三：请求与响应</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%EF%BC%9ARequest"><span class="toc-text">四：Request</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%EF%BC%9AResponse"><span class="toc-text">五：Response</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%AD%EF%BC%9A%E5%AE%9E%E6%88%98"><span class="toc-text">六：实战</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%88%AC%E5%8F%96%E6%A0%A1%E8%8A%B1%E7%BD%91%E8%A7%86%E9%A2%91"><span class="toc-text">爬取校花网视频</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B6%89%E5%8F%8A%E7%9F%A5%E8%AF%86%EF%BC%9A"><span class="toc-text">涉及知识：</span></a></li></ol></li></ol></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="一：何为爬虫"><a href="#一：何为爬虫" class="headerlink" title="一：何为爬虫"></a>一：何为爬虫</h3><h4 id="1：什么是互联网？"><a href="#1：什么是互联网？" class="headerlink" title="1：什么是互联网？"></a>1：什么是互联网？</h4><blockquote>
+<p>互联网是由网络设备（网线，路由器，交换机，防火墙等等）和多台计算机连接而成，像张网一样。</p>
+</blockquote>
+<h4 id="2：互联网建立的目的？"><a href="#2：互联网建立的目的？" class="headerlink" title="2：互联网建立的目的？"></a>2：互联网建立的目的？</h4><blockquote>
+<p>互联网的核心价值在于数据的共享/传递：数据是存放于一台台计算机上的，而将计算机互联到一起的目的就是为了能够方便彼此之间的数据共享/传递，否则你只能拿U盘去别人的计算机上拷贝数据了。</p>
+</blockquote>
+<h4 id="3：什么是上网？爬虫要做的是什么？"><a href="#3：什么是上网？爬虫要做的是什么？" class="headerlink" title="3：什么是上网？爬虫要做的是什么？"></a>3：什么是上网？爬虫要做的是什么？</h4><blockquote>
+<p>我们所谓的上网便是由用户端计算机发送请求给目标计算机，将目标计算机的数据下载到本地的过程。</p>
+<ol>
+<li>用户获取网络数据的方式是：浏览器提交请求-&gt;下载网页代码-&gt;解析/渲染成页面。</li>
+<li>而爬虫程序要做的就是：模拟浏览器发送请求-&gt;下载网页代码-&gt;只提取有用的数据-&gt;存放于数据库或文件中</li>
+<li>1与2区别是：我们的爬虫程序只提取网页代码中对我们有用的数据</li>
+</ol>
+</blockquote>
+<h4 id="4：总结爬虫"><a href="#4：总结爬虫" class="headerlink" title="4：总结爬虫"></a>4：总结爬虫</h4><blockquote>
+<ul>
+<li>爬虫的比喻： 如果我们把互联网比作一张大的蜘蛛网，那一台计算机上的数据便是蜘蛛网上的一个猎物，而爬虫程序就是一只小蜘蛛，沿着蜘蛛网抓取自己想要的猎物/数据</li>
+<li> 爬虫的定义：向网站发起请求，获取资源后分析并提取有用数据的程序 </li>
+<li>爬虫的价值：互联网中最有价值的便是数据，比如天猫商城的商品信息，链家网的租房信息，雪球网的证券投资信息等等，这些数据都代表了各个行业的真金白银，可以说，谁掌握了行业内的第一手数据，谁就成了整个行业的主宰，如果把整个互联网的数据比喻为一座宝藏，那我们的爬虫课程就是来教大家如何来高效地挖掘这些宝藏，掌握了爬虫技能，你就成了所有互联网信息公司幕后的老板，换言之，它们都在免费为你提供有价值的数据。</li>
+</ul>
+</blockquote>
+<h3 id="二：爬虫的基本流程"><a href="#二：爬虫的基本流程" class="headerlink" title="二：爬虫的基本流程"></a>二：爬虫的基本流程</h3><p><img src="https://images2017.cnblogs.com/blog/1036857/201711/1036857-20171102174025326-341248106.png"></p>
+<ul>
+<li><p>发起请求</p>
+<blockquote>
+<p>使用http库向目标站点发起请求，即发送一个Request<br>Request包含：请求头、请求体等</p>
+</blockquote>
+</li>
+<li><p>获取响应内容</p>
+<blockquote>
+<p>如果服务器能正常响应，则会得到一个Response<br>Response包含：html，json，图片，视频等</p>
+</blockquote>
+</li>
+<li><p>解析内容</p>
+<blockquote>
+<p>解析html数据：正则表达式，第三方解析库如Beautifulsoup，pyquery等<br>解析json数据：json模块<br>解析二进制数据:以b的方式写入文件</p>
+</blockquote>
+</li>
+<li><p>保存数据</p>
+<blockquote>
+<p>数据库<br>XML文件</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="三：请求与响应"><a href="#三：请求与响应" class="headerlink" title="三：请求与响应"></a>三：请求与响应</h3><p><img src="https://images2017.cnblogs.com/blog/1036857/201711/1036857-20171102180223529-1349691987.png"></p>
+<ul>
+<li>Request：用户将自己的信息通过浏览器（socket client）发送给服务器（socket server）</li>
+<li>Response：服务器接收请求，分析用户发来的请求信息，然后返回数据</li>
+<li>PS：浏览器在接收Response后，会解析其内容来显示给用户，而爬虫程序在模拟浏览器发送请求然后接收Response后，是要提取其中的有用数据。</li>
+</ul>
+<h3 id="四：Request"><a href="#四：Request" class="headerlink" title="四：Request"></a>四：Request</h3><blockquote>
+<ol>
+<li>请求方式：</li>
+</ol>
+<ul>
+<li><p>常用的请求方式：GET，POST</p>
+</li>
+<li><p>其他请求方式：HEAD，PUT，DELETE，OPTHONS</p>
+</li>
+<li><p>ps：用浏览器演示get与post的区别，（用登录演示post）</p>
+<p>post与get请求最终都会拼接成这种形式：k1=xxx&amp;k2=yyy&amp;k3=zzz<br>post请求的参数放在请求体内：可用浏览器查看，存放于form data内<br>get请求的参数直接放在url后</p>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ol start="2">
+<li>请求url：url全称统一资源定位符，如一个网页文档，一张图片 一个视频等都可以用url唯一来确定<ul>
+<li>url编码<br><a target="_blank" rel="noopener" href="https://www.baidu.com/s?wd=%E5%9B%BE%E7%89%87">https://www.baidu.com/s?wd=图片</a><br>图片会被编码（看示例代码）</li>
+<li>网页的加载过程是：<br>加载一个网页，通常都是先加载document文档，<br>在解析document文档的时候，遇到链接，则针对超链接发起下载图片的请求</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<ol start="3">
+<li>请求头<ul>
+<li>User-agent：请求头中如果没有user-agent客户端配置，<pre><code>服务端可能将你当做一个非法用户
+host
+cookies：cookie用来保存登录信息</code></pre>
+</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>一般做爬虫都会加上请求头</p>
+</blockquote>
+<blockquote>
+<ol start="4">
+<li>请求体<ul>
+<li>如果是get方式，请求体没有内容</li>
+<li> 如果是post方式，请求体是format data</li>
+</ul>
+</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>ps：<br>1、登录窗口，文件上传等，信息都会被附加到请求体内<br>2、登录，输入错误的用户名密码，然后提交，就可以看到post，正确登录后页面通常会跳转，无法捕捉到post</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> urllib.parse <span class="keyword">import</span> urlencode</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">headers=&#123;</span><br><span class="line"><span class="string">&#x27;Accept&#x27;</span>:<span class="string">&#x27;text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Cookie&#x27;</span>:<span class="string">&#x27;H_WISE_SIDS=101556_115474_115442_114743_108373_100099_115725_106201_107320_115339_114797_115553_116093_115546_115625_115446_114329_115350_114275_116040_110085; PSTM=1494300712; BAIDUID=42FE2934E37AF7AD1FA31D8CC7006D45:FG=1; BIDUPSID=2996557DB2710279BD865C50F9A68615; MCITY=-%3A; __cfduid=da9f97dea6458ca26aa4278280752ebb01508939712; BDSFRCVID=PGLsJeCCxG3wt_3ZUrBLDfv2D_qBZSjAgcEe3J; H_BDCLCKID_SF=tJAOoCLytI03qn5zq4Oh-4oHhxoJq5QxbT7Z0l8KtfcNVJQs-lCMhbtp-l3GJPoLWK6hBKQmWIQHDnbsbq0M2tcQXR5-WROCte74KKJx-4PWeIJo5tKh04JbhUJiB5OLBan7Lq7xfDDbbDtmej_3-PC3ql6354Rj2C_X3b7EfKjIOtO_bfbT2MbyeqrNQlTkLIvXoITJQD_bEP3Fbfj2DPQ3KabZqjDjJbue_I05f-oqebT4btbMqRtthf5KeJ3KaKrKW5rJabC3hPJeKU6qLT5Xjh6B5qDfyDoAbKOt-IOjhb5hMpnx-p0njxQyaR3RL2Kj0p_EWpcxsCQqLUonDh8L3H7MJUntKjnRonTO5hvvhb6O3M7-XpOhDG0fJjtJJbksQJ5e24oqHP-kKPrV-4oH5MQy5toyHD7yWCvjWlT5OR5Jj6KMjMkb3xbz2fcpMIrjob8M5CQESInv3MA--fcLD2ch5-3eQgTI3fbIJJjWsq0x0-jle-bQypoa-U0j2COMahkMal7xO-QO05CaD53yDNDqtjn-5TIX_CjJbnA_Hn7zepoxebtpbt-qJJjzMerW_Mc8QUJBH4tR-T3keh-83xbnBT5KaKO2-RnPXbcWjt_lWh_bLf_kQN3TbxuO5bRiL66I0h6jDn3oyT3VXp0n54nTqjDHfRuDVItXf-L_qtDk-PnVeUP3DhbZKxtqtDKjXJ7X2fclHJ7z-R3IBPCD0tjk-6JnWncKaRcI3poiqKtmjJb6XJkl2HQ405OT-6-O0KJcbRodobAwhPJvyT8DXnO7-fRTfJuJ_DDMJDD3fP36q4QV-JIehmT22jnT32JeaJ5n0-nnhP3mBTbA3JDYX-Oh-jjRX56GhfO_0R3jsJKRy66jK4JKjHKet6vP; ispeed_lsm=0; H_PS_PSSID=1421_24558_21120_17001_24880_22072; BD_UPN=123253; H_PS_645EC=44be6I1wqYYVvyugm2gc3PK9PoSa26pxhzOVbeQrn2rRadHvKoI%2BCbN5K%2Bg; BDORZ=B490B5EBF6F3CD402E515D22BCDA1598&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;Host&#x27;</span>:<span class="string">&#x27;www.baidu.com&#x27;</span>,</span><br><span class="line"><span class="string">&#x27;User-Agent&#x27;</span>:<span class="string">&#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/61.0.3163.100 Safari/537.36&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># response=requests.get(&#x27;https://www.baidu.com/s?&#x27;+urlencode(&#123;&#x27;wd&#x27;:&#x27;美女&#x27;&#125;),headers=headers)</span></span><br><span class="line">response=requests.get(<span class="string">&#x27;https://www.baidu.com/s&#x27;</span>,params=&#123;<span class="string">&#x27;wd&#x27;</span>:<span class="string">&#x27;美女&#x27;</span>&#125;,headers=headers) <span class="comment">#params内部就是调用urlencode</span></span><br><span class="line">print(response.text)</span><br></pre></td></tr></table></figure>
+<h3 id="五：Response"><a href="#五：Response" class="headerlink" title="五：Response"></a>五：Response</h3><ul>
+<li><p>响应状态</p>
+<pre><code>200：代表成功
+301：代表跳转
+404：文件不存在
+403：权限
+502：服务器错误</code></pre>
+</li>
+<li><p>Respone header</p>
+<pre><code>set-cookie：可能有多个，是来告诉浏览器，把cookie保存下来</code></pre>
+</li>
+<li><p>preview就是网页源代码</p>
+<pre><code>最主要的部分，包含了请求资源的内容
+如网页html，图片
+二进制数据等</code></pre>
+</li>
+</ul>
+<h3 id="六：实战"><a href="#六：实战" class="headerlink" title="六：实战"></a>六：实战</h3><ul>
+<li><p>总结爬虫流程：</p>
+<pre><code>爬取---&gt;解析---&gt;存储</code></pre>
+</li>
+<li><p>爬虫所需工具：</p>
+<pre><code>请求库：requests,selenium
+解析库：正则，beautifulsoup，pyquery
+存储库：文件，MySQL，Mongodb，Redis</code></pre>
+</li>
+<li><p>爬虫常用框架：</p>
+<pre><code>scrapy</code></pre>
+</li>
+</ul>
+<h4 id="爬取校花网视频"><a href="#爬取校花网视频" class="headerlink" title="爬取校花网视频"></a>爬取校花网视频</h4><ol>
+<li><p>基础版</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">respose=requests.get(<span class="string">&#x27;http://www.xiaohuar.com/v/&#x27;</span>)</span><br><span class="line"><span class="comment"># print(respose.status_code)# 响应的状态码</span></span><br><span class="line"><span class="comment"># print(respose.content)  #返回字节信息</span></span><br><span class="line"><span class="comment"># print(respose.text)  #返回文本内容</span></span><br><span class="line">urls=re.findall(<span class="string">r&#x27;class=&quot;items&quot;.*?href=&quot;(.*?)&quot;&#x27;</span>,respose.text,re.S)  <span class="comment">#re.S 把文本信息转换成1行匹配</span></span><br><span class="line">url=urls[<span class="number">5</span>]</span><br><span class="line">result=requests.get(url)</span><br><span class="line">mp4_url=re.findall(<span class="string">r&#x27;id=&quot;media&quot;.*?src=&quot;(.*?)&quot;&#x27;</span>,result.text,re.S)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">video=requests.get(mp4_url)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:\\a.mp4&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(video.content)</span><br></pre></td></tr></table></figure></li>
+<li><p>函数封装版</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_index</span>(<span class="params">url</span>):</span></span><br><span class="line">    respose = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> respose.status_code==<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> respose.text</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_index</span>(<span class="params">res</span>):</span></span><br><span class="line">    urls = re.findall(<span class="string">r&#x27;class=&quot;items&quot;.*?href=&quot;(.*?)&quot;&#x27;</span>, res,re.S)  <span class="comment"># re.S 把文本信息转换成1行匹配</span></span><br><span class="line">    <span class="keyword">return</span> urls</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_detail</span>(<span class="params">urls</span>):</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> url.startswith(<span class="string">&#x27;http&#x27;</span>):</span><br><span class="line">            url=<span class="string">&#x27;http://www.xiaohuar.com%s&#x27;</span> %url</span><br><span class="line">        result = requests.get(url)</span><br><span class="line">        <span class="keyword">if</span> result.status_code==<span class="number">200</span> :</span><br><span class="line">            mp4_url_list = re.findall(<span class="string">r&#x27;id=&quot;media&quot;.*?src=&quot;(.*?)&quot;&#x27;</span>, result.text, re.S)</span><br><span class="line">            <span class="keyword">if</span> mp4_url_list:</span><br><span class="line">                mp4_url=mp4_url_list[<span class="number">0</span>]</span><br><span class="line">                print(mp4_url)</span><br><span class="line">                <span class="comment"># save(mp4_url)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span>(<span class="params">url</span>):</span></span><br><span class="line">    video = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> video.status_code==<span class="number">200</span>:</span><br><span class="line">        m=hashlib.md5()</span><br><span class="line">        m.updata(url.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        m.updata(<span class="built_in">str</span>(time.time()).encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        filename=<span class="string">r&#x27;%s.mp4&#x27;</span>% m.hexdigest()</span><br><span class="line">        filepath=<span class="string">r&#x27;D:\\%s&#x27;</span>%filename</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filepath, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(video.content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        res1 = get_index(<span class="string">&#x27;http://www.xiaohuar.com/list-3-%s.html&#x27;</span>% i )</span><br><span class="line">        res2 = parse_index(res1)</span><br><span class="line">        get_detail(res2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>并发版（PS：如果一共需要爬30个视频，开30个线程去做，花的时间就是 其中最慢那份的耗时时间）</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"><span class="keyword">from</span> concurrent.futures <span class="keyword">import</span> ThreadPoolExecutor</span><br><span class="line">p=ThreadPoolExecutor(<span class="number">30</span>) <span class="comment">#创建1个程池中，容纳线程个数为30个；</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_index</span>(<span class="params">url</span>):</span></span><br><span class="line">    respose = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> respose.status_code==<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> respose.text</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_index</span>(<span class="params">res</span>):</span></span><br><span class="line">    res=res.result() <span class="comment">#进程执行完毕后，得到1个对象</span></span><br><span class="line">    urls = re.findall(<span class="string">r&#x27;class=&quot;items&quot;.*?href=&quot;(.*?)&quot;&#x27;</span>, res,re.S)  <span class="comment"># re.S 把文本信息转换成1行匹配</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        p.submit(get_detail(url))  <span class="comment">#获取详情页 提交到线程池</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_detail</span>(<span class="params">url</span>):</span>  <span class="comment">#只下载1个视频</span></span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> url.startswith(<span class="string">&#x27;http&#x27;</span>):</span><br><span class="line">            url=<span class="string">&#x27;http://www.xiaohuar.com%s&#x27;</span> %url</span><br><span class="line">        result = requests.get(url)</span><br><span class="line">        <span class="keyword">if</span> result.status_code==<span class="number">200</span> :</span><br><span class="line">            mp4_url_list = re.findall(<span class="string">r&#x27;id=&quot;media&quot;.*?src=&quot;(.*?)&quot;&#x27;</span>, result.text, re.S)</span><br><span class="line">            <span class="keyword">if</span> mp4_url_list:</span><br><span class="line">                mp4_url=mp4_url_list[<span class="number">0</span>]</span><br><span class="line">                print(mp4_url)</span><br><span class="line">                <span class="comment"># save(mp4_url)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span>(<span class="params">url</span>):</span></span><br><span class="line">    video = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> video.status_code==<span class="number">200</span>:</span><br><span class="line">        m=hashlib.md5()</span><br><span class="line">        m.updata(url.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        m.updata(<span class="built_in">str</span>(time.time()).encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        filename=<span class="string">r&#x27;%s.mp4&#x27;</span>% m.hexdigest()</span><br><span class="line">        filepath=<span class="string">r&#x27;D:\\%s&#x27;</span>%filename</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filepath, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(video.content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        p.submit(get_index,<span class="string">&#x27;http://www.xiaohuar.com/list-3-%s.html&#x27;</span>% i ).add_done_callback(parse_index)</span><br><span class="line">        <span class="comment">#1、先把爬主页的任务（get_index）异步提交到线程池</span></span><br><span class="line">        <span class="comment">#2、get_index任务执行完后，会通过回调函add_done_callback（）数通知主线程，任务完成；</span></span><br><span class="line">        <span class="comment">#2、把get_index执行结果（注意线程执行结果是对象，调用res=res.result()方法，才能获取真正执行结果），当做参数传给parse_index</span></span><br><span class="line">        <span class="comment">#3、parse_index任务执行完毕后，</span></span><br><span class="line">        <span class="comment">#4、通过循环，再次把获取详情页 get_detail（）任务提交到线程池执行</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<h5 id="涉及知识："><a href="#涉及知识：" class="headerlink" title="涉及知识："></a>涉及知识：</h5><blockquote>
+<p>计算密集型任务：使用多进程，因为能Python有GIL，多进程可以利用上CPU多核优势；</p>
+<p>IO密集型任务：使用多线程，做IO切换节省任务执行时间（并发）</p>
+<p>线程池</p>
+</blockquote>
+</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2020-2021 Laosec
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

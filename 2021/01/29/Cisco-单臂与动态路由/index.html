@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux提权之信息收集 | Falao&#39;s Blog</title>
+  <title>Cisco-单臂与动态路由 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Linux提权之信息收集 | Falao&#39;s Blog">
+  <meta name="description" content="Cisco-单臂与动态路由 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -407,9 +407,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Linux提权之信息收集" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Cisco-单臂与动态路由" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux提权之信息收集</h1>
+        <h1 class="article-title">Cisco-单臂与动态路由</h1>
     
     <div class="article-meta">
         
@@ -419,7 +419,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="后渗透专题">后渗透专题</a>
+            <a  data-rel="网络工程师">网络工程师</a>
             
         </span>
         
@@ -427,7 +427,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-18 21:13:04'>2021-01-18 10:53</time>
+            Created At : <time class="date" title='Updated At: 2021-01-29 13:16:55'>2021-01-29 12:07</time>
         
     </div>
     <div class="article-meta">
@@ -449,7 +449,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1"><span class="toc-text">一：单臂路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AD%90%E6%8E%A5%E5%8F%A3"><span class="toc-text">子接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#vlan%E6%A0%87%E7%AD%BE%E7%9A%84%E5%B0%81%E8%A3%85%E7%BB%93%E6%9E%84"><span class="toc-text">vlan标签的封装结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E7%9A%84%E7%BC%BA%E9%99%B7"><span class="toc-text">单臂路由的缺陷</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%8A%80%E6%9C%AF"><span class="toc-text">二：三层交换技术</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8ECEF%E7%9A%84%E5%BF%AB%E9%80%9F%E8%BD%AC%E5%8F%91"><span class="toc-text">基于CEF的快速转发</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E4%B9%8B%E9%97%B4%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="toc-text">三层交换机之间的配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%9A%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1"><span class="toc-text">三：动态路由</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%89%E7%85%A7%E8%B7%AF%E7%94%B1%E6%89%A7%E8%A1%8C%E7%9A%84%E7%AE%97%E6%B3%95%E5%8A%A8%E6%80%81%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE%E5%88%86%E7%B1%BB"><span class="toc-text">按照路由执行的算法动态路由协议分类</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RIP%E8%B7%AF%E7%94%B1%E5%8D%8F%E8%AE%AE"><span class="toc-text">RIP路由协议</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RIP-V1%E5%92%8CRIP-V2%E5%8C%BA%E5%88%AB"><span class="toc-text">RIP V1和RIP V2区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#RIP-V2%E9%85%8D%E7%BD%AE"><span class="toc-text">RIP V2配置</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验一：单臂路由实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E9%85%8D%E7%BD%AERIP"><span class="toc-text">实验二：配置RIP</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%89%EF%BC%9A%E4%B8%89%E5%B1%82%E4%BA%A4%E6%8D%A2%E6%9C%BA%E5%81%9A%E5%8D%95%E8%87%82%E8%B7%AF%E7%94%B1"><span class="toc-text">实验三：三层交换机做单臂路由</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -465,7 +465,387 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h2 id="一：单臂路由"><a href="#一：单臂路由" class="headerlink" title="一：单臂路由"></a>一：单臂路由</h2><blockquote>
+<p>实现不同vlan之间的通信</p>
+</blockquote>
+<h4 id="子接口"><a href="#子接口" class="headerlink" title="子接口"></a>子接口</h4><blockquote>
+<p>路由器的物理接口可以被划分成多个逻辑接口，每个子接口对应一个vlan网关</p>
+</blockquote>
+<h4 id="vlan标签的封装结构"><a href="#vlan标签的封装结构" class="headerlink" title="vlan标签的封装结构"></a>vlan标签的封装结构</h4><pre><code class="xaml">encapsulation dot1q 2</code></pre>
+<h4 id="单臂路由的缺陷"><a href="#单臂路由的缺陷" class="headerlink" title="单臂路由的缺陷"></a>单臂路由的缺陷</h4><blockquote>
+<p>单臂路由容易形成网络瓶颈，子接口依托物理接口，应用不灵活；vlan之间需要转发查看路由表，严重浪费设备资源</p>
+</blockquote>
+<h2 id="二：三层交换技术"><a href="#二：三层交换技术" class="headerlink" title="二：三层交换技术"></a>二：三层交换技术</h2><blockquote>
+<p>使用三层交换机技术实现vlan之间通信   三层交换等于二层交换+三层转发</p>
+</blockquote>
+<h4 id="基于CEF的快速转发"><a href="#基于CEF的快速转发" class="headerlink" title="基于CEF的快速转发"></a>基于CEF的快速转发</h4><p>主要包含两个转发用的信息表</p>
+<ul>
+<li>转发信息库（FIB）：FIB类似于路由表包含路由表中转发的信息镜像，当网络的拓扑发生变换时，路由表将被更新，而FIB也将随之发生变化</li>
+<li>邻接关系表：每个FIB条目，邻接关系表中包含相应的第二层地址</li>
+<li>虚拟接口（SVI）三层交换机上的配置的VLAN接口为虚接口</li>
+</ul>
+<h4 id="三层交换机之间的配置"><a href="#三层交换机之间的配置" class="headerlink" title="三层交换机之间的配置"></a>三层交换机之间的配置</h4><ul>
+<li><p>在三层交换机上开启路由功能</p>
+<pre><code class="xaml">ip routing   //在全局模式下使用此命令</code></pre>
+</li>
+<li><p>配置虚拟接口的IP地址</p>
+<pre><code class="xaml">interface vlan 2
+ip address 192.168.2.1 255.255.255.0
+no shutdown </code></pre>
+</li>
+<li><p>在三层交换机上的配置Trunk并执行接口封装为802.1q</p>
+<pre><code class="xaml">switchport trunk encapsulation dot1q
+switchport mode trunk</code></pre>
+</li>
+<li><p>配置路由接口</p>
+<pre><code class="xaml">no swithcport    //接口模式下启用</code></pre>
+</li>
+</ul>
+<h2 id="三：动态路由"><a href="#三：动态路由" class="headerlink" title="三：动态路由"></a>三：动态路由</h2><blockquote>
+<p>特点：减少管理任务  占用了网络的带宽</p>
+</blockquote>
+<h4 id="按照路由执行的算法动态路由协议分类"><a href="#按照路由执行的算法动态路由协议分类" class="headerlink" title="按照路由执行的算法动态路由协议分类"></a>按照路由执行的算法动态路由协议分类</h4><ul>
+<li>距离矢量路由协议  依据从源网络到目标网络所经过的路由器的个数新选择路由 RIP/IGRP</li>
+<li>链路状态路由协议  综合考虑从源网络到目标网络的各条路径的情况选择路由  OSPF、is-is</li>
+</ul>
+<h4 id="RIP路由协议"><a href="#RIP路由协议" class="headerlink" title="RIP路由协议"></a>RIP路由协议</h4><ul>
+<li>RIP是距离矢量路由选择协议</li>
+<li>RIP的度量值为跳数，最大条数为15跳，16跳为不可达</li>
+<li>RIP更新时间，每隔30S发送路由更新消息，UDP 520 端口</li>
+<li>RIP路由跟新消息，发送整个路由表信息</li>
+</ul>
+<h4 id="RIP-V1和RIP-V2区别"><a href="#RIP-V1和RIP-V2区别" class="headerlink" title="RIP V1和RIP V2区别"></a>RIP V1和RIP V2区别</h4><table>
+<thead>
+<tr>
+<th align="center">RIP V1</th>
+<th align="center">RIP V2</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">有类路由协议</td>
+<td align="center">无类路由协议</td>
+</tr>
+<tr>
+<td align="center">广播更新（255.255.255.255）</td>
+<td align="center">组播更新（224.0.0.9）</td>
+</tr>
+<tr>
+<td align="center">不支持VLSM</td>
+<td align="center">支持VLSM</td>
+</tr>
+<tr>
+<td align="center">自动路由汇总，不可关闭</td>
+<td align="center">自动汇总可关闭，可手工汇总</td>
+</tr>
+<tr>
+<td align="center">更新的过程中不携带子网信息</td>
+<td align="center">更新的过程携带子网信息</td>
+</tr>
+</tbody></table>
+<h4 id="RIP-V2配置"><a href="#RIP-V2配置" class="headerlink" title="RIP V2配置"></a>RIP V2配置</h4><pre><code class="xaml">router rip   //全局配置模式下开启
+version 2      //使用RIP V2
+no auto-auymmary    //关闭路由汇总
+network  主网络ID</code></pre>
+<h2 id="实验一：单臂路由实验"><a href="#实验一：单臂路由实验" class="headerlink" title="实验一：单臂路由实验"></a>实验一：单臂路由实验</h2><p><img src="https://s3.ax1x.com/2021/01/29/yPicbd.png"></p>
+<pre><code class="xaml">Switch&gt;enable
+Switch#
+Switch#vlan database
+% Warning: It is recommended to configure VLAN from config mode,
+as VLAN database mode is being deprecated. Please consult user
+documentation for configuring VTP/VLAN in config mode.
+
+Switch(vlan)#
+Switch(vlan)#vlan 2 name other
+VLAN 2 added:
+Name: other
+Switch(vlan)#
+Switch(vlan)#exit
+APPLY completed.
+Exiting....
+Switch#
+Switch#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line. End with CNTL/Z.
+Switch(config)#
+Switch(config)#interface f0/3
+Switch(config-if)#switchport access vlan 2
+Switch(config-if)#exit
+Switch(config)#
+Switch(config)#interface f0/1
+Switch(config-if)#switchport mode trunk</code></pre>
+<pre><code class="xaml">Router&gt;enable
+Router#
+Router#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line. End with CNTL/Z.
+Router(config)#
+Router(config)#interface g0/0
+Router(config-if)#
+Router(config-if)#
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#
+Router(config)#interface g0/0.1
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.1, changed state to up
+
+Router(config-subif)#encap
+Router(config-subif)#encapsulation dot
+Router(config-subif)#encapsulation dot1Q 1
+Router(config-subif)#ip address 192.168.1.1 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#
+Router(config-subif)#
+Router(config-subif)#exit
+Router(config)#
+Router(config)#
+Router(config)#
+Router(config)#interface g0/0.2
+Router(config-subif)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0.2, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0.2, changed state to up
+
+Router(config-subif)#enca
+Router(config-subif)#encapsulation do
+Router(config-subif)#encapsulation dot1Q 2
+Router(config-subif)#ip address 192.168,2.1 255.255.255.0
+^
+% Invalid input detected at '^' marker.
+Router(config-subif)#ip address 192.168.2.1 255.255.255.0
+Router(config-subif)#no shutdown
+Router(config-subif)#
+Router(config-subif)#exit</code></pre>
+<h2 id="实验二：配置RIP"><a href="#实验二：配置RIP" class="headerlink" title="实验二：配置RIP"></a>实验二：配置RIP</h2><p><img src="https://s3.ax1x.com/2021/01/29/yPirvD.png"></p>
+<p><img src="https://s3.ax1x.com/2021/01/29/yPi48f.png"></p>
+<pre><code class="xaml">Router&gt;enable
+Router#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line. End with CNTL/Z.
+Router(config)#
+Router(config)#interface g0/0
+Router(config-if)#
+Router(config-if)#ip address 192.168.1.1 255.255.255.0
+Router(config-if)#
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#
+Router(config)#
+Router(config)#interface g0/1
+Router(config-if)#ip address 192.168.2.1 255.255.255.0
+Router(config-if)#
+Router(config-if)#no shtudown
+^
+% Invalid input detected at '^' marker.
+Router(config-if)#
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config)#
+Router(config)#router tip
+^
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no au
+Router(config-router)#no auto-summary
+Router(config-router)#network 192.168.1.0
+Router(config-router)#network 192.168.2.0
+Router(config-router)#exit
+Router(config)#</code></pre>
+<pre><code class="xaml">Router&gt;enable
+Router#
+Router#config
+Configuring from terminal, memory, or network [terminal]?
+Enter configuration commands, one per line. End with CNTL/Z.
+Router(config)#interface g0/0
+Router(config-if)#
+Router(config-if)#ip address 192.168.3.1 255.255.255.0
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/0, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/0, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#
+Router(config)#interface g0/1
+Router(config-if)#
+Router(config-if)#ip address 192.168.2.2 255.255.255.0
+Router(config-if)#no shtudown
+^
+% Invalid input detected at '^' marker.
+Router(config-if)#
+Router(config-if)#no shutdown
+
+Router(config-if)#
+%LINK-5-CHANGED: Interface GigabitEthernet0/1, changed state to up
+
+%LINEPROTO-5-UPDOWN: Line protocol on Interface GigabitEthernet0/1, changed state to up
+
+Router(config-if)#
+Router(config-if)#exit
+Router(config)#
+Router(config)#router rip
+Router(config-router)#version 2
+Router(config-router)#no auto-summary
+Router(config-router)#network 192.168.2.0
+Router(config-router)#network 192.168.3.0
+Router(config-router)#
+Router(config-router)#exit
+Router(config)#
+Router#
+%SYS-5-CONFIG_I: Configured from console by console
+
+Router#show ip route
+Codes: L - local, C - connected, S - static, R - RIP, M - mobile, B - BGP
+D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area
+N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+E1 - OSPF external type 1, E2 - OSPF external type 2, E - EGP
+i - IS-IS, L1 - IS-IS level-1, L2 - IS-IS level-2, ia - IS-IS inter area
+* - candidate default, U - per-user static route, o - ODR
+P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+R 192.168.1.0/24 [120/1] via 192.168.2.1, 00:00:25, GigabitEthernet0/1
+192.168.2.0/24 is variably subnetted, 2 subnets, 2 masks
+C 192.168.2.0/24 is directly connected, GigabitEthernet0/1
+L 192.168.2.2/32 is directly connected, GigabitEthernet0/1
+192.168.3.0/24 is variably subnetted, 2 subnets, 2 masks
+C 192.168.3.0/24 is directly connected, GigabitEthernet0/0
+L 192.168.3.1/32 is directly connected, GigabitEthernet0/0</code></pre>
+<h2 id="实验三：三层交换机做单臂路由"><a href="#实验三：三层交换机做单臂路由" class="headerlink" title="实验三：三层交换机做单臂路由"></a>实验三：三层交换机做单臂路由</h2><p><img src="https://s3.ax1x.com/2021/01/29/yPF9r4.png"></p>
+<pre><code class="xaml">Switch#show run
+Building configuration...
+Current configuration : 1380 bytes
+!
+version 12.2
+no service timestamps log datetime msec
+no service timestamps debug datetime msec
+no service password-encryption
+!
+hostname Switch
+!
+ip routing
+!
+spanning-tree mode pvst
+!
+interface FastEthernet0/1
+switchport trunk encapsulation dot1q
+switchport mode trunk
+!
+interface FastEthernet0/2
+!
+interface FastEthernet0/3
+!
+interface FastEthernet0/4
+!
+interface FastEthernet0/5
+!
+interface FastEthernet0/6
+!
+interface FastEthernet0/7
+!
+interface FastEthernet0/8
+!
+interface FastEthernet0/9
+!
+interface FastEthernet0/10
+!
+interface FastEthernet0/11
+!
+interface FastEthernet0/12
+!
+interface FastEthernet0/13
+!
+interface FastEthernet0/14
+!
+interface FastEthernet0/15
+!
+interface FastEthernet0/16
+!
+interface FastEthernet0/17
+!
+interface FastEthernet0/18
+!
+interface FastEthernet0/19
+!
+interface FastEthernet0/20
+!
+interface FastEthernet0/21
+!
+interface FastEthernet0/22
+!
+interface FastEthernet0/23
+!
+interface FastEthernet0/24
+!
+interface GigabitEthernet0/1
+!
+interface GigabitEthernet0/2
+!
+interface Vlan1
+ip address 192.168.1.1 255.255.255.0
+!
+interface Vlan2
+mac-address 0007.ec27.3a01
+ip address 192.168.2.1 255.255.255.0
+!
+interface Vlan3
+mac-address 0007.ec27.3a02
+ip address 192.168.3.1 255.255.255.0
+!
+ip classless
+!
+ip flow-export version 9
+!
+line con 0
+!
+line aux 0
+!
+line vty 0 4
+login
+!
+end</code></pre>
+<blockquote>
+<p>注意：interface vlan vlan-id 配置IP为下面主机的默认网关</p>
+</blockquote>
+<ul>
+<li><p>下行接口配置为：</p>
+<blockquote>
+<p>switchport mode access   //这条命令必须敲出来，否则不能成功执行下面这条命令switchport mode trunk ip routing</p>
+</blockquote>
+</li>
+<li><p>未完待续…</p>
+</li>
+</ul>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
     </div>

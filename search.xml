@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>科学上网-SSR搭建</title>
+      <link href="2021/02/12/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-SSR%E6%90%AD%E5%BB%BA/"/>
+      <url>2021/02/12/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-SSR%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一：SSR简介"><a href="#一：SSR简介" class="headerlink" title="一：SSR简介"></a>一：SSR简介</h1><blockquote><p>ShadowsocksR（简称 SSR）是 Shadowsocks 分支，在 Shadowsocks(简称 SS)的基础上增加了一些数据混淆方式，称修复了部分安全问题并可以提高 QoS 优先级。甚至增加了类似 Tor 的可插拔传输层功能。</p></blockquote><h1 id="二：环境部署"><a href="#二：环境部署" class="headerlink" title="二：环境部署"></a>二：环境部署</h1><h4 id="步骤一：用户注册与购买"><a href="#步骤一：用户注册与购买" class="headerlink" title="步骤一：用户注册与购买"></a>步骤一：用户注册与购买</h4><blockquote><p>云主机购买地址：<a href="https://my.vultr.com/">https://my.vultr.com/</a></p></blockquote><h4 id="步骤二：云主机部署"><a href="#步骤二：云主机部署" class="headerlink" title="步骤二：云主机部署"></a>步骤二：云主机部署</h4><p><img src="https://s3.ax1x.com/2021/02/12/yDJ0dH.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDJvTJ.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDYFOO.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDYVTH.png"></p><h4 id="步骤三：远程主机连接"><a href="#步骤三：远程主机连接" class="headerlink" title="步骤三：远程主机连接"></a>步骤三：远程主机连接</h4><ul><li>使用工具：<a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a></li></ul><p><img src="https://s3.ax1x.com/2021/02/12/yDYtts.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDYs74.png"></p><h1 id="三：SSR节点搭建"><a href="#三：SSR节点搭建" class="headerlink" title="三：SSR节点搭建"></a>三：SSR节点搭建</h1><h4 id="步骤一：环境准备"><a href="#步骤一：环境准备" class="headerlink" title="步骤一：环境准备"></a>步骤一：环境准备</h4><ul><li><p><strong>shadowsocksR</strong> 一键部署脚本</p><pre><code class="shell">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh &amp;&amp; chmod +x ssrmu.sh &amp;&amp; bash ssrmu.sh</code></pre></li><li><p>SSR客户端软件</p><blockquote><p>SSTap 是 SocksCap64 作者新开发的一款利用虚拟网卡实现的网络层代理。SSTap 能在网络层拦截所有连接并转发给 HTTP，SOCKS4，5，SHADOWSOCKS 代理.而无需对被代理的应用程序做任何修改或设置。它能同时转发 TCP, UDP 数据包。它非常适合于游戏玩家使用。享受你的游戏时光！请使用SSTap！</p></blockquote><pre><code class="http">链接：https://pan.baidu.com/s/1L-lEa39CTmgf5x0umKPjXQ 提取码：laos 复制这段内容后打开百度网盘手机App，操作更方便哦</code></pre></li></ul><h4 id="步骤二：SSR部署"><a href="#步骤二：SSR部署" class="headerlink" title="步骤二：SSR部署"></a>步骤二：SSR部署</h4><ol><li><p>复制ShadowsocksR一键部署脚本到VPS主机终端</p><p><img src="https://s3.ax1x.com/2021/02/12/yDNQeS.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDNYzq.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDNrFJ.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDNyWR.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDN4Te.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDNq6P.png"></p></li></ol><h4 id="步骤三：建立SSR节点连接"><a href="#步骤三：建立SSR节点连接" class="headerlink" title="步骤三：建立SSR节点连接"></a>步骤三：建立SSR节点连接</h4><ol><li><p>在SSTAP中添加SSR节点信息</p><p><img src="https://s3.ax1x.com/2021/02/12/yDUYAe.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDaYrV.png"></p><h4 id="步骤四：连接测试"><a href="#步骤四：连接测试" class="headerlink" title="步骤四：连接测试"></a>步骤四：连接测试</h4><p><img src="https://s3.ax1x.com/2021/02/12/yDaRaD.png"></p><h1 id="四：免费SSR节点"><a href="#四：免费SSR节点" class="headerlink" title="四：免费SSR节点"></a>四：免费SSR节点</h1><pre><code class="http">https://lncn.org/   //1-2天更新一次https://raw.githubusercontent.com/ssrsub/ssr/master/ssrsub  //需要base64解密http://ss.pythonic.life/      //待验证</code></pre></li></ol>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务器运维 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>暗网-地址大全</title>
       <link href="2021/01/29/%E6%9A%97%E7%BD%91-%E5%9C%B0%E5%9D%80%E5%A4%A7%E5%85%A8/"/>
       <url>2021/01/29/%E6%9A%97%E7%BD%91-%E5%9C%B0%E5%9D%80%E5%A4%A7%E5%85%A8/</url>

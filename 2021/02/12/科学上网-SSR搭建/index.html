@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux提权之信息收集 | Falao&#39;s Blog</title>
+  <title>科学上网-SSR搭建 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Linux提权之信息收集 | Falao&#39;s Blog">
+  <meta name="description" content="科学上网-SSR搭建 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -445,9 +445,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Linux提权之信息收集" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-科学上网-SSR搭建" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux提权之信息收集</h1>
+        <h1 class="article-title">科学上网-SSR搭建</h1>
     
     <div class="article-meta">
         
@@ -457,7 +457,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="后渗透专题">后渗透专题</a>
+            <a  data-rel="服务器运维">服务器运维</a>
             
         </span>
         
@@ -465,7 +465,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-18 21:13:04'>2021-01-18 10:53</time>
+            Created At : <time class="date" title='Updated At: 2021-02-12 12:14:33'>2021-02-12 10:47</time>
         
     </div>
     <div class="article-meta">
@@ -487,7 +487,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9ASSR%E7%AE%80%E4%BB%8B"><span class="toc-text">一：SSR简介</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E7%8E%AF%E5%A2%83%E9%83%A8%E7%BD%B2"><span class="toc-text">二：环境部署</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E7%94%A8%E6%88%B7%E6%B3%A8%E5%86%8C%E4%B8%8E%E8%B4%AD%E4%B9%B0"><span class="toc-text">步骤一：用户注册与购买</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E4%BA%91%E4%B8%BB%E6%9C%BA%E9%83%A8%E7%BD%B2"><span class="toc-text">步骤二：云主机部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E8%BF%9C%E7%A8%8B%E4%B8%BB%E6%9C%BA%E8%BF%9E%E6%8E%A5"><span class="toc-text">步骤三：远程主机连接</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%EF%BC%9ASSR%E8%8A%82%E7%82%B9%E6%90%AD%E5%BB%BA"><span class="toc-text">三：SSR节点搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E7%8E%AF%E5%A2%83%E5%87%86%E5%A4%87"><span class="toc-text">步骤一：环境准备</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9ASSR%E9%83%A8%E7%BD%B2"><span class="toc-text">步骤二：SSR部署</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E5%BB%BA%E7%AB%8BSSR%E8%8A%82%E7%82%B9%E8%BF%9E%E6%8E%A5"><span class="toc-text">步骤三：建立SSR节点连接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E8%BF%9E%E6%8E%A5%E6%B5%8B%E8%AF%95"><span class="toc-text">步骤四：连接测试</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%EF%BC%9A%E5%85%8D%E8%B4%B9SSR%E8%8A%82%E7%82%B9"><span class="toc-text">四：免费SSR节点</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -503,7 +503,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="一：SSR简介"><a href="#一：SSR简介" class="headerlink" title="一：SSR简介"></a>一：SSR简介</h1><blockquote>
+<p>ShadowsocksR（简称 SSR）是 Shadowsocks 分支，在 Shadowsocks(简称 SS)的基础上增加了一些数据混淆方式，称修复了部分安全问题并可以提高 QoS 优先级。甚至增加了类似 Tor 的可插拔传输层功能。</p>
+</blockquote>
+<h1 id="二：环境部署"><a href="#二：环境部署" class="headerlink" title="二：环境部署"></a>二：环境部署</h1><h4 id="步骤一：用户注册与购买"><a href="#步骤一：用户注册与购买" class="headerlink" title="步骤一：用户注册与购买"></a>步骤一：用户注册与购买</h4><blockquote>
+<p>云主机购买地址：<a target="_blank" rel="noopener" href="https://my.vultr.com/">https://my.vultr.com/</a></p>
+</blockquote>
+<h4 id="步骤二：云主机部署"><a href="#步骤二：云主机部署" class="headerlink" title="步骤二：云主机部署"></a>步骤二：云主机部署</h4><p><img src="https://s3.ax1x.com/2021/02/12/yDJ0dH.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDJvTJ.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDYFOO.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDYVTH.png"></p>
+<h4 id="步骤三：远程主机连接"><a href="#步骤三：远程主机连接" class="headerlink" title="步骤三：远程主机连接"></a>步骤三：远程主机连接</h4><ul>
+<li>使用工具：<a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a></li>
+</ul>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDYtts.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDYs74.png"></p>
+<h1 id="三：SSR节点搭建"><a href="#三：SSR节点搭建" class="headerlink" title="三：SSR节点搭建"></a>三：SSR节点搭建</h1><h4 id="步骤一：环境准备"><a href="#步骤一：环境准备" class="headerlink" title="步骤一：环境准备"></a>步骤一：环境准备</h4><ul>
+<li><p><strong>shadowsocksR</strong> 一键部署脚本</p>
+<pre><code class="shell">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh &amp;&amp; chmod +x ssrmu.sh &amp;&amp; bash ssrmu.sh</code></pre>
+</li>
+<li><p>SSR客户端软件</p>
+<blockquote>
+<p>SSTap 是 SocksCap64 作者新开发的一款利用虚拟网卡实现的网络层代理。SSTap 能在网络层拦截所有连接并转发给 HTTP，SOCKS4，5，SHADOWSOCKS 代理.而无需对被代理的应用程序做任何修改或设置。它能同时转发 TCP, UDP 数据包。它非常适合于游戏玩家使用。享受你的游戏时光！请使用SSTap！</p>
+</blockquote>
+<pre><code class="http">链接：https://pan.baidu.com/s/1L-lEa39CTmgf5x0umKPjXQ 
+提取码：laos 
+复制这段内容后打开百度网盘手机App，操作更方便哦</code></pre>
+</li>
+</ul>
+<h4 id="步骤二：SSR部署"><a href="#步骤二：SSR部署" class="headerlink" title="步骤二：SSR部署"></a>步骤二：SSR部署</h4><ol>
+<li><p>复制ShadowsocksR一键部署脚本到VPS主机终端</p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDNQeS.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDNYzq.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDNrFJ.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDNyWR.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDN4Te.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDNq6P.png"></p>
+</li>
+</ol>
+<h4 id="步骤三：建立SSR节点连接"><a href="#步骤三：建立SSR节点连接" class="headerlink" title="步骤三：建立SSR节点连接"></a>步骤三：建立SSR节点连接</h4><ol>
+<li><p>在SSTAP中添加SSR节点信息</p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDUYAe.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/12/yDaYrV.png"></p>
+<h4 id="步骤四：连接测试"><a href="#步骤四：连接测试" class="headerlink" title="步骤四：连接测试"></a>步骤四：连接测试</h4><p><img src="https://s3.ax1x.com/2021/02/12/yDaRaD.png"></p>
+<h1 id="四：免费SSR节点"><a href="#四：免费SSR节点" class="headerlink" title="四：免费SSR节点"></a>四：免费SSR节点</h1><pre><code class="http">https://lncn.org/   //1-2天更新一次
+https://raw.githubusercontent.com/ssrsub/ssr/master/ssrsub  //需要base64解密
+http://ss.pythonic.life/      //待验证</code></pre>
+</li>
+</ol>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
     </div>

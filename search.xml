@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>WIN10-安装Kali</title>
+      <link href="2021/02/12/WIN10-%E5%AE%89%E8%A3%85Kali/"/>
+      <url>2021/02/12/WIN10-%E5%AE%89%E8%A3%85Kali/</url>
+      
+        <content type="html"><![CDATA[<h1 id="安装步骤"><a href="#安装步骤" class="headerlink" title="安装步骤"></a>安装步骤</h1><blockquote><p>起因：win10 的应用商店有了ump版本的Kali Linux</p></blockquote><h4 id="步骤一：配置系统"><a href="#步骤一：配置系统" class="headerlink" title="步骤一：配置系统"></a>步骤一：配置系统</h4><ul><li>以管理员身份打开Powershell,然后执行</li></ul><pre><code class="powershell">Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Windows-Subsystem-Linux</code></pre><h4 id="步骤二：配置浏览器"><a href="#步骤二：配置浏览器" class="headerlink" title="步骤二：配置浏览器"></a>步骤二：配置浏览器</h4><ul><li>打开IE浏览器–&gt;Internet选项–&gt;高级标签页–&gt;设置框–&gt;安全选项下勾选（TLS1.0 TLS1.1 TLS1.2 ）</li></ul><h4 id="步骤三：安装Kali-Linux"><a href="#步骤三：安装Kali-Linux" class="headerlink" title="步骤三：安装Kali Linux"></a>步骤三：安装Kali Linux</h4><ul><li>打开Microsoft Store–&gt;搜索Kali–安装</li></ul><p><img src="https://s3.ax1x.com/2021/02/12/yDbPIO.png"></p><p><img src="https://s3.ax1x.com/2021/02/12/yDbEzd.png"></p><h4 id="步骤四：安装工具"><a href="#步骤四：安装工具" class="headerlink" title="步骤四：安装工具"></a>步骤四：安装工具</h4><ul><li><p>切换root用户</p><pre><code class="shell">sudo -i </code></pre></li><li><p>安装nmap与sqlmap</p><pre><code class="shell">┌──(root💀FaLao)-[~]└─# apt-get install nmap sqlmap</code></pre></li><li><p>查看Nmap与sqlmap帮助信息</p><pre><code class="shell">┌──(root💀FaLao)-[~]└─# nmap -hWarning: Nmap may not work correctly on Windows Subsystem for Linux.For best performance and accuracy, use the native Windows build from https://nmap.org/download.html#windows.Nmap 7.91 ( https://nmap.org )Usage: nmap [Scan Type(s)] [Options] {target specification}....┌──(root💀FaLao)-[~]└─# sqlmap        ___       __H__ ___ ___[)]_____ ___ ___  {1.5.2#stable}|_ -| . [.]     | .'| . ||___|_  [']_|_|_|__,|  _|      |_|V...       |_|   http://sqlmap.orgUsage: python3 sqlmap [options]sqlmap: error: missing a mandatory option (-d, -u, -l, -m, -r, -g, -c, --list-tampers, --wizard, --update, --purge or --dependencies). Use -h for basic and -hh for advanced help....</code></pre></li></ul><h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul><li>主系统为kali换windows推荐使用，有Windows工具包不推荐使用</li><li>未完待续…</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务器运维 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cisco-网络地址转换</title>
       <link href="2021/02/12/Cisco-%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2/"/>
       <url>2021/02/12/Cisco-%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2/</url>
@@ -341,8 +360,8 @@
     
     <entry>
       <title>RHCSA之软件包管理</title>
-      <link href="2021/01/18/RHCSA%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/"/>
-      <url>2021/01/18/RHCSA%E4%B9%8B%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/</url>
+      <link href="2021/01/18/RHCSA-%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/"/>
+      <url>2021/01/18/RHCSA-%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86/</url>
       
         <content type="html"><![CDATA[<h2 id="源码编译安装"><a href="#源码编译安装" class="headerlink" title="源码编译安装"></a>源码编译安装</h2><h2 id="RPM包安装"><a href="#RPM包安装" class="headerlink" title="RPM包安装"></a>RPM包安装</h2><h2 id="包管理器安装"><a href="#包管理器安装" class="headerlink" title="包管理器安装"></a>包管理器安装</h2><h3 id="本地YUM源搭建"><a href="#本地YUM源搭建" class="headerlink" title="本地YUM源搭建"></a>本地YUM源搭建</h3><blockquote><ol><li><p>将光盘塞入光驱</p></li><li><p>mkdir /iso                  #创建进行文件挂载目录</p></li><li><p>mount /dev/sr0 /iso   #挂载镜像文件到/iso</p></li><li><p>cd /etc/yum.repos.d/ #进入到YUM配置目录</p></li><li><p>rm -rf *                      #删除所有的配置文件</p></li><li><p>vi repo.repo              #创建并编辑新的配置</p><blockquote><p>[Centos_iso]          #仓库描述</p><p>name = info           #对软件源的描述</p><p>baseurl=file:///iso   #镜像挂载位置</p><p>enable = 1             #是否启用此配置 0代表禁用 1代表启用</p><p>gpgchek = 0          #是否检测软件包签名</p></blockquote></li><li><p>yum clear all           #清除之前的YUM源信息</p></li><li><p>yum repolist            #列出YUM的信息</p></li><li><p>yum -y install gcc    #安装GCC编译程序</p></li><li><p>vi /etc/rc.d/rc.local</p><blockquote><p>mount /dev/sr0 /iso         #在最后一行添加</p></blockquote></li><li><p>chmod 755 /etc/rc.d/rc.local   #系统开机时自动挂载此脚本</p></li><li><p>reboot     #重启操作系统并验证</p></li></ol></blockquote>]]></content>
       

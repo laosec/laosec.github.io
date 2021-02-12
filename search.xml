@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Cisco-网络地址转换</title>
+      <link href="2021/02/12/Cisco-%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2/"/>
+      <url>2021/02/12/Cisco-%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2/</url>
+      
+        <content type="html"><![CDATA[<h1 id="网络地址转换"><a href="#网络地址转换" class="headerlink" title="网络地址转换"></a>网络地址转换</h1><blockquote><p>通过将内部网络地址的私有IP地址翻译成全球唯一的公网IP地址，是内部网络可以连接到互联网等外部网络上</p></blockquote><h4 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h4><ul><li>节省公有合法IP地址</li><li>处理地址重叠</li><li>增强灵活性</li><li>安全性</li></ul><h4 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h4><ul><li>延迟增大</li><li>配置和维护的复杂性</li><li>不支持某些应用，可以通过静态NAT映射来避免</li></ul><h4 id="NAT实现方式"><a href="#NAT实现方式" class="headerlink" title="NAT实现方式"></a>NAT实现方式</h4><ol><li><p>静态转换：IP地址的对应关系是一对一，而且是不变的，借助静态的转换，能实现网络对内部网络中某些特设定服务器的访问</p><p>静态NAT配置：配置接口以及路由</p><pre><code class="shell">ip nat inside source static 192.168.100.1 202.102.152.3</code></pre><blockquote><p>进入出口配置：ip nat outdside </p><p>进入入口配置：ip nat inside </p></blockquote></li><li><p>动态转换：IP地址的对应关系是不确定的，而是随机的，所有被授权访问互联网的私有地址可以随机转换位任何指定的合法的外部IP地址。内部网络同时访问Internet的主机数少于配置的合法地址中的IP个数时适用</p><p>动态NAT配置：</p><pre><code class="shell">access-list 1 permit 192.168.100.0 0.0.0.255   //全局配置模式ip nat pool nsd 1.1.1.1 1.1.1.2 netmast 255.255.255.248  //定义地址池名为nsd，地址池IP范围1.1.1.1到1.1.1.2   全局配置模式ip nat inside source list 1 pool nsd</code></pre></li><li><p>端口多路复用（PAT）</p><blockquote><p>通过改变外出数据包的源IP地址和源端口并进行端口转换，内部网络的所有主机均可共享一个合法的IP地址实现互联网的访问，节约IP </p></blockquote><p>PAT的配置：</p><pre><code class="shell">ip nat inside source list 1 interface f0/1 overload</code></pre></li></ol><h4 id="NAT转换条目"><a href="#NAT转换条目" class="headerlink" title="NAT转换条目"></a>NAT转换条目</h4><ul><li><p>查看NAT转换条目</p><pre><code class="shell">show ip nat translations //显示当前存在的转换 特权模式</code></pre></li><li><p>清除NAT转换条目</p><pre><code class="shell">clear ip nat translation * //清除NAT转换条目中的所有条目注意：静态NAT条目不会被清除</code></pre></li></ul><h4 id="NAT三种实现方式的区别"><a href="#NAT三种实现方式的区别" class="headerlink" title="NAT三种实现方式的区别"></a>NAT三种实现方式的区别</h4><ul><li>静态转换的对应关系一对一且不变，并没有节约共用IP地址，只隐藏了主机的真实地址</li><li>动态转换虽然在一定情况下节约了公有IP，但当内部网络访问的Internet的主机数大于合法的地址池中的IP数量时就不适用了</li><li>端口多路复用可以所有内部网络共享一个合法的外部IP地址，从而最大限度节约IP地址资源</li></ul><h4 id="NAT常见问题"><a href="#NAT常见问题" class="headerlink" title="NAT常见问题"></a>NAT常见问题</h4><ul><li>ACL阻止转换后的流量</li><li>进行地址转换的ACL不全</li><li>overload参数漏配</li><li>不对称路由问题</li><li>动态地址池IP地址范围配置错误</li><li>inside和outside接口配置错误</li></ul><h4 id="显示每个转化的数据包"><a href="#显示每个转化的数据包" class="headerlink" title="显示每个转化的数据包"></a>显示每个转化的数据包</h4><pre><code class="shell">debug ip nat  //特权模式</code></pre><blockquote><p>S表示源地址  D表示目的地址</p><p>192.168.1.2-&gt;4.4.4.4 表示将192.168.1.2转换为4.4.4.4</p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络工程师 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cisco-访问控制列表</title>
       <link href="2021/02/12/Cisco-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8/"/>
       <url>2021/02/12/Cisco-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8/</url>

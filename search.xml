@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Cisco-访问控制列表</title>
+      <link href="2021/02/12/Cisco-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8/"/>
+      <url>2021/02/12/Cisco-%E8%AE%BF%E9%97%AE%E6%8E%A7%E5%88%B6%E5%88%97%E8%A1%A8/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一：ACL概述"><a href="#一：ACL概述" class="headerlink" title="一：ACL概述"></a>一：ACL概述</h1><h4 id="访问控制列表（ACL）"><a href="#访问控制列表（ACL）" class="headerlink" title="访问控制列表（ACL）"></a>访问控制列表（ACL）</h4><ul><li>读取第三层，第四层包头信息</li><li>根据预定好的规则对包进行过滤</li></ul><h4 id="访问空控制列表的处理过程"><a href="#访问空控制列表的处理过程" class="headerlink" title="访问空控制列表的处理过程"></a>访问空控制列表的处理过程</h4><ul><li>如果匹配第一条规则，则不再往下检查，路由器将决定该数据包允许通过或拒绝通过</li><li>如果不匹配第一条规则，则依次往下检查，知道有有任何一条规则匹配</li><li>如果最后没有任何一条规则匹配，则路由器根据默认的规则将丢弃该数据包</li></ul><h4 id="访问控制列表的类型"><a href="#访问控制列表的类型" class="headerlink" title="访问控制列表的类型"></a>访问控制列表的类型</h4><ul><li>标准访问控制列表基于源IP地址的过滤数据包</li><li>扩展访问控制列表基于源IP地址，目的IP地址，指定协议，端口等来过滤数据包列表号是100~199</li><li>命名访问控制列表命名访问控制列表在标准和扩展访问控制列表中使用名称代替表号</li></ul><h1 id="二：标准访问控制列表"><a href="#二：标准访问控制列表" class="headerlink" title="二：标准访问控制列表"></a>二：标准访问控制列表</h1><h4 id="步骤一：标准访问控制列表的创建"><a href="#步骤一：标准访问控制列表的创建" class="headerlink" title="步骤一：标准访问控制列表的创建"></a>步骤一：标准访问控制列表的创建</h4><pre><code class="shell">access-list 1 deny 192.168.1.1 0.0.0.0access-list 1 permit 192.168.1.0 0.0.0.255</code></pre><blockquote><p>通配符掩码：也叫做反掩码。用二进制数0和1表示，如果某位为1，表明这意味不需要进行匹配操作，如果0表明需要严格匹配。例如：192.168.1.0/24 子网掩码是255.255.255.0，其反码表示可以通过255.255.255.255减去255.255.255.0得到0.0.0.255</p></blockquote><ul><li><p>隐含的拒绝语句</p><pre><code class="shell">access-list 1 deny 0.0.0.0 255.255.255.255</code></pre></li></ul><h4 id="步骤二：将ACL应用于接口"><a href="#步骤二：将ACL应用于接口" class="headerlink" title="步骤二：将ACL应用于接口"></a>步骤二：将ACL应用于接口</h4><blockquote><p>接口模式:ip access-group 列表号 in或out</p></blockquote><pre><code class="shell">access-list 1 deny 192.168.1.1 0.0.0.0 或者写为access-list 1 deny host 192.1681.1  </code></pre><pre><code class="shell">access-list deny 0.0.0.0 255.255.255.255或者写为access-list deny any </code></pre><h4 id="步骤三：删除已建立的访问控制列表"><a href="#步骤三：删除已建立的访问控制列表" class="headerlink" title="步骤三：删除已建立的访问控制列表"></a>步骤三：删除已建立的访问控制列表</h4><pre><code class="shell">no access-list 列表号   //全局配置模式</code></pre><h4 id="步骤四：接口上取消ACL"><a href="#步骤四：接口上取消ACL" class="headerlink" title="步骤四：接口上取消ACL"></a>步骤四：接口上取消ACL</h4><pre><code class="shell">no ip access-group 列表号 in或out</code></pre><h4 id="步骤五：查看访问控制列表"><a href="#步骤五：查看访问控制列表" class="headerlink" title="步骤五：查看访问控制列表"></a>步骤五：查看访问控制列表</h4><pre><code class="shell">show access-lists //特权模式</code></pre><h1 id="三：扩展访问控制列表"><a href="#三：扩展访问控制列表" class="headerlink" title="三：扩展访问控制列表"></a>三：扩展访问控制列表</h1><blockquote><p>可以根据源IP地址，目的IP地址，指定协议，端口等过滤数据包</p></blockquote><ul><li>扩展访问控制列表号:100-199</li><li>eq等于，lt小于，gt大于，neq不等于</li><li>扩展ACL应该应用在离源地址最近的路由器上</li></ul><h4 id="扩展访问控制列表案例"><a href="#扩展访问控制列表案例" class="headerlink" title="扩展访问控制列表案例"></a>扩展访问控制列表案例</h4><ul><li>例子1</li></ul><pre><code class="shell">access-list 101 permit ip 192.168.1.0 0.0.0.255 192.168.2.0 0.0.0255(允许192.168.1.0网络访问192.168.2.0网络的所有的服务）   //全局模式access-list 101 deny ip any any //拒绝所有的服务  //全局模式</code></pre><ul><li>例子2</li></ul><pre><code class="shell">access 101 deny tcp 192.168.1.0 0.0.0.255 host 192.168.2.2 eq 21(拒绝192.168.1.0网段访问192.168.2.2的TCP的21端口   //全局配置模式access-list 101 permit ip any any (允许访问所有）</code></pre><ul><li>例子3</li></ul><pre><code class="shell">access-list 101 deny icmp 192.168.1.0 0.0.0.255 host 192.168.2.2 echo 拒绝192.168.1.0 ping 192.168.2.2</code></pre><ul><li><p>删除扩展ACL</p><pre><code class="shell">no access-list 列表号</code></pre><p>注意：扩展与标准ACL不能删除单条ACL语句，只能删除整个ACL</p></li></ul><h1 id="四：命名访问控制类表"><a href="#四：命名访问控制类表" class="headerlink" title="四：命名访问控制类表"></a>四：命名访问控制类表</h1><ul><li><p>命名访问控制类表可以配置标准命名可以配置扩展命名</p></li><li><p>命名访问控制列表的ACL语句默认第一条为10，第二条为20，以此类推</p></li><li><p>命名ACL可以删除单条ACL语句，而不必删除整个ACL。并且命名ACL语句可以有选择的插入到列表中的某个位置，使得ACL配置更加方便灵活</p></li><li><p>标准命名ACL的配置</p><pre><code class="shell">全局：ip access-list standard 名字permit hsot 192.168.1.1deny deny</code></pre><pre><code class="shell">ip access-group 名字 in或者out  //命名ACL应用于接口</code></pre></li><li><p>扩展命名ACL的配置</p><pre><code class="shell">全局：ip access-list extended 名字deny tcp 192.168.1.0 0.0.0.255 host 192.168.2.2 eq 80 //拒绝1.0网段访问2.2的WEB服务permit ip any any </code></pre></li><li><p>未完待续…</p></li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 网络工程师 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>Cisco-HSRP与STP</title>
       <link href="2021/02/12/Cisco-HSRP%E4%B8%8ESTP/"/>
       <url>2021/02/12/Cisco-HSRP%E4%B8%8ESTP/</url>

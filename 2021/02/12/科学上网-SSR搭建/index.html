@@ -497,7 +497,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-02-12 12:14:33'>2021-02-12 10:47</time>
+            Created At : <time class="date" title='Updated At: 2021-02-13 08:52:43'>2021-02-12 10:47</time>
         
     </div>
     <div class="article-meta">
@@ -541,15 +541,30 @@
 <h1 id="二：环境部署"><a href="#二：环境部署" class="headerlink" title="二：环境部署"></a>二：环境部署</h1><h4 id="步骤一：用户注册与购买"><a href="#步骤一：用户注册与购买" class="headerlink" title="步骤一：用户注册与购买"></a>步骤一：用户注册与购买</h4><blockquote>
 <p>云主机购买地址：<a target="_blank" rel="noopener" href="https://my.vultr.com/">https://my.vultr.com/</a></p>
 </blockquote>
-<h4 id="步骤二：云主机部署"><a href="#步骤二：云主机部署" class="headerlink" title="步骤二：云主机部署"></a>步骤二：云主机部署</h4><p><img src="https://s3.ax1x.com/2021/02/12/yDJ0dH.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDJvTJ.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDYFOO.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDYVTH.png"></p>
+<h4 id="步骤二：云主机部署"><a href="#步骤二：云主机部署" class="headerlink" title="步骤二：云主机部署"></a>步骤二：云主机部署</h4><ol>
+<li><p>进入主控制界面，侧边栏选择Products–&gt;点击Deploy Instance按钮开始部署</p>
+</li>
+<li><p>在Choose Server–&gt;选择Cloud Compute</p>
+</li>
+<li><p>在Server Location–&gt;Tokyo</p>
+</li>
+<li><p>在Server Type–&gt;Centos 7 x64</p>
+</li>
+<li><p>在Server Size–&gt;$5/mo</p>
+</li>
+<li><p>点击Deploy Now</p>
+</li>
+</ol>
 <h4 id="步骤三：远程主机连接"><a href="#步骤三：远程主机连接" class="headerlink" title="步骤三：远程主机连接"></a>步骤三：远程主机连接</h4><ul>
 <li>使用工具：<a target="_blank" rel="noopener" href="https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html">Putty</a></li>
 </ul>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDYtts.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDYs74.png"></p>
+<ol>
+<li><p>进入主机控制台可查看主机详细信息</p>
+</li>
+<li><p>进入CMD使用命令,进行登录</p>
+<pre><code class="shell">ssh root@x.x.x.x</code></pre>
+</li>
+</ol>
 <h1 id="三：SSR节点搭建"><a href="#三：SSR节点搭建" class="headerlink" title="三：SSR节点搭建"></a>三：SSR节点搭建</h1><h4 id="步骤一：环境准备"><a href="#步骤一：环境准备" class="headerlink" title="步骤一：环境准备"></a>步骤一：环境准备</h4><ul>
 <li><p><strong>shadowsocksR</strong> 一键部署脚本</p>
 <pre><code class="shell">wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ssrmu.sh &amp;&amp; chmod +x ssrmu.sh &amp;&amp; bash ssrmu.sh</code></pre>
@@ -564,20 +579,26 @@
 </li>
 </ul>
 <h4 id="步骤二：SSR部署"><a href="#步骤二：SSR部署" class="headerlink" title="步骤二：SSR部署"></a>步骤二：SSR部署</h4><ol>
-<li><p>复制ShadowsocksR一键部署脚本到VPS主机终端</p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDNQeS.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDNYzq.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDNrFJ.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDNyWR.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDN4Te.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDNq6P.png"></p>
-</li>
+<li>复制ShadowsocksR一键部署脚本到VPS主机终端</li>
+<li>输入1：安装ShadowsocksR</li>
+<li>IP或域名设置为默认</li>
+<li>设置连接用户名  例：laosec</li>
+<li>设置连接端口号  例：12321</li>
+<li>设置连接密码      例：laosecurity</li>
+<li>设置用户加密方式为aes-256-ctr</li>
+<li>设置协议插件为auth_aes_128_sha1</li>
+<li>设置混淆插件默认plain</li>
+<li>其余设置默认即可，开始安装</li>
+<li>安装完后会显示该SSR节点的相关配置信息</li>
 </ol>
 <h4 id="步骤三：建立SSR节点连接"><a href="#步骤三：建立SSR节点连接" class="headerlink" title="步骤三：建立SSR节点连接"></a>步骤三：建立SSR节点连接</h4><ol>
-<li><p>在SSTAP中添加SSR节点信息</p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDUYAe.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/12/yDaYrV.png"></p>
-<h4 id="步骤四：连接测试"><a href="#步骤四：连接测试" class="headerlink" title="步骤四：连接测试"></a>步骤四：连接测试</h4><p><img src="https://s3.ax1x.com/2021/02/12/yDaRaD.png"></p>
+<li><p>在SSTAP中添加SSR节点信息，点击加号–&gt;添加SS/SSR代理</p>
+</li>
+<li><p>将SSR节点信息填入，并店家闪电按钮来进行测速</p>
+<h4 id="步骤四：连接测试"><a href="#步骤四：连接测试" class="headerlink" title="步骤四：连接测试"></a>步骤四：连接测试</h4><ol>
+<li>百度直接搜索IP即可查看</li>
+<li><a target="_blank" rel="noopener" href="https://www.ip138.com/">https://www.ip138.com/</a>   </li>
+</ol>
 <h1 id="四：免费SSR节点"><a href="#四：免费SSR节点" class="headerlink" title="四：免费SSR节点"></a>四：免费SSR节点</h1><pre><code class="http">https://lncn.org/   //1-2天更新一次
 https://raw.githubusercontent.com/ssrsub/ssr/master/ssrsub  //需要base64解密
 http://ss.pythonic.life/      //待验证</code></pre>

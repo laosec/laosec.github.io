@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>OSCP-一般课程信息</title>
+      <link href="2021/02/16/OSCP-%E4%B8%80%E8%88%AC%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF/"/>
+      <url>2021/02/16/OSCP-%E4%B8%80%E8%88%AC%E8%AF%BE%E7%A8%8B%E4%BF%A1%E6%81%AF/</url>
+      
+        <content type="html"><![CDATA[<h1 id="General-Course-Informations"><a href="#General-Course-Informations" class="headerlink" title="General Course Informations"></a>General Course Informations</h1><blockquote><ul><li><p>Kali Linux Penetration Testing = PWK</p></li><li><p>PWK是为系统和网络管理员与安全专业人员而创建的</p></li></ul></blockquote><h2 id="一：关于PWK课程"><a href="#一：关于PWK课程" class="headerlink" title="一：关于PWK课程"></a>一：关于PWK课程</h2><h4 id="1-应该有的材料"><a href="#1-应该有的材料" class="headerlink" title="1. 应该有的材料"></a>1. 应该有的材料</h4><ul><li>PWK课程材料：实验指南/课程视频</li><li>访问内部网络的VPN：VPN凭据/VPN连接包</li><li>论坛的学生证书：不可以在论坛上发布WP</li><li>现场支持：在线帮助</li><li>OSCP尝试考试：Labs结束后有120天时间来安排和完成考试</li></ul><h4 id="2-官方提供学习策略"><a href="#2-官方提供学习策略" class="headerlink" title="2. 官方提供学习策略"></a>2. 官方提供学习策略</h4><ul><li>查看欢迎邮件和课程信息邮件中包含的所有信息</li><li>复习课程材料</li><li>完成所有课程练习</li><li>攻击实验室机器</li></ul><h4 id="3-课程信息邮件包"><a href="#3-课程信息邮件包" class="headerlink" title="3. 课程信息邮件包"></a>3. 课程信息邮件包</h4><ul><li>VPN包/实验室/论坛凭据/控制面板URL</li></ul><h4 id="4-课程练习"><a href="#4-课程练习" class="headerlink" title="4. 课程练习"></a>4. 课程练习</h4><blockquote><p>Try Header <span class="github-emoji"><span>🍭</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f36d.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p></blockquote><h4 id="5-Labs"><a href="#5-Labs" class="headerlink" title="5. Labs"></a>5. Labs</h4><blockquote><p>获取最高权限的交互式shell–&gt;瞄准其他机器            支持：学生论坛/现场帮助</p></blockquote><h2 id="二：渗透测试流程"><a href="#二：渗透测试流程" class="headerlink" title="二：渗透测试流程"></a>二：渗透测试流程</h2><blockquote><p>信息收集–&gt;服务枚举–&gt;渗透–&gt;权限维持–后渗透</p></blockquote><blockquote><p><strong>获取目标主机的Proof.txt文件，表示成功拿下，重点是获取Root/SYSTEM级别的交互式Shell,Network-secret.txt，提交到控制面板中，恢复靶机状态，并解锁其他网络中计算机</strong></p></blockquote><h4 id="1-实验室地址"><a href="#1-实验室地址" class="headerlink" title="1. 实验室地址"></a>1. 实验室地址</h4><table><thead><tr><th>Lab</th><th>Subnet</th><th>Target Start</th><th>Target End</th></tr></thead><tbody><tr><td>PWK</td><td>10.11.1.0/24</td><td>10.11.1.1</td><td>10.11.1.254</td></tr></tbody></table><ul><li>注：<strong>Lab是共享状态，对靶机会限制学生使用数量</strong></li><li>注：<strong>攻击机更改密码或减少服务</strong></li></ul><h4 id="2-Control-Panel"><a href="#2-Control-Panel" class="headerlink" title="2. Control Panel"></a>2. Control Panel</h4><blockquote><p>Reverts 恢复 </p><p>Client Machines /客户端机器</p><p><strong>不要再客户机上存储任何需要保留的信息</strong></p></blockquote><ul><li><strong>我们会获取到的三台客户机：Windows10/Debian/Windows server 2016</strong></li></ul><h4 id="3-行为限制"><a href="#3-行为限制" class="headerlink" title="3. 行为限制"></a>3. 行为限制</h4><ol><li>不要对网路发起ARP欺骗/中间人攻击</li><li>不要删除关键系统文件或提示</li><li>不要更改Network-secret.txt/proof.txt</li><li>不要故意干扰其他机器：关闭机器/把用户踢出机器/阻止特定IP或范围/入侵他人客户机</li></ol><h4 id="4-Reporting"><a href="#4-Reporting" class="headerlink" title="4. Reporting"></a>4. Reporting</h4><ul><li>考虑评估目标：<strong>大纲，阻止内容</strong></li><li>考虑阅读对象：<strong>摘要，面向管理层；详细面向技术人员</strong></li><li>考虑包括内容：<strong>关键截图/额外材料-&gt;附加证明文件/回顾观点</strong></li><li>考虑演示文稿：<strong>简单易懂的观点/字体样式，间距段落，标题；保持一致/拼写检查</strong></li></ul><h4 id="5-CPE学分"><a href="#5-CPE学分" class="headerlink" title="5. CPE学分"></a>5. CPE学分</h4><blockquote><p>提交Lab报告，并将课程练习作为附录</p></blockquote><h4 id="6-Not-taking-Tools"><a href="#6-Not-taking-Tools" class="headerlink" title="6. Not taking Tools"></a>6. Not taking Tools</h4><blockquote><p>记录笔记的工具:OneNote /DayOne /Joplin /MDwiki</p></blockquote><h4 id="7-Backups"><a href="#7-Backups" class="headerlink" title="7. Backups"></a>7. Backups</h4><blockquote><p>备份：文件/快照</p></blockquote><h4 id="8-About-The-OSCP-Exam"><a href="#8-About-The-OSCP-Exam" class="headerlink" title="8. About The OSCP Exam"></a>8. About The OSCP Exam</h4><ul><li><p><strong>70分及格</strong>–&gt;</p></li><li><p><strong>23小时45分钟考试时间</strong>–&gt;</p></li><li><p><strong>远程监控考试</strong>–&gt;</p></li><li><p><strong>提前15分钟到场</strong>–&gt;</p></li><li><p><strong>身份验证/考前任务</strong>–&gt;</p></li><li><p><strong>检查包：VPN连接包/考试控制面板URL</strong></p></li></ul><blockquote><p>考试申请需要时间：可提前申请</p><p><strong>MSF可在实验中使用/考试中受到限制</strong></p></blockquote><h4 id="9-Wrapping-Up"><a href="#9-Wrapping-Up" class="headerlink" title="9. Wrapping Up"></a>9. Wrapping Up</h4><ul><li>参考网络资源…</li><li>如有错误之处请联系作者更新…</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机认证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>OSCP-目录</title>
+      <link href="2021/02/16/OSCP-%E7%9B%AE%E5%BD%95/"/>
+      <url>2021/02/16/OSCP-%E7%9B%AE%E5%BD%95/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Offensive-Security-进攻性安全"><a href="#Offensive-Security-进攻性安全" class="headerlink" title="Offensive Security 进攻性安全"></a>Offensive Security 进攻性安全</h1><blockquote><p>Penetration Testing With Kali linux</p></blockquote><p><img src="https://www.offensive-security.com/wp-content/uploads/2020/09/PWK-OSCP-PEN-200-box-label.png"></p><table><thead><tr><th align="center">目录数</th><th align="left">章节标题</th><th align="left">翻译</th></tr></thead><tbody><tr><td align="center">第一章</td><td align="left">General Course Informations</td><td align="left">一般课程信息</td></tr><tr><td align="center">第二章</td><td align="left">Getting Comfortable With Kali</td><td align="left">适应Kali</td></tr><tr><td align="center">第三章</td><td align="left">Command Line Fun</td><td align="left">命令行乐趣</td></tr><tr><td align="center">第四章</td><td align="left">Practical Tools</td><td align="left">使用工具</td></tr><tr><td align="center">第五章</td><td align="left">Bash Scripting</td><td align="left">Bash脚本</td></tr><tr><td align="center">第六章</td><td align="left">Passive information Gathering</td><td align="left">被动式信息收集</td></tr><tr><td align="center">第七章</td><td align="left">Active information Gathering</td><td align="left">主动式信息收集</td></tr><tr><td align="center">第八章</td><td align="left">Vulnerability Scanning</td><td align="left">漏洞扫描</td></tr><tr><td align="center">第九章</td><td align="left">Web Application Attacks</td><td align="left">Web应用程序攻击</td></tr><tr><td align="center">第十章</td><td align="left">Introduction To Buffer Overflows</td><td align="left">缓冲区溢出简介</td></tr><tr><td align="center">第十一章</td><td align="left">Windows Buffer Overflows</td><td align="left">Windows缓冲区溢出</td></tr><tr><td align="center">第十二章</td><td align="left">Linux Buffer Overflows</td><td align="left">Linux缓冲区溢出</td></tr><tr><td align="center">第十三章</td><td align="left">Client-side Attacks</td><td align="left">客户端攻击</td></tr><tr><td align="center">第十四章</td><td align="left">Locating Public Exploits</td><td align="left">定位公共漏洞</td></tr><tr><td align="center">第十五章</td><td align="left">Fixing Exploits</td><td align="left">修复漏洞</td></tr><tr><td align="center">第十六章</td><td align="left">File Transfer</td><td align="left">文件传输</td></tr><tr><td align="center">第十七章</td><td align="left">Antivirus Evasion</td><td align="left">防病毒规避</td></tr><tr><td align="center">第十八章</td><td align="left">Privilege Escalation</td><td align="left">权限提升</td></tr><tr><td align="center">第十九章</td><td align="left">Password Attacks</td><td align="left">密码攻击</td></tr><tr><td align="center">第二十章</td><td align="left">Port Redirection and Tunneling</td><td align="left">端口重定向和隧道</td></tr><tr><td align="center">第二十一章</td><td align="left">Active Directory Attacks</td><td align="left">AD域攻击</td></tr><tr><td align="center">第二十二章</td><td align="left">The Metasploit Framework</td><td align="left">Metasploit框架</td></tr><tr><td align="center">第二十三章</td><td align="left">Powershell Empire</td><td align="left">Powershell帝国</td></tr><tr><td align="center">第二十四章</td><td align="left">Penetration Test Breakdown</td><td align="left">渗透测试故障</td></tr><tr><td align="center">第二十五章</td><td align="left">Try Header:The Labs</td><td align="left">更努力：实验室</td></tr></tbody></table><ul><li>内容参照于<a href="https://www.offensive-security.com/pwk-oscp/">官方连接</a></li><li>如有错误之处请联系作者更新…</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机认证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>WIN10-安装Kali</title>
       <link href="2021/02/12/WIN10-%E5%AE%89%E8%A3%85Kali/"/>
       <url>2021/02/12/WIN10-%E5%AE%89%E8%A3%85Kali/</url>

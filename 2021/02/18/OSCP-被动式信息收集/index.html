@@ -104,7 +104,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(31)</small>
+                <small>(32)</small>
             
         </div>
     </li>
@@ -185,7 +185,7 @@
                     <div data-rel="计算机认证">
                         
                         计算机认证
-                        <small>(7)</small>
+                        <small>(8)</small>
                         
                     </div>
                     
@@ -227,7 +227,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="31">
+<input type="hidden" id="yelog_site_posts_number" value="32">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -288,6 +288,14 @@
            data-author="" >
             <span class="post-title" title="2021年计划">2021年计划</span>
             <span class="post-date" title="2021-01-29 09:56:13">2021/01/29</span>
+        </a>
+        
+        <a  class="All 计算机认证 "
+           href="/2021/02/18/OSCP-%E4%B8%BB%E5%8A%A8%E5%BC%8F%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="OSCP-主动式信息收集">OSCP-主动式信息收集</span>
+            <span class="post-date" title="2021-02-18 21:10:40">2021/02/18</span>
         </a>
         
         <a  class="All 计算机认证 "
@@ -567,7 +575,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-02-18 17:53:04'>2021-02-18 16:53</time>
+            Created At : <time class="date" title='Updated At: 2021-02-18 21:09:24'>2021-02-18 16:53</time>
         
     </div>
     <div class="article-meta">
@@ -589,7 +597,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Passive-Information-Gathering"><span class="toc-text">Passive Information Gathering</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#whois%E6%9E%9A%E4%B8%BE"><span class="toc-text">whois枚举</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Google-Hacking"><span class="toc-text">Google Hacking</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Netcraft"><span class="toc-text">Netcraft</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Recon-ng"><span class="toc-text">Recon-ng</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Passive-Information-Gathering"><span class="toc-text">Passive Information Gathering</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#whois%E6%9E%9A%E4%B8%BE"><span class="toc-text">whois枚举</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Google-Hacking"><span class="toc-text">Google Hacking</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Netcraft"><span class="toc-text">Netcraft</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Recon-ng"><span class="toc-text">Recon-ng</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%BC%80%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="toc-text">开源代码</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Shodan"><span class="toc-text">Shodan</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Security-Header-Scanner"><span class="toc-text">Security Header Scanner</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SSL-Server-Test"><span class="toc-text">SSL Server Test</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Pastebin"><span class="toc-text">Pastebin</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86"><span class="toc-text">用户信息收集</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AF%86%E7%A0%81%E5%AD%98%E5%82%A8"><span class="toc-text">密码存储</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A4%BE%E4%BA%A4%E5%AA%92%E4%BD%93%E5%B7%A5%E5%85%B7"><span class="toc-text">社交媒体工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Stack-Overflow"><span class="toc-text">Stack Overflow</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86%E6%A1%86%E6%9E%B6"><span class="toc-text">信息收集框架</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -697,6 +705,67 @@ _/    _/  _/_/_/_/    _/_/_/    _/_/_/    _/      _/            _/      _/    _/
                       [recon-ng v5.1.1, Tim Tomes (@lanmaster53)]                       
 [*] No modules enabled/installed.
 [recon-ng][default] &gt; </code></pre>
+<pre><code class="shell">[recon-ng][default] &gt; marketplace search github    #搜索相关模块
+[recon-ng][default] &gt; marketplace info recon/domains-hosts/google_site_web   #查看模块详细信息
+[recon-ng][default] &gt; marketplace install recon/domains-hosts/google_site_web  #安装模块
+[recon-ng][default] &gt; modules load recon/domains-hosts/google_site_web    #进入此模块
+[recon-ng][default][google_site_web] &gt; info       #查看模块相关信息
+[recon-ng][default][google_site_web] &gt; options set SOURCE laosec.cn   #根据模块信息来设置相关参数
+[recon-ng][default][google_site_web] &gt; run        #运行模块
+[recon-ng][default][google_site_web] &gt; show hosts #查看存储的结果数据
+[recon-ng][default][google_site_web] &gt; back       #退出当前模块
+[recon-ng][default] &gt; marketplace info recon/hosts-hosts/resolve     #查看模块的详细信息--&gt;解析主机的IP地址
+[recon-ng][default] &gt; marketplace install recon/hosts-hosts/resolve  #安装模块
+[recon-ng][default] &gt; modules load recon/hosts-hosts/resolve    #加载模块
+[recon-ng][default][resolve] &gt; info   #查看模块的详细信息
+[recon-ng][default][resolve] &gt; run    #执行此模块
+[recon-ng][default][resolve] &gt; show hosts  #查看存储的结果所对应的IP地址</code></pre>
+<h1 id="开源代码"><a href="#开源代码" class="headerlink" title="开源代码"></a>开源代码</h1><blockquote>
+<p>开源项目或在线代码存储库：Github /Gitlab/SourceForge</p>
+</blockquote>
+<pre><code class="http">user:megacorpone filename:users   //user:github用户名  filename:敏感文件名</code></pre>
+<p><img src="https://s3.ax1x.com/2021/02/18/yWrm3n.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/18/yWrdu6.png"></p>
+<h1 id="Shodan"><a href="#Shodan" class="headerlink" title="Shodan"></a>Shodan</h1><blockquote>
+<p>在线设备搜索引擎<a target="_blank" rel="noopener" href="https://www.shodan.io/">Shodan</a></p>
+</blockquote>
+<pre><code class="shell">hostname:megacorpone.com      
+hostname:megacorpone.com port:22 </code></pre>
+<h1 id="Security-Header-Scanner"><a href="#Security-Header-Scanner" class="headerlink" title="Security Header Scanner"></a>Security Header Scanner</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://securityheaders.com/">https://securityheaders.com/</a></li>
+</ul>
+<h1 id="SSL-Server-Test"><a href="#SSL-Server-Test" class="headerlink" title="SSL Server Test"></a>SSL Server Test</h1><blockquote>
+<p>SSL服务器测试</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.ssllabs.com/">https://www.ssllabs.com/</a></li>
+</ul>
+<h1 id="Pastebin"><a href="#Pastebin" class="headerlink" title="Pastebin"></a>Pastebin</h1><blockquote>
+<p>Pastebin是一个用于存储和共享文本的网站。该网站不需要基本的帐户。许多人使用Pastebin是因为它无处不在，而且使用简单。但既然Pastebin是一个公共服务，我们可以用它来搜索敏感信息。</p>
+</blockquote>
+<ul>
+<li><a target="_blank" rel="noopener" href="http://pastebin.com/">http://pastebin.com/</a></li>
+</ul>
+<h1 id="用户信息收集"><a href="#用户信息收集" class="headerlink" title="用户信息收集"></a>用户信息收集</h1><pre><code class="shell">┌──(root💀kali)-[~]
+└─# theharvester -d megacorpone.com -b google 
+# -d 指定目标域 -b 设置数据要搜索的源</code></pre>
+<h1 id="密码存储"><a href="#密码存储" class="headerlink" title="密码存储"></a>密码存储</h1><pre><code class="shell">/usr/share/wordlists/rockyou.txt</code></pre>
+<h1 id="社交媒体工具"><a href="#社交媒体工具" class="headerlink" title="社交媒体工具"></a>社交媒体工具</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://www.social-searcher.com/">https://www.social-searcher.com/</a></li>
+</ul>
+<h1 id="Stack-Overflow"><a href="#Stack-Overflow" class="headerlink" title="Stack Overflow"></a>Stack Overflow</h1><ul>
+<li><a target="_blank" rel="noopener" href="https://stackoverflow.com/">https://stackoverflow.com/</a></li>
+</ul>
+<h1 id="信息收集框架"><a href="#信息收集框架" class="headerlink" title="信息收集框架"></a>信息收集框架</h1><ul>
+<li>OSINT Fraamework<ul>
+<li><a target="_blank" rel="noopener" href="https://osintframework.com/">https://osintframework.com/</a></li>
+</ul>
+</li>
+<li>Maltego<ul>
+<li>未完待续…</li>
+</ul>
+</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

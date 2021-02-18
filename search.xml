@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>OSCP-被动式信息收集</title>
+      <link href="2021/02/18/OSCP-%E8%A2%AB%E5%8A%A8%E5%BC%8F%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/"/>
+      <url>2021/02/18/OSCP-%E8%A2%AB%E5%8A%A8%E5%BC%8F%E4%BF%A1%E6%81%AF%E6%94%B6%E9%9B%86/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Passive-Information-Gathering"><a href="#Passive-Information-Gathering" class="headerlink" title="Passive Information Gathering"></a>Passive Information Gathering</h1><blockquote><p>被动式信息收集，不与目标产生任何交互</p></blockquote><h1 id="whois枚举"><a href="#whois枚举" class="headerlink" title="whois枚举"></a>whois枚举</h1><ul><li><p>正向查找</p><pre><code class="shell">┌──(laosec㉿kali)-[~]└─$ whois megacorpone.com                                                                </code></pre></li><li><p>反向查找</p><pre><code class="shell">┌──(laosec㉿kali)-[~]└─$ whois 38.100.193.70  </code></pre></li></ul><h1 id="Google-Hacking"><a href="#Google-Hacking" class="headerlink" title="Google Hacking"></a>Google Hacking</h1><ul><li>谷歌语法</li></ul><table><thead><tr><th>语法</th><th>描述</th></tr></thead><tbody><tr><td>intext:关键字</td><td>搜索网页正文中含有这些关键字的网页</td></tr><tr><td>intitle:关键字</td><td>搜索网页标题中含有这些关键字的网页</td></tr><tr><td>cache:关键字</td><td>搜索含有关键字内容的cache</td></tr><tr><td>define:搜索关键字的定义</td><td>搜索关键字的定义</td></tr><tr><td>filtetyp:文件名.后缀名</td><td>搜索特定的文件</td></tr><tr><td>info:关键字</td><td>搜索指定站点的一些基本信息</td></tr><tr><td>inurl:关键字</td><td>搜索含有关键字的URL地址</td></tr><tr><td>link:关键字</td><td>查找与关键字做了链接的URL地址</td></tr><tr><td>site:域名</td><td>返回域名中所有的URL地址</td></tr></tbody></table><ul><li><a href="https://www.exploit-db.com/google-hacking-database">GHDB</a></li></ul><h1 id="Netcraft"><a href="#Netcraft" class="headerlink" title="Netcraft"></a>Netcraft</h1><ul><li><a href="https://searchdns.netcraft.com/">Netcraft </a></li></ul><p><img src="https://s3.ax1x.com/2021/02/18/yWG9X9.png"></p><h1 id="Recon-ng"><a href="#Recon-ng" class="headerlink" title="Recon-ng"></a>Recon-ng</h1><blockquote><p><strong>recon-ng是一款强大的信息收集工具，特别是在收集子域名以及解析子域名的IP地址时，十分方便</strong></p></blockquote><pre><code class="shell">┌──(laosec㉿kali)-[~]└─$ recon-ng                                                                             127 ⨯[*] Version check disabled.    _/_/_/    _/_/_/_/    _/_/_/    _/_/_/    _/      _/            _/      _/    _/_/_/   _/    _/  _/        _/        _/      _/  _/_/    _/            _/_/    _/  _/         _/_/_/    _/_/_/    _/        _/      _/  _/  _/  _/  _/_/_/_/  _/  _/  _/  _/  _/_/_/ _/    _/  _/        _/        _/      _/  _/    _/_/            _/    _/_/  _/      _/ _/    _/  _/_/_/_/    _/_/_/    _/_/_/    _/      _/            _/      _/    _/_/_/                                              /\                                         / \\ /\    Sponsored by...               /\  /\/  \\V  \/\                                 / \\/ // \\\\\ \\ \/\                                // // BLACK HILLS \/ \\                               www.blackhillsinfosec.com                  ____   ____   ____   ____ _____ _  ____   ____  ____                 |____] | ___/ |____| |       |   | |____  |____ |                 |      |   \_ |    | |____   |   |  ____| |____ |____                                   www.practisec.com                      [recon-ng v5.1.1, Tim Tomes (@lanmaster53)]                       [*] No modules enabled/installed.[recon-ng][default] &gt; </code></pre>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机认证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OSCP-实用工具</title>
       <link href="2021/02/17/OSCP-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
       <url>2021/02/17/OSCP-%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</url>

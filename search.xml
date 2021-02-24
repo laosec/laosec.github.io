@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>Docker-Vulhub搭建</title>
+      <link href="2021/02/24/Docker-Vulhub%E6%90%AD%E5%BB%BA/"/>
+      <url>2021/02/24/Docker-Vulhub%E6%90%AD%E5%BB%BA/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Vulhub简介"><a href="#Vulhub简介" class="headerlink" title="Vulhub简介"></a>Vulhub简介</h1><blockquote><p>Vulhub是一个基于docker和docker-compose的漏洞环境集合，进入对应目录并执行一条语句即可启动一个全新的漏洞环境，让漏洞复现变得更加简单，让安全研究者更加专注于漏洞原理本身.<a href="www.vulhub.org">官方地址</a></p></blockquote><h1 id="Vulhub安装"><a href="#Vulhub安装" class="headerlink" title="Vulhub安装"></a>Vulhub安装</h1><h4 id="步骤一：安装Docker"><a href="#步骤一：安装Docker" class="headerlink" title="步骤一：安装Docker"></a>步骤一：安装Docker</h4><pre><code class="shell">┌──(root💀kali)-[/home/laosec]└─# apt-get update  #更新软件列表┌──(root💀kali)-[/home/laosec]└─# apt-get install -y apt-transport-https ca-certificates #安装https协议，CA证书┌──(root💀kali)-[/home/laosec]└─# apt install docker.io   #安装docker┌──(root💀kali)-[/home/laosec]└─# docker -v   #查看版本号     Docker version 20.10.3+dfsg1, build 48d30b5   ┌──(root💀kali)-[/home/laosec]└─# systemctl start docker   #启动docker┌──(root💀kali)-[/home/laosec]└─# docker ps -a   #显示docker详细信息CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES</code></pre><h4 id="步骤二：安装pip"><a href="#步骤二：安装pip" class="headerlink" title="步骤二：安装pip"></a>步骤二：安装pip</h4><pre><code class="shell">┌──(root💀kali)-[/home/laosec]└─# apt-get install python3-pip   </code></pre><h4 id="步骤三：安装docker-compose"><a href="#步骤三：安装docker-compose" class="headerlink" title="步骤三：安装docker-compose"></a>步骤三：安装docker-compose</h4><pre><code class="shell">┌──(root💀kali)-[/home/laosec]└─# pip3 install docker-compose   ┌──(root💀kali)-[/home/laosec]└─# docker-compose -v   #查看docker-compose版本docker-compose version 1.28.4, build unknown</code></pre><h4 id="步骤四：下载Vulhub"><a href="#步骤四：下载Vulhub" class="headerlink" title="步骤四：下载Vulhub"></a>步骤四：下载Vulhub</h4><pre><code class="shell">┌──(root💀kali)-[/home/laosec]└─# git clone https://github.com/vulhub/vulhub.git  #拉取靶机镜像正克隆到 'vulhub'...remote: Enumerating objects: 10276, done.remote: Total 10276 (delta 0), reused 0 (delta 0), pack-reused 10276接收对象中: 100% (10276/10276), 131.64 MiB | 9.92 MiB/s, 完成.处理 delta 中: 100% (4073/4073), 完成....                                                                       ┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]└─# pwd      #进入到漏洞环境中/home/laosec/vulhub/struts2/s2-001┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]└─# docker-compose build  #拉取镜像┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]└─# docker-compose up -d  #启动镜像┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]└─# docker-compose ps     #查看虚拟机环境</code></pre><p><img src="https://s3.ax1x.com/2021/02/24/yLvvXq.png"></p><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]└─# docker-compose down  关闭容器Stopping s2-001_struts2_1 ... doneRemoving s2-001_struts2_1 ... doneRemoving network s2-001_default</code></pre><ul><li>未完待续…</li></ul>]]></content>
+      
+      
+      <categories>
+          
+          <category> 服务器运维 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OSCP-漏洞扫描</title>
       <link href="2021/02/20/OSCP-%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/"/>
       <url>2021/02/20/OSCP-%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/</url>

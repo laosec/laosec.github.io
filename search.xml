@@ -4,6 +4,44 @@
   
     
     <entry>
+      <title>OSCP-Web应用程序攻击</title>
+      <link href="2021/03/01/OSCP-Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%94%BB%E5%87%BB/"/>
+      <url>2021/03/01/OSCP-Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%94%BB%E5%87%BB/</url>
+      
+        <content type="html"><![CDATA[]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机认证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
+      <title>常见中间件漏洞</title>
+      <link href="2021/02/28/%E5%B8%B8%E8%A7%81%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/"/>
+      <url>2021/02/28/%E5%B8%B8%E8%A7%81%E4%B8%AD%E9%97%B4%E4%BB%B6%E6%BC%8F%E6%B4%9E/</url>
+      
+        <content type="html"><![CDATA[<h1 id="Weblogic"><a href="#Weblogic" class="headerlink" title="Weblogic"></a>Weblogic</h1><blockquote><p>WebLogic是美国Oracle公司出品的一个applicationserver，确切的说是一个基于JAVAEE架构的中间件，WebLogic是用于开发、集成、部署和管理大型分布 式Web应用、网络应用和数据库应用的Java应用服务器。将Java的动态功能和Java Enterprise标准的安全性引入大型网络应用的开发、集成、部署和管理之 中</p><p>默认端口:<strong>7001</strong></p></blockquote>]]></content>
+      
+      
+      <categories>
+          
+          <category> WEB渗透 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>常见框架漏洞</title>
       <link href="2021/02/24/%E5%B8%B8%E8%A7%81%E6%A1%86%E6%9E%B6%E6%BC%8F%E6%B4%9E/"/>
       <url>2021/02/24/%E5%B8%B8%E8%A7%81%E6%A1%86%E6%9E%B6%E6%BC%8F%E6%B4%9E/</url>
@@ -46,7 +84,7 @@
       <link href="2021/02/20/OSCP-%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/"/>
       <url>2021/02/20/OSCP-%E6%BC%8F%E6%B4%9E%E6%89%AB%E6%8F%8F/</url>
       
-        <content type="html"><![CDATA[<h1 id="一：Nessus漏洞扫描"><a href="#一：Nessus漏洞扫描" class="headerlink" title="一：Nessus漏洞扫描"></a>一：Nessus漏洞扫描</h1><blockquote><p>Nessus 号称是”世界上最流行的漏洞扫描程序,全世界超过75,000个组织在使用它”.尽管这个扫描程序可以免费下载得到,但是要从Tenable Network Security更新到所有最新的威胁信息,每年的直接订购费用是$1,200.Linux, FreeBSD, Solaris, Mac OS X和Windows下都可以使用 Nessus.</p></blockquote><h4 id="1：Nessus安装"><a href="#1：Nessus安装" class="headerlink" title="1：Nessus安装"></a>1：Nessus安装</h4><pre><code class="shell">┌──(root💀kali)-[/home/laosec]└─# apt update &amp;&amp; apt upgrade  #更新包列表并升级到现有软件的最新版本</code></pre><blockquote><p>Nessus下载地址：<a href="https://www.tenable.com/downloads/nessus">https://www.tenable.com/downloads/nessus</a></p><p>备用下载：</p><pre><code class="shell">链接：https://pan.baidu.com/s/1L4cdpq3YGS3qz7iEb55rCA 提取码：lsec 复制这段内容后打开百度网盘手机App，操作更方便哦</code></pre></blockquote><p><strong>检测文件真实性</strong></p><p><img src="https://s3.ax1x.com/2021/02/26/yxhNJ1.png"></p><p><img src="https://s3.ax1x.com/2021/02/26/yxhwQK.png"></p><p><strong>安装软件包</strong></p><pre><code class="shell">┌──(root💀kali)-[/home/laosec/桌面]└─# apt install ./Nessus-8.13.1-debian6_amd64.deb ... You can start Nessus Scanner by typing /bin/systemctl start nessusd.service - Then go to https://kali:8834/ to configure your scanner...</code></pre><p><strong>启动服务</strong></p><pre><code class="shell">┌──(root💀kali)-[/home/laosec/桌面]└─# /bin/systemctl start nessusd.service  </code></pre><p><strong>访问WEB安装界面</strong></p><p><img src="https://s3.ax1x.com/2021/02/26/yx5Ygx.png"></p><blockquote><p>选择Nessus Essentials–&gt;填写姓名及邮件信息–&gt;邮箱收到动态码之后填入–&gt;创建本地Nessus账户，填入账户名与密码–&gt;下载插件</p></blockquote>]]></content>
+        <content type="html"><![CDATA[<h1 id="一：Nessus漏洞扫描"><a href="#一：Nessus漏洞扫描" class="headerlink" title="一：Nessus漏洞扫描"></a>一：Nessus漏洞扫描</h1><blockquote><p>Nessus 号称是”世界上最流行的漏洞扫描程序,全世界超过75,000个组织在使用它”.尽管这个扫描程序可以免费下载得到,但是要从Tenable Network Security更新到所有最新的威胁信息,每年的直接订购费用是$1,200.Linux, FreeBSD, Solaris, Mac OS X和Windows下都可以使用 Nessus.</p></blockquote><h4 id="1：Nessus安装"><a href="#1：Nessus安装" class="headerlink" title="1：Nessus安装"></a>1：Nessus安装</h4><pre><code class="shell">┌──(root💀kali)-[/home/laosec]└─# apt update &amp;&amp; apt upgrade  #更新包列表并升级到现有软件的最新版本</code></pre><blockquote><p>Nessus下载地址：<a href="https://www.tenable.com/downloads/nessus">https://www.tenable.com/downloads/nessus</a></p><p>备用下载：</p><pre><code class="shell">链接：https://pan.baidu.com/s/1L4cdpq3YGS3qz7iEb55rCA 提取码：lsec 复制这段内容后打开百度网盘手机App，操作更方便哦</code></pre></blockquote><p><strong>检测文件真实性</strong></p><p><img src="https://s3.ax1x.com/2021/02/26/yxhNJ1.png"></p><p><img src="https://s3.ax1x.com/2021/02/26/yxhwQK.png"></p><p><strong>安装软件包</strong></p><pre><code class="shell">┌──(root💀kali)-[/home/laosec/桌面]└─# apt install ./Nessus-8.13.1-debian6_amd64.deb ... You can start Nessus Scanner by typing /bin/systemctl start nessusd.service - Then go to https://kali:8834/ to configure your scanner...</code></pre><p><strong>启动服务</strong></p><pre><code class="shell">┌──(root💀kali)-[/home/laosec/桌面]└─# /bin/systemctl start nessusd.service  </code></pre><p><strong>访问WEB安装界面</strong></p><p><img src="https://s3.ax1x.com/2021/02/26/yx5Ygx.png"></p><blockquote><p>选择Nessus Essentials–&gt;填写姓名及邮件信息–&gt;邮箱收到动态码之后填入–&gt;创建本地Nessus账户，填幽灵和熔毁：目标扫描幽灵和熔毁漏洞入账户名与密码–&gt;下载插件</p></blockquote><h4 id="2：Nessus扫描描述"><a href="#2：Nessus扫描描述" class="headerlink" title="2：Nessus扫描描述"></a>2：Nessus扫描描述</h4><p>Nessus扫描类型：</p><ul><li>基本网络扫描：具有各种检查的通用扫描，可用于各种目标类型</li><li>认证补丁审计：枚举缺失补丁的认证扫描</li><li>Web应用程序测试：专门扫描Web应用程序中已发布的漏洞</li><li>幽灵和熔毁：目标扫描幽灵和熔毁漏洞</li></ul><p>基本网络扫描模板：</p><ul><li>目标是位于内部网络还是公共网络</li><li>扫描程序是否应该尝试强制用户凭据</li><li>扫描器应该扫描所有TCP和UDP端口还是只扫描公共端口</li><li>扫描仪应该运行哪些检查，应该避免哪些检查</li><li>扫描仪应该运行经过身份验证的扫描还是未经身份验证的扫描</li></ul><h4 id="3：基本网络扫描"><a href="#3：基本网络扫描" class="headerlink" title="3：基本网络扫描"></a>3：基本网络扫描</h4><blockquote><p>New Scan-&gt;Basic Network Scan-&gt;name&amp;targets-&gt;Discovery-&gt;Scan Type&amp;Custom-&gt;Port Scanning-&gt;Port scan range0-65535-&gt;save-&gt;launch</p></blockquote><p><strong>Exercises</strong></p><ul><li>在Wireshark打开的情况下运行扫描，并显示扫描仪为完成扫描而执行的步骤</li><li>查看扫描结果</li></ul><h4 id="4：身份验证扫描"><a href="#4：身份验证扫描" class="headerlink" title="4：身份验证扫描"></a>4：身份验证扫描</h4><blockquote><p>New Scan-&gt;Credentialed Patch Audit-&gt;Credentials-&gt;SSH-&gt;Authentication method-&gt;password-&gt;username&amp;password-&gt;Launch</p></blockquote><p><strong>Exercises</strong></p><ul><li>按照上面的步骤创建您自己的Debian客户端的身份验证扫描</li><li>查看扫描结果</li></ul><h4 id="5：Nessus插件扫描"><a href="#5：Nessus插件扫描" class="headerlink" title="5：Nessus插件扫描"></a>5：Nessus插件扫描</h4><blockquote></blockquote><p><strong>Exercises</strong></p><ul><li>按照上面的步骤创建您自己的Beta扫描</li><li>Nessus扫描端口的规则</li><li>查看扫描结果</li></ul><h1 id="二：Nmap-漏洞扫描"><a href="#二：Nmap-漏洞扫描" class="headerlink" title="二：Nmap 漏洞扫描"></a>二：Nmap 漏洞扫描</h1><blockquote><p>“vuln”和“exploit”中的脚本前者检测到漏洞，而后者试图利用它。</p><p>Kali中Nse脚本存放位置  /usr/share/nmap/scripts/</p></blockquote><pre><code class="shell">┌──(root💀kali)-[/]└─# nmap --script vuln 192.168.0.104</code></pre><p><strong>Exercises</strong></p><ul><li>找到一个类似于NFS导出共享信息公开的NSE脚本，该脚本在“使用单个Nessus插件扫描”部分中执行。一旦找到了，就在PWK实验室中对Beta运行脚本</li><li>未完待续…</li></ul>]]></content>
       
       
       <categories>

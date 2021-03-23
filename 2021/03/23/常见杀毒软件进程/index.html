@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>Linux提权之权限维持 | Falao&#39;s Blog</title>
+  <title>常见杀毒软件进程 | Falao&#39;s Blog</title>
   <meta name="keywords" content="">
-  <meta name="description" content="Linux提权之权限维持 | Falao&#39;s Blog">
+  <meta name="description" content="常见杀毒软件进程 | Falao&#39;s Blog">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="ID：法老职业：渗透测试工程师证书：OSCP&#x2F;CISP-PTE">
 <meta property="og:type" content="website">
@@ -643,9 +643,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-Linux提权之权限维持" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-常见杀毒软件进程" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">Linux提权之权限维持</h1>
+        <h1 class="article-title">常见杀毒软件进程</h1>
     
     <div class="article-meta">
         
@@ -655,7 +655,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="后渗透专题">后渗透专题</a>
+            <a  data-rel="总结与分享">总结与分享</a>
             
         </span>
         
@@ -663,7 +663,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-01-19 10:52:33'>2021-01-19 10:20</time>
+            Created At : <time class="date" title='Updated At: 2021-03-23 18:50:17'>2021-03-23 18:49</time>
         
     </div>
     <div class="article-meta">
@@ -685,7 +685,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%84%E6%9D%83%E9%99%90%E7%BB%B4%E6%8C%81"><span class="toc-text">常规权限维持</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E5%BB%BA%E5%90%8E%E9%97%A8%E8%B4%A6%E5%8F%B7"><span class="toc-text">创建后门账号</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E6%9D%80%E6%AF%92%E8%BD%AF%E4%BB%B6%E8%BF%9B%E7%A8%8B"><span class="toc-text">常见杀毒软件进程</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81WAF%E8%BD%AF%E4%BB%B6%E8%BF%9B%E7%A8%8B"><span class="toc-text">常见WAF软件进程</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -701,9 +701,358 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="常规权限维持"><a href="#常规权限维持" class="headerlink" title="常规权限维持"></a>常规权限维持</h2><h3 id="创建后门账号"><a href="#创建后门账号" class="headerlink" title="创建后门账号"></a>创建后门账号</h3><blockquote>
-<p>useradd -p  `openssl passwd -1 -salt ‘salt’ 123456` guest</p>
-</blockquote>
+        <h1 id="常见杀毒软件进程"><a href="#常见杀毒软件进程" class="headerlink" title="常见杀毒软件进程"></a>常见杀毒软件进程</h1><table>
+<thead>
+<tr>
+<th>进程名</th>
+<th>杀毒软件</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>360tray.exe</td>
+<td>360安全卫士</td>
+</tr>
+<tr>
+<td>360sd.exe</td>
+<td>360杀毒</td>
+</tr>
+<tr>
+<td>avp.exe</td>
+<td>卡巴斯基</td>
+</tr>
+<tr>
+<td>KvMonXP.exe</td>
+<td>江民杀毒</td>
+</tr>
+<tr>
+<td>RavMonD.exe</td>
+<td>瑞星杀毒</td>
+</tr>
+<tr>
+<td>kxetray.exe</td>
+<td>金山毒霸</td>
+</tr>
+<tr>
+<td>knsdtray.exe</td>
+<td>可牛杀毒</td>
+</tr>
+<tr>
+<td>TMBMSRV.exe</td>
+<td>趋势杀毒</td>
+</tr>
+<tr>
+<td>avcenter.exe</td>
+<td>Avira(小红伞)</td>
+</tr>
+<tr>
+<td>ashDisp.exe</td>
+<td>Avast网络安全</td>
+</tr>
+<tr>
+<td>rtvscan.exe</td>
+<td>诺顿杀毒</td>
+</tr>
+<tr>
+<td>ksafe.exe</td>
+<td>金山卫士</td>
+</tr>
+<tr>
+<td>QQPCRTP.exe</td>
+<td>QQ电脑管家</td>
+</tr>
+<tr>
+<td>Miner.exe</td>
+<td>流量矿石</td>
+</tr>
+<tr>
+<td>AYAgent.aye</td>
+<td>韩国胶囊</td>
+</tr>
+<tr>
+<td>patray.exe</td>
+<td>安博士</td>
+</tr>
+<tr>
+<td>V3Svc.exe</td>
+<td>安博士V3</td>
+</tr>
+<tr>
+<td>remupd.exe</td>
+<td>熊猫卫士</td>
+</tr>
+<tr>
+<td>safedog.exe</td>
+<td>安全狗</td>
+</tr>
+<tr>
+<td>parmor.exe</td>
+<td>木马克星</td>
+</tr>
+<tr>
+<td>beikesan.exe</td>
+<td>贝壳云安全</td>
+</tr>
+<tr>
+<td>FortiTray.exe</td>
+<td>飞塔</td>
+</tr>
+<tr>
+<td>KSWebShield.exe</td>
+<td>金山网盾</td>
+</tr>
+<tr>
+<td>TrojanHunter.exe</td>
+<td>木马猎手</td>
+</tr>
+<tr>
+<td>GG.exe</td>
+<td>巨盾网游安全盾</td>
+</tr>
+<tr>
+<td>adam.exe</td>
+<td>绿鹰安全精灵</td>
+</tr>
+<tr>
+<td>AST.exe</td>
+<td>超级巡警</td>
+</tr>
+<tr>
+<td>ananwidget.exe</td>
+<td>墨者安全专家</td>
+</tr>
+<tr>
+<td>avgwdsvc.exe</td>
+<td>AVG杀毒</td>
+</tr>
+<tr>
+<td>ccSetMgr.exe</td>
+<td>赛门铁克</td>
+</tr>
+<tr>
+<td>rfwmain.exe</td>
+<td>瑞星防火墙</td>
+</tr>
+<tr>
+<td>kpfwtray.exe</td>
+<td>金山网镖</td>
+</tr>
+<tr>
+<td>FYFireWall.exe</td>
+<td>风云防火墙</td>
+</tr>
+<tr>
+<td>MPMon.exe</td>
+<td>微点主动防御</td>
+</tr>
+<tr>
+<td>pfw.exe</td>
+<td>天网防火墙</td>
+</tr>
+<tr>
+<td>S.exe</td>
+<td>在抓鸡</td>
+</tr>
+<tr>
+<td>1433.exe</td>
+<td>在扫1433</td>
+</tr>
+<tr>
+<td>DUB.exe</td>
+<td>在爆破</td>
+</tr>
+<tr>
+<td>ServUDaemon.exe</td>
+<td>发现S-U</td>
+</tr>
+<tr>
+<td>BaiduSdSvc.exe</td>
+<td>百度杀软</td>
+</tr>
+<tr>
+<td>mssecess.exe</td>
+<td>微软杀毒</td>
+</tr>
+<tr>
+<td>a2guard.exe</td>
+<td>a-squared杀毒</td>
+</tr>
+<tr>
+<td>ad-watch.exe</td>
+<td>Lavasoft杀毒</td>
+</tr>
+<tr>
+<td>cleaner8.exe</td>
+<td>The Cleaner杀毒</td>
+</tr>
+<tr>
+<td>vba32lder.exe</td>
+<td>vb32杀毒</td>
+</tr>
+<tr>
+<td>MongoosaGUI.exe</td>
+<td>Mongoosa杀毒</td>
+</tr>
+<tr>
+<td>CorantiControlCenter32.exe</td>
+<td>Coranti2012杀毒</td>
+</tr>
+<tr>
+<td>F-PROT.EXE</td>
+<td>F-PROT杀毒</td>
+</tr>
+<tr>
+<td>CMCTrayIcon.exe</td>
+<td>CMC杀毒</td>
+</tr>
+<tr>
+<td>K7TSecurity.exe</td>
+<td>K7杀毒</td>
+</tr>
+<tr>
+<td>UnThreat.exe</td>
+<td>UnThreat杀毒</td>
+</tr>
+<tr>
+<td>CKSoftShiedAntivirus4.exe</td>
+<td>Shield Antivirus杀毒</td>
+</tr>
+<tr>
+<td>AVWatchService.exe</td>
+<td>VIRUSfighter杀毒</td>
+</tr>
+<tr>
+<td>ArcaTasksService.exe</td>
+<td>ArcaVir杀毒</td>
+</tr>
+<tr>
+<td>iptray.exe</td>
+<td>Immunet杀毒</td>
+</tr>
+<tr>
+<td>PSafeSysTray.exe</td>
+<td>PSafe杀毒</td>
+</tr>
+<tr>
+<td>nspupsvc.exe</td>
+<td>nProtect杀毒</td>
+</tr>
+<tr>
+<td>SpywareTerminatorShield.exe</td>
+<td>SpywareTerminator杀毒</td>
+</tr>
+<tr>
+<td>BKavService.exe</td>
+<td>Bkav杀毒</td>
+</tr>
+<tr>
+<td>MsMpEng.exe</td>
+<td>Microsoft Security Essentials</td>
+</tr>
+<tr>
+<td>SBAMSvc.exe</td>
+<td>VIPRE</td>
+</tr>
+<tr>
+<td>ccSvcHst.exe</td>
+<td>Norton杀毒</td>
+</tr>
+<tr>
+<td>f-secure.exe</td>
+<td>冰岛</td>
+</tr>
+<tr>
+<td>egui.exe</td>
+<td>NOD32</td>
+</tr>
+<tr>
+<td>Mcshield.exe</td>
+<td>麦咖啡</td>
+</tr>
+<tr>
+<td>SavProgress.exe</td>
+<td>Sophos杀毒</td>
+</tr>
+<tr>
+<td>fsavgui.exe</td>
+<td>F-Secure杀毒</td>
+</tr>
+<tr>
+<td>vsserv.exe</td>
+<td>比特梵德</td>
+</tr>
+<tr>
+<td>AVK.exe</td>
+<td>GData</td>
+</tr>
+<tr>
+<td>ccapp.exe</td>
+<td>Symantec Norton</td>
+</tr>
+<tr>
+<td>avg.exe</td>
+<td>AVG Anti-Virus</td>
+</tr>
+<tr>
+<td>spidernt.exe</td>
+<td>Dr.web</td>
+</tr>
+<tr>
+<td>Mcshield.exe</td>
+<td>Mcafee</td>
+</tr>
+<tr>
+<td>avgaurd.exe</td>
+<td>Avira Antivir</td>
+</tr>
+<tr>
+<td>F-PROT.exe</td>
+<td>F-Prot AntiVirus</td>
+</tr>
+<tr>
+<td>vsmon.exe</td>
+<td>ZoneAlarm</td>
+</tr>
+<tr>
+<td>avp.exe</td>
+<td>Kaspersky</td>
+</tr>
+<tr>
+<td>cpf.exe</td>
+<td>Comodo</td>
+</tr>
+<tr>
+<td>outpost.exe</td>
+<td>Outpost Firewall</td>
+</tr>
+</tbody></table>
+<h1 id="常见WAF软件进程"><a href="#常见WAF软件进程" class="headerlink" title="常见WAF软件进程"></a>常见WAF软件进程</h1><table>
+<thead>
+<tr>
+<th>WAF软件</th>
+<th>进程</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>安全狗</td>
+<td>SafeDogGuardCenter.exe<br>safedogupdatecenter.exe<br>safedogguardcenter.exe<br>SafeDogSiteIIS.exe<br>SafeDogTray.exe<br>SafeDogServerUI.exe</td>
+</tr>
+<tr>
+<td>云锁</td>
+<td>yunsuo_agent_service.exe<br>yunsuo_agent_daemon.exe</td>
+</tr>
+<tr>
+<td>D盾</td>
+<td>D_Safe_Manage.exe<br>d_manage.exe</td>
+</tr>
+<tr>
+<td>护卫神</td>
+<td>HwsPanel.exe 护卫神·入侵防护系统（状态托盘）<br>hws_ui.exe  护卫神·入侵防护系统 - <a target="_blank" rel="noopener" href="http://www.huweishen.com/">www.huweishen.com</a><br>hws.exe    护卫神·入侵防护系统 服务处理程序<br>hwsd.exe    护卫神·入侵防护系统 监控组件</td>
+</tr>
+<tr>
+<td>火绒</td>
+<td>hipstray.exe<br>wsctrl.exe<br>usysdiag.exe</td>
+</tr>
+</tbody></table>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

